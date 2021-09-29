@@ -1,0 +1,131 @@
+.get-started {
+	padding: 2rem 0;
+	background-color: $primary-color;
+	position: relative;
+
+	&__row {
+		display: flex;
+		align-items: center;
+		padding: 0 2rem;
+
+		@include media-query(phone) {
+			flex-direction: column;
+			position: relative;
+
+			@include selectAllExceptLast {
+				margin-bottom: 2rem;
+			}
+		}
+	}
+
+	&__desc {
+		margin: 0 2rem;
+
+		@include media-query(phone) {
+			margin-right: 0;
+			margin-left: 0;
+		}
+	}
+
+	&__graphic {
+		display: none;
+		width: 100%;
+		position: absolute;
+		top: 50%;
+		left: -50%;
+		transform: translateY(-50%);
+
+		@include media-query(phone) {
+			display: block;
+		}
+	}
+}
+
+.main {
+	background: url(../img/graphic-circle-2.png), url(../img/graphic-circle-3.png),
+		url(../img/graphic-circle-3.png);
+	background-size: 120%;
+	background-position: -10rem 0, -10rem 50%, -10rem 100%;
+	background-repeat: no-repeat;
+
+	@include media-query(tab-land) {
+		background-image: url(../img/graphic-circle-2.png), url(../img/graphic-circle-3.png);
+		background-position: -10rem 0, -10rem 100%;
+	}
+
+	@include media-query(phone) {
+		background-image: url(../img/graphic-circle-2.png), url(../img/graphic-circle-3.png),
+			url(../img/graphic-circle-3.png);
+
+		background-size: 250%, 200%, 500%;
+		background-position: 120% 24rem, -20rem 60%, 20rem 125%;
+	}
+}
+
+.feature {
+	min-height: 100vh;
+	display: flex;
+	align-items: center;
+	position: relative;
+
+	&::before {
+		content: "";
+		position: absolute;
+		inset: 0;
+		background: $radial-gradient;
+		z-index: -5;
+	}
+
+	@include media-query(tab-land) {
+		min-height: 40vh;
+	}
+
+	@include media-query(phone) {
+		min-height: 75vh;
+	}
+}
+
+.description {
+	padding: 8rem 0;
+
+	&__content {
+		display: flex;
+		margin: 1.5rem 0;
+	}
+
+	&__icon {
+		flex-shrink: 0;
+		width: 4rem;
+		height: 4rem;
+		background: linear-gradient(90deg, #090909 0%, rgba(53, 53, 53, 0.554374) 50%, #1c1c1c 100%);
+		border-radius: 50%;
+		border: solid 1px $primary-color;
+		font-size: 2rem;
+		color: $white-color;
+		margin-right: 1.5rem;
+
+		@include flex(center, center);
+	}
+
+	&__details {
+		h3 {
+			font-weight: bold;
+			margin-bottom: 1rem;
+		}
+
+		p {
+			margin: 0;
+		}
+	}
+}
+
+.circle {
+	background: url(../img/graphic-footer-circle.png);
+	background-size: 100%;
+	background-position: center;
+	background-repeat: no-repeat;
+
+	@include media-query(phone) {
+		background: none;
+	}
+}

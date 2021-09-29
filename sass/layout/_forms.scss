@@ -1,0 +1,38 @@
+.form {
+	&__input {
+		width: 100%;
+		padding: 1rem;
+		border-radius: 0.5rem;
+		font-weight: bold;
+		border: 2px solid transparent;
+		outline: none;
+
+		&::placeholder {
+			color: #ccc;
+		}
+
+		&:focus {
+			border: 2px solid $primary-color;
+			background-color: transparent;
+			color: $primary-color;
+			box-shadow: 0 0 2rem rgba(0, 0, 0, 0.1);
+		}
+	}
+
+	&-select {
+		border-radius: 0.5rem;
+		padding: 1rem;
+		color: #ccc;
+		font-size: 1.2rem;
+		font-weight: bold;
+
+		option {
+			font-weight: bold;
+		}
+
+		&:focus {
+			border: 2px solid $primary-color;
+			box-shadow: 0 0 2rem rgba(0, 0, 0, 0.1);
+		}
+	}
+}

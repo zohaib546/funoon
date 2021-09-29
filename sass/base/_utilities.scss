@@ -1,0 +1,82 @@
+.bg-graphic {
+	background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+		url(../img/graphic-circle-1.png), linear-gradient($black-color, $black-color);
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-position: center;
+	min-height: 100vh;
+	display: flex;
+	flex-direction: column;
+
+	@include media-query(phone) {
+		background: url(../img/graphic-circle.png), linear-gradient($black-color, $black-color),
+			$black-color;
+		background-repeat: no-repeat;
+		background-size: 50rem, cover;
+		background-position: 15rem -25rem, center;
+	}
+}
+
+.bg-graphic-radial {
+	background: url(../img/graphic-circle-4.png), $radial-gradient;
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-position: center;
+	min-height: 100vh;
+	display: flex;
+	flex-direction: column;
+
+	@include media-query(phone) {
+		background: url(../img/graphic-circle.png), $radial-gradient;
+		background-repeat: no-repeat;
+		background-size: 50rem, cover;
+		background-position: 15rem -25rem, center;
+	}
+}
+
+.bg-radial {
+	position: relative;
+
+	&::before {
+		content: "";
+		position: absolute;
+		inset: 0;
+		background: $radial-gradient;
+		z-index: -100;
+	}
+}
+
+.primary-color {
+	color: $primary-color;
+}
+
+.seperator {
+	text-align: center;
+	position: relative;
+
+	span {
+		background: $black-color;
+		padding: 0 1rem;
+	}
+
+	&::before {
+		content: "";
+		height: 1px;
+		background: white;
+		display: block;
+		position: absolute;
+		top: 50%;
+		left: 0;
+		right: 0;
+		z-index: -1;
+	}
+}
+
+.mb-12 {
+	margin-bottom: 12rem;
+}
+
+.mw-30 {
+	width: 100%;
+	max-width: 30rem;
+}

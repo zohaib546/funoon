@@ -1,0 +1,181 @@
+.navbar {
+	padding: 1rem;
+}
+
+.navbar-dark .navbar-nav .nav-link {
+	color: $white-color;
+}
+
+.nav-item {
+	@include notLastChild {
+		margin-right: 2rem;
+	}
+
+	@include media-query(tab) {
+		text-align: right;
+
+		@include notLastChild {
+			margin-right: 0;
+		}
+	}
+}
+
+.list-inline {
+	@include media-query(phone) {
+		display: flex;
+		flex-wrap: wrap;
+		text-align: left;
+	}
+
+	&-item {
+		margin-top: 1rem;
+		margin-bottom: 1rem;
+
+		@include media-query(phone) {
+			flex: 1 0 50%;
+			margin: 1.5rem 0;
+		}
+	}
+}
+
+.list-inline-item a {
+	padding: 0 3rem;
+
+	&:hover {
+		color: $primary-color;
+	}
+}
+
+.list-inline-item.active a {
+	color: $primary-color;
+}
+
+.list-inline-item {
+	&:not(:last-child) {
+		border-right: 1px solid $white-color;
+		margin-right: 0;
+
+		@include media-query(phone) {
+			border: none;
+			margin-right: 0;
+		}
+	}
+}
+
+.form-control {
+	border-color: transparent;
+	border-radius: 0.5rem;
+	padding: 1.5rem 2.5rem;
+	font-weight: bold;
+	font-size: 1.65rem;
+}
+
+.form-control:focus {
+	border-color: $primary-color;
+}
+
+.input-group {
+	@include media-query(phone) {
+		flex-direction: column;
+	}
+}
+
+.input-group > .form-control {
+	@include media-query(phone) {
+		width: 100%;
+		border-radius: 0.5rem !important;
+		margin-bottom: 2rem;
+	}
+}
+
+.input-group
+	> :not(:first-child):not(.dropdown-menu):not(.valid-tooltip):not(.valid-feedback):not(.invalid-tooltip):not(.invalid-feedback) {
+	@include media-query(phone) {
+		border-top-left-radius: 0.5rem;
+		border-bottom-left-radius: 0.5rem;
+		margin-left: 0;
+	}
+}
+
+.accordion-item:first-of-type {
+	border-top-left-radius: 0;
+	border-top-right-radius: 0;
+}
+
+.accordion-item:last-of-type {
+	border-bottom-right-radius: 0;
+	border-bottom-left-radius: 0;
+}
+
+.faqs {
+	.accordion-button,
+	.accordion-item {
+		background: linear-gradient(90deg, #090909 0%, rgba(69, 69, 69, 0.554374) 57.99%, #1c1c1c 100%);
+		border: 1px solid #202020;
+	}
+
+	.accordion-item:not(:last-child) {
+		margin-bottom: 1rem;
+	}
+
+	.accordion-button:focus {
+		border-color: #333;
+		box-shadow: none;
+	}
+
+	.accordion-button {
+		color: $white-color;
+		font-size: 1.6rem;
+		text-transform: uppercase;
+	}
+
+	.accordion-button:not(.collapsed) {
+		color: $white-color;
+		background-color: transparent;
+		box-shadow: none;
+	}
+
+	.accordion-button::after {
+		background-image: url(../img/svg/plus.png);
+	}
+
+	.accordion-button:not(.collapsed)::after {
+		background-image: url(../img/svg/plus.png);
+	}
+}
+
+.profile {
+	.accordion-button {
+		background-color: transparent;
+		color: $white-color;
+		padding: 1rem 0;
+	}
+
+	.accordion-button:focus {
+		border-color: none;
+		box-shadow: none;
+	}
+
+	.accordion-item {
+		background-color: transparent;
+		border: none;
+	}
+
+	.accordion-button:not(.collapsed) {
+		color: $white-color;
+		background-color: transparent;
+		box-shadow: none;
+	}
+
+	.accordion-item:not(:last-child) .accordion-button {
+		border-bottom: 1px solid $white-color;
+	}
+
+	.accordion-button::after {
+		background-image: url(../img/svg/icon-chevron.svg);
+	}
+
+	.accordion-body {
+		padding: 1rem 0 0;
+	}
+}
