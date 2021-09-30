@@ -428,6 +428,10 @@ button:focus {
   padding: 7rem 0;
 }
 
+.font-sm {
+  font-size: 1rem;
+}
+
 .hero {
   display: flex;
   flex-direction: column;
@@ -538,7 +542,7 @@ button:focus {
   color: #000;
   border-radius: 50%;
   font-size: 1.6rem;
-  background-color: #fff;
+  background-color: #0f98d5;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -901,6 +905,35 @@ button:focus {
   padding: 2rem;
   border-radius: 1rem;
   box-shadow: 0 0 1.5rem rgba(0, 0, 0, 0.2);
+}
+
+.availibility__platforms > * {
+  margin-right: 1rem;
+  margin-bottom: 1rem;
+}
+.availibility__button {
+  padding: 0.5rem 1rem;
+  display: inline-block;
+  height: 4rem;
+  width: 15rem;
+  background-color: #000;
+  border-radius: 0.8rem;
+  box-shadow: 0 0 1rem rgba(0, 0, 0, 0.2);
+  transition: all 0.2s;
+}
+.availibility__button:hover {
+  background-color: #080808;
+}
+.availibility__social-button {
+  background-color: #222;
+  border-radius: 0.8rem;
+  overflow: hidden;
+  display: inline-block;
+  box-shadow: 0 0 1rem rgba(0, 0, 0, 0.2);
+  padding: 0.5rem;
+}
+.availibility__social-button img {
+  height: 5rem;
 }
 
 /*
