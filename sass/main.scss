@@ -49,6 +49,7 @@ sass 7–1 pattern/
 // Vendors
 @import "vendors/bootstrap";
 @import "vendors/jquery-ui";
+@import "vendors/owl-overrides";
 
 // Base
 @import "base/base";
@@ -76,6 +77,7 @@ sass 7–1 pattern/
 @import "pages/authentication";
 @import "pages/profile";
 @import "pages/availibility";
+@import "pages/landing-page";
 
 // Themes
 @import "themes/theme";

@@ -46,6 +46,10 @@
 	}
 }
 
+.bg-radial-simple {
+	background: $radial-gradient;
+}
+
 .primary-color {
 	color: $primary-color;
 }
@@ -92,4 +96,12 @@
 
 .font-sm {
 	font-size: 1rem;
+}
+
+.ml-res-50 {
+	margin-left: 5rem;
+
+	@include media-query(phone) {
+		margin-left: 2rem;
+	}
 }
