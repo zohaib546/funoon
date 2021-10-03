@@ -268,23 +268,23 @@ media-query-px / root-size-browser => 600px/16px = 37.5em
   border-color: #0f98d5;
 }
 
-.drama .owl-carousel .owl-nav button.owl-prev,
-.drama .owl-carousel .owl-nav button.owl-next {
+section[class] .owl-carousel .owl-nav button.owl-prev,
+section[class] .owl-carousel .owl-nav button.owl-next {
   position: absolute;
   top: 0;
-  width: 10rem;
+  width: 5rem;
   height: 100%;
   margin: 0;
 }
-.drama .owl-carousel .owl-nav button.owl-prev {
+section[class] .owl-carousel .owl-nav button.owl-prev {
   background: linear-gradient(90deg, black 10%, rgba(0, 0, 0, 0) 100%);
   left: 0;
 }
-.drama .owl-carousel .owl-nav button.owl-next {
+section[class] .owl-carousel .owl-nav button.owl-next {
   background: linear-gradient(270deg, black 10%, rgba(0, 0, 0, 0) 100%);
   right: 0;
 }
-.drama .owl-theme .owl-nav {
+section[class] .owl-theme .owl-nav {
   margin-top: 0;
 }
 
@@ -506,6 +506,10 @@ button:focus {
   }
 }
 
+.pb-100 {
+  padding-bottom: 10rem;
+}
+
 .hero {
   display: flex;
   flex-direction: column;
@@ -604,6 +608,12 @@ button:focus {
 }
 .header-nav__item:last-child {
   margin-right: 2rem;
+}
+.header-nav__link {
+  transition: color 0.15s ease-in-out;
+}
+.header-nav__link:hover {
+  color: rgba(255, 255, 255, 0.75);
 }
 @media only screen and (max-width: 37.5em) {
   .header-nav--desktop {
@@ -1223,23 +1233,121 @@ button:focus {
   height: 4rem;
 }
 
-.drama {
+.movie {
   margin: 5rem 0;
 }
-.drama__carousel {
+.movie__carousel {
   position: relative;
 }
-.drama__figure {
-  height: 22rem;
+.movie__figure {
+  height: 20rem;
   overflow: hidden;
 }
-@media only screen and (max-width: 75em) {
-  .drama__figure {
-    height: auto;
+@media only screen and (max-width: 48em) {
+  .movie__figure {
+    height: 18rem;
   }
 }
-.drama__cover {
-  transform: scale(1.08);
+@media only screen and (max-width: 37.5em) {
+  .movie__figure {
+    height: 15rem;
+  }
+}
+.movie__cover {
+  height: 100%;
+}
+
+.exclusive {
+  margin: 5rem 0;
+}
+.exclusive__carousel {
+  position: relative;
+}
+.exclusive__figure {
+  position: relative;
+  height: 30rem;
+  overflow: hidden;
+}
+.exclusive__figure::before {
+  content: "";
+  position: absolute;
+  right: 0;
+  top: -4px;
+  width: 5rem;
+  height: 8rem;
+  background: url(../img/landing-page/exclusive/flag.png) no-repeat;
+  background-size: contain;
+}
+@media only screen and (max-width: 37.5em) {
+  .exclusive__figure {
+    height: 25rem;
+  }
+}
+.exclusive__cover {
+  height: 100%;
+}
+
+.top {
+  margin: 5rem 0;
+}
+.top__item {
+  display: flex;
+}
+.top__number-figure {
+  height: 20rem;
+  margin-right: -3rem;
+}
+.top__number-figure--1 {
+  margin-right: -9rem;
+}
+@media only screen and (max-width: 37.5em) {
+  .top__number-figure--1 {
+    margin-right: -5rem;
+  }
+}
+@media only screen and (max-width: 48em) {
+  .top__number-figure {
+    height: 15rem;
+  }
+}
+.top__figure {
+  height: 20rem;
+}
+@media only screen and (max-width: 48em) {
+  .top__figure {
+    height: 15rem;
+  }
+}
+.top__cover {
+  height: 100%;
+}
+
+.resume {
+  margin: 5rem 0;
+}
+.resume__figure {
+  height: 20rem;
+}
+.resume__cover {
+  height: 100%;
+}
+.resume__loaded-history {
+  margin-top: 1rem;
+}
+.resume__bar {
+  margin: auto;
+  width: 80%;
+  height: 5px;
+  background: #ccc;
+  position: relative;
+}
+.resume__progress {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 50%;
+  height: 100%;
+  background: #0f98d5;
 }
 
 /*
