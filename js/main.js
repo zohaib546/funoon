@@ -20,8 +20,8 @@ $(".movie-carousel").owlCarousel({
 	margin: 5,
 	nav: true,
 	mouseDrag: false,
-	dots: false,
 	stagePadding: 50,
+	dots: false,
 	navText: [
 		"<span class='carousel-nav-left'><i class='fa fa-chevron-left'></i></span>",
 		"<span class='carousel-nav-right'><i class='fa fa-chevron-right'></i></span>",
