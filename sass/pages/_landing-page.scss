@@ -1,0 +1,294 @@
+.video {
+	position: relative;
+	margin-top: 2rem;
+	line-height: 1;
+
+	&__cover {
+		position: relative;
+		height: 80vh;
+
+		&::before,
+		&::after {
+			content: "";
+			position: absolute;
+			inset: 0;
+			z-index: 0;
+		}
+
+		&::before {
+			background: linear-gradient(
+				90deg,
+				rgba(0, 0, 0, 1) 0%,
+				rgba(0, 0, 0, 1) 0%,
+				rgba(0, 0, 0, 0) 50%,
+				rgba(0, 0, 0, 1) 100%
+			);
+
+			@include media-query(phone) {
+				background: transparent;
+			}
+		}
+
+		&::after {
+			background: linear-gradient(
+				0deg,
+				rgba(0, 0, 0, 1) 0%,
+				rgba(0, 0, 0, 1) 0%,
+				rgba(0, 0, 0, 1) 10%,
+				rgba(0, 0, 0, 0.0984768907563025) 50%,
+				rgba(0, 0, 0, 1) 90%,
+				rgba(0, 0, 0, 1) 100%
+			);
+		}
+
+		@include media-query(phone) {
+			height: 60vh;
+		}
+	}
+
+	&__figure {
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
+	}
+
+	&__title {
+		width: auto !important;
+		height: 10rem;
+	}
+
+	&__slidecontent {
+		max-width: 500px;
+		position: absolute;
+		left: 5rem;
+		bottom: 5rem;
+		z-index: 1;
+
+		@include media-query(phone) {
+			left: 0;
+			padding: 0 2rem;
+		}
+	}
+
+	&__content-faded {
+		color: #afafaf;
+	}
+
+	&__cta {
+		@include media-query(phone) {
+			display: flex;
+		}
+	}
+
+	&__genre {
+		display: flex;
+
+		&-name {
+			padding-right: 1rem;
+			margin-right: 1rem;
+
+			@include notLastChild {
+				border-right: 1px solid $white-color;
+			}
+		}
+	}
+
+	&__button {
+		font-weight: bold;
+		padding: 0.5rem 2rem;
+		border: 1px solid $primary-color;
+		background-color: $primary-color;
+		color: $white-color;
+		transition: all 0.15s;
+
+		&:hover {
+			background-color: lighten($primary-color, 5%);
+		}
+
+		@include media-query(phone) {
+			padding: 1.5rem;
+			flex: 1;
+		}
+	}
+
+	&__button-outline {
+		font-weight: bold;
+		background-color: transparent;
+		padding: 0.5rem 2rem;
+		border: 1px solid $primary-color;
+		color: $primary-color;
+		transition: all 0.15s;
+
+		&:hover {
+			background-color: $primary-color;
+			color: $white-color;
+		}
+
+		@include media-query(phone) {
+			padding: 1.5rem;
+			flex: 1;
+		}
+	}
+
+	&__actions {
+		position: absolute;
+		bottom: 20vh;
+		right: 5rem;
+
+		@include media-query(phone) {
+			z-index: 1;
+			bottom: 27vh;
+			right: 2rem;
+		}
+
+		&-button {
+			background: transparent;
+			border: none;
+			outline: 0;
+			display: block;
+
+			img {
+				width: 4rem;
+				height: 4rem;
+			}
+		}
+	}
+}
+
+.movie {
+	margin: 5rem 0;
+
+	&__carousel {
+		position: relative;
+	}
+
+	&__item {
+	}
+
+	&__figure {
+		height: 20rem;
+		overflow: hidden;
+
+		@include media-query(tab) {
+			height: 18rem;
+		}
+
+		@include media-query(phone) {
+			height: 15rem;
+		}
+	}
+
+	&__cover {
+		height: 100%;
+	}
+}
+
+.exclusive {
+	margin: 5rem 0;
+
+	&__carousel {
+		position: relative;
+	}
+
+	&__item {
+	}
+
+	&__figure {
+		position: relative;
+		height: 30rem;
+		overflow: hidden;
+
+		&::before {
+			content: "";
+			position: absolute;
+			right: 0;
+			top: -4px;
+			width: 5rem;
+			height: 8rem;
+			background: url(../img/landing-page/exclusive/flag.png) no-repeat;
+			background-size: contain;
+		}
+
+		@include media-query(phone) {
+			height: 25rem;
+		}
+	}
+
+	&__cover {
+		height: 100%;
+	}
+}
+
+.top {
+	margin: 5rem 0;
+	&__carousel {
+	}
+
+	&__item {
+		display: flex;
+	}
+
+	&__number-figure {
+		height: 20rem;
+		margin-right: -3rem;
+
+		&--1 {
+			margin-right: -9rem;
+
+			@include media-query(phone) {
+				margin-right: -5rem;
+			}
+		}
+
+		@include media-query(tab) {
+			height: 15rem;
+		}
+	}
+
+	&__figure {
+		height: 20rem;
+
+		@include media-query(tab) {
+			height: 15rem;
+		}
+	}
+
+	&__cover {
+		height: 100%;
+	}
+}
+
+.resume {
+	margin: 5rem 0;
+	&__item {
+	}
+
+	&__figure {
+		height: 20rem;
+	}
+
+	&__cover {
+		height: 100%;
+	}
+
+	&__loaded-history {
+		margin-top: 1rem;
+	}
+
+	&__bar {
+		margin: auto;
+		width: 80%;
+		height: 5px;
+		background: #ccc;
+		position: relative;
+	}
+
+	&__progress {
+		position: absolute;
+		left: 0;
+		top: 0;
+		width: 50%;
+		height: 100%;
+		background: $primary-color;
+	}
+}

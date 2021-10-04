@@ -1,0 +1,60 @@
+.video {
+	&__carousel {
+		position: relative;
+	}
+
+	.owl-dots {
+		margin-top: 0;
+		margin-bottom: 1rem;
+		position: absolute;
+		bottom: 0;
+		left: 5rem;
+
+		@include media-query(phone) {
+			left: 50%;
+			transform: translateX(-50%);
+		}
+	}
+
+	.owl-theme .owl-dots .owl-dot span {
+		transition: all 0.2s;
+		background: $black-color;
+		border: 1px solid $white-color;
+		margin: 5px 10px 5px 0;
+	}
+
+	.owl-theme .owl-dots .owl-dot.active span {
+		background: $primary-color;
+		border: 1px solid $primary-color;
+		width: 3rem;
+	}
+	.owl-theme .owl-dots .owl-dot:hover span {
+		background: $primary-color;
+		border-color: $primary-color;
+	}
+}
+
+section[class] {
+	.owl-carousel .owl-nav button.owl-prev,
+	.owl-carousel .owl-nav button.owl-next {
+		position: absolute;
+		top: 0;
+		width: 5rem;
+		height: 100%;
+		margin: 0;
+	}
+
+	.owl-carousel .owl-nav button.owl-prev {
+		background: linear-gradient(90deg, rgba(0, 0, 0, 1) 10%, rgba(0, 0, 0, 0) 100%);
+		left: 0;
+	}
+
+	.owl-carousel .owl-nav button.owl-next {
+		background: linear-gradient(270deg, rgba(0, 0, 0, 1) 10%, rgba(0, 0, 0, 0) 100%);
+		right: 0;
+	}
+
+	.owl-theme .owl-nav {
+		margin-top: 0;
+	}
+}

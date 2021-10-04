@@ -4,6 +4,8 @@
 		<!-- Required meta tags -->
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+		<!-- FAVICON -->
+		<link rel="icon" href="img/svg/logo.svg" sizes="any" type="image/svg+xml" />
 		<!-- Font Awesome Script -->
 		<!-- <script src="https://kit.fontawesome.com/7ae40850c4.js" crossorigin="anonymous"></script> -->
 		<!-- Font Awesome Css -->
@@ -14,404 +16,993 @@
 		<link rel="stylesheet" href="css/bootstrap-5.0/bootstrap.min.css" />
 		<!-- Bootstrap 5.0 beta 2 RTL CSS -->
 		<!-- <link rel="stylesheet" href="css/bootstrap-5.0/bootstrap.rtl.min.css" /> -->
+		<!-- Owl Carousel -->
+		<link rel="stylesheet" href="css/owl-carousel/owl.carousel.min.css" />
+		<link rel="stylesheet" href="css/owl-carousel/owl.theme.default.min.css" />
 		<!-- Custom CSS -->
 		<link rel="stylesheet" href="css/main.css" />
 		<title>Landing Page</title>
 	</head>
 	<body>
-		<!-- HERO -->
-		<section class="hero">
-			<!-- HEADER -->
-			<header class="header">
-				<nav class="navbar navbar-expand-sm navbar-dark">
-					<div class="container-fluid">
-						<a class="navbar-brand" href="#">
-							<img src="img/svg/logo.svg" alt="logo" />
-						</a>
-						<div class="d-flex">
-							<div class="dropdown me-3">
-								<button
-									class="button button--primary-sm dropdown-toggle"
-									type="button"
-									id="headerMobileDropdown"
+		<!-- HEADER -->
+		<header class="header">
+			<!-- FIRST LEVEL NAVBAR -->
+			<nav class="navbar navbar-expand-sm navbar-dark">
+				<div class="container-fluid">
+					<a class="navbar-brand" href="#">
+						<img src="img/svg/logo.svg" alt="logo" />
+					</a>
+					<button
+						class="navbar-toggler d-none"
+						type="button"
+						data-bs-toggle="collapse"
+						data-bs-target="#navbarNavAltMarkup"
+						aria-controls="navbarNavAltMarkup"
+						aria-expanded="false"
+						aria-label="Toggle navigation"
+					>
+						<span class="navbar-toggler-icon"></span>
+					</button>
+					<div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+						<!-- TOP NAVBAR DESKTOP -->
+						<div class="navbar-nav ms-auto">
+							<li class="nav-item">
+								<a class="nav-link" href="#"><i class="fas fa-search"></i> Search</a>
+							</li>
+							<li class="nav-item dropdown">
+								<a
+									class="nav-link dropdown-toggle"
+									href="#"
+									id="navbarDropdown"
+									role="button"
 									data-bs-toggle="dropdown"
 									aria-expanded="false"
 								>
-									English
-								</button>
-								<ul class="dropdown-menu" aria-labelledby="headerMobileDropdown">
+									Language
+								</a>
+								<ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+									<li><a class="dropdown-item" href="#">English</a></li>
 									<li><a class="dropdown-item" href="#">Arabic</a></li>
-									<li><a class="dropdown-item" href="#">French</a></li>
-									<li><a class="dropdown-item" href="#">Deutsch</a></li>
 								</ul>
-							</div>
-							<button class="button button--primary-sm">Sign in</button>
+							</li>
+							<li class="nav-item dropdown">
+								<a
+									class="nav-link dropdown-toggle"
+									href="#"
+									id="navbarDropdown"
+									role="button"
+									data-bs-toggle="dropdown"
+									aria-expanded="false"
+								>
+									Ali Haider
+								</a>
+								<ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+									<li><a class="dropdown-item" href="#">Action</a></li>
+									<li><a class="dropdown-item" href="#">Another action</a></li>
+									<li><hr class="dropdown-divider" /></li>
+									<li><a class="dropdown-item" href="#">Something else here</a></li>
+								</ul>
+							</li>
 						</div>
 					</div>
-				</nav>
-			</header>
-
-			<!-- HERO CONTENT -->
-			<div class="hero__content">
-				<h1 class="mb-12 hero__heading hero__heading--lg">
-					Whatever mood you are in, we have something for you…
-				</h1>
-				<h1 class="mb-4 hero__heading hero__heading--md">Watch anywhere. Cancel anytime.</h1>
-				<h2 class="mb-5 hero__heading hero__heading--sm">
-					Enter your email to create or restart your membership.
-				</h2>
-				<form>
-					<div class="mb-3 input-group">
-						<input
-							type="email"
-							class="form-control"
-							placeholder="Email address"
-							aria-label="Email address"
-							aria-describedby="button-addon2"
-						/>
-						<button
-							class="button button--primary button--primary-big"
-							type="button"
-							id="button-addon2"
-						>
-							Get Started <i class="hero__content-icon fas fa-sort-down"></i>
-						</button>
+					<!-- TOP NAVBAR MOBILE-->
+					<div class="header__mobile-nav">
+						<div class="dropdown me-3">
+							<button
+								class="button button--primary-sm dropdown-toggle"
+								type="button"
+								id="headerMobileDropdown"
+								data-bs-toggle="dropdown"
+								aria-expanded="false"
+							>
+								English
+							</button>
+							<ul class="dropdown-menu" aria-labelledby="headerMobileDropdown">
+								<li><a class="dropdown-item" href="#">Arabic</a></li>
+								<li><a class="dropdown-item" href="#">French</a></li>
+								<li><a class="dropdown-item" href="#">Deutsch</a></li>
+							</ul>
+						</div>
+						<button class="button button--primary-sm">Sign in</button>
 					</div>
-				</form>
-			</div>
-		</section>
+				</div>
+			</nav>
+			<!-- SECOND LEVEL NAVBAR DESKTOP -->
+			<nav class="header-nav header-nav--desktop">
+				<ul class="header-nav__list">
+					<li class="header-nav__item active"><a class="header-nav__link" href="#">Home</a></li>
+					<li class="header-nav__item"><a class="header-nav__link" href="#">Plays</a></li>
+					<li class="header-nav__item"><a class="header-nav__link" href="#">Operations</a></li>
+					<li class="header-nav__item"><a class="header-nav__link" href="#">Series</a></li>
+					<li class="header-nav__item"><a class="header-nav__link" href="#">Programs</a></li>
+					<li class="header-nav__item"><a class="header-nav__link" href="#">Movies</a></li>
+				</ul>
+			</nav>
+			<!-- SECOND LEVEL (bottom) NAVBAR PHONE -->
+			<nav class="header-nav header-nav--smartphone">
+				<ul class="header-nav__list">
+					<li class="header-nav__item">
+						<a class="header-nav__link" href="#">
+							<img
+								class="header-nav__icon"
+								src="img/landing-page/icons/icon-phone-home.svg"
+								alt="icon"
+							/>
+							<span class="header-nav__text"> Home </span>
+						</a>
+					</li>
+					<li class="header-nav__item">
+						<a class="header-nav__link" href="#">
+							<img
+								class="header-nav__icon"
+								src="img/landing-page/icons/icon-phone-category.svg"
+								alt="icon"
+							/>
+							<span class="header-nav__text"> Categories </span>
+						</a>
+					</li>
+					<li class="header-nav__item">
+						<a class="header-nav__link" href="#">
+							<img
+								class="header-nav__icon"
+								src="img/landing-page/icons/icon-phone-download.svg"
+								alt="icon"
+							/>
+							<span class="header-nav__text"> Categories </span>
+						</a>
+					</li>
+					<li class="header-nav__item">
+						<a class="header-nav__link" href="#">
+							<img
+								class="header-nav__icon"
+								src="img/landing-page/icons/icon-phone-search.svg"
+								alt="icon"
+							/>
+							<span class="header-nav__text"> Categories </span>
+						</a>
+					</li>
+				</ul>
+			</nav>
+		</header>
 
-		<!-- MAIN AREA -->
-		<main class="main">
-			<!-- TV -->
-			<section class="feature">
-				<div class="container">
-					<div class="row justify-content-between align-items-center">
-						<div class="col-lg-4">
-							<div class="my-5 text-center">
-								<h1 class="mb-5 main-heading-bold-lg">Enjoy on your TV.</h1>
-								<p class="mb-5">
-									Watch on Smart TVs, Playstation, Xbox, Chromecast, Apple TV, Blu-ray players, and
-									more.
+		<main class="bg-radial-simple pb-100">
+			<!-- VIDEO -->
+			<section class="video">
+				<div class="video-carousel owl-carousel owl-theme">
+					<div class="video__slide">
+						<figure class="video__cover">
+							<img class="video__figure" src="img/hero-cover.png" alt="cover" />
+							<figcaption class="video__slidecontent">
+								<img
+									class="mb-3 video__title"
+									src="img/landing-page/icons/icon-movie-title.svg"
+									alt="movie title icon"
+								/>
+								<h3 class="secondary-heading-bold-lg">Bye Bye London</h3>
+								<ul class="mb-3 video__genre">
+									<li class="video__genre-name">Play</li>
+									<li class="video__genre-name">Genre</li>
+								</ul>
+								<p class="mb-3 video__description">
+									A satirical play, a wealthy Kuwaiti businessman travels to London after he lied to
+									his family that he was sick to spend good time in London. He meet a group of
+									strange characters there, so
 								</p>
-								<h1 class="m-0 main-heading-sm">
-									One account for the whole family we have content customized for each family
-									member.
-								</h1>
-							</div>
-						</div>
-						<div class="col-lg-6">
-							<div class="my-5 text-center">
-								<figure class="mb-5">
-									<img class="img-fluid" src="img/tv.png" alt="tv with remote" />
-								</figure>
-								<h1 class="m-0 main-heading-sm">
-									Whether it's Retro Arabic Series hits or the hilarious collection of your
-									favourite plays we are sure to satisfy your thirst! And if you can't decide what
-									to watch, check out our handpicked suggestions from each category,
-								</h1>
-							</div>
-						</div>
-					</div>
-				</div>
-			</section>
-
-			<!-- MULTIPLE SCREENS -->
-			<section class="feature">
-				<div class="container">
-					<div class="row justify-content-center">
-						<div class="col-md-6">
-							<div class="text-center">
-								<figure class="mb-5">
-									<img class="img-fluid" src="img/screens.png" alt="multiple screens displaying" />
-								</figure>
-								<h1 class="mb-3 main-heading-bold-lg">Watch Everywhere</h1>
-								<p class="m-0">
-									Stream unlimited movies and TV shows on your phone, <br />
-									tablet, laptop, and TV without paying more.
-								</p>
-							</div>
-						</div>
-					</div>
-				</div>
-			</section>
-
-			<!-- DOWNLOADS -->
-			<section class="feature">
-				<div class="container">
-					<div class="row justify-content-center">
-						<div class="col-lg-8">
-							<div class="text-center">
-								<figure class="mb-5">
-									<img class="img-fluid" src="img/download-animated.gif" alt="smartphone" />
-								</figure>
-								<h1 class="mb-3 main-heading-bold-lg">Download your shows to watch offline.</h1>
-								<p class="m-0">Save your favorites easily and always have something to watch.</p>
-							</div>
-						</div>
-					</div>
-				</div>
-			</section>
-
-			<!-- FAQS -->
-			<section class="feature">
-				<div class="container">
-					<div class="row justify-content-center">
-						<div class="col-md-6">
-							<h1 class="secondary-heading-bold-lg text-center mb-5">Frequently Asked Questions</h1>
-							<div class="faqs">
-								<div class="accordion" id="faqsAccordion">
-									<div class="accordion-item">
-										<h2 class="accordion-header" id="headingOne">
-											<button
-												class="accordion-button"
-												type="button"
-												data-bs-toggle="collapse"
-												data-bs-target="#collapseOne"
-												aria-expanded="true"
-												aria-controls="collapseOne"
-											>
-												What is funoon.net ?
-											</button>
-										</h2>
-										<div
-											id="collapseOne"
-											class="accordion-collapse collapse show"
-											aria-labelledby="headingOne"
-											data-bs-parent="#accordionExample"
-										>
-											<div class="accordion-body">
-												<p>
-													Funoonet is a streaming service that offers a wide variety of award
-													winning TV shows, movies, anime, documentaries and more on thousands of
-													internet connected devices.
-												</p>
-												<p>
-													You can watch as much as you want, whenever you wnat without a single
-													commercial - all for one low monthly price. There’s always something new
-													to discover, added every week !
-												</p>
-											</div>
-										</div>
-									</div>
-									<div class="accordion-item">
-										<h2 class="accordion-header" id="headingTwo">
-											<button
-												class="accordion-button collapsed"
-												type="button"
-												data-bs-toggle="collapse"
-												data-bs-target="#collapseTwo"
-												aria-expanded="false"
-												aria-controls="collapseTwo"
-											>
-												How much does Funoon.net cost ?
-											</button>
-										</h2>
-										<div
-											id="collapseTwo"
-											class="accordion-collapse collapse"
-											aria-labelledby="headingTwo"
-											data-bs-parent="#accordionExample"
-										>
-											<div class="accordion-body">
-												<p>
-													Watch funoon on your smartphone, tablet, smart TV, laptop or streaming
-													devices all for onw monthly fixed price.
-												</p>
-												<p>
-													Plans ranges from USD 5.55 to USD 7.77 per month. No extra costs, no
-													contracts.
-												</p>
-											</div>
-										</div>
-									</div>
-									<div class="accordion-item">
-										<h2 class="accordion-header" id="headingThree">
-											<button
-												class="accordion-button collapsed"
-												type="button"
-												data-bs-toggle="collapse"
-												data-bs-target="#collapseThree"
-												aria-expanded="false"
-												aria-controls="collapseThree"
-											>
-												Where can i watch ?
-											</button>
-										</h2>
-										<div
-											id="collapseThree"
-											class="accordion-collapse collapse"
-											aria-labelledby="headingThree"
-											data-bs-parent="#accordionExample"
-										>
-											<div class="accordion-body">
-												<p>
-													Watch anywhere, anytime on unlimited no. of devices. Sign in with you
-													Funoonewt account to watch instantly on the web from your personal
-													computer or on any internet-connected device that offers the Funoon App
-													including smart TVs, smartphones, tablets, streaming media players and
-													game consoles.
-												</p>
-											</div>
-										</div>
-									</div>
+								<div class="mb-3">
+									<p class="mb-0 video__content-faded">
+										Stars: Abdul Hussein Abdel Reda,Ghanem Al-Saleh,Maryam AlGhadhban
+									</p>
+									<p class="mb-0 video__content-faded">Written by: Abdul Hussein Abdul-Redha</p>
+									<p class="mb-0 video__content-faded">Directed by: Monsef Al-Souissi</p>
 								</div>
+								<div class="video__cta">
+									<button class="video__button me-2">Watch Now</button>
+									<button class="video__button-outline me-2">Add To List</button>
+									<button class="video__button">More Info</button>
+								</div>
+							</figcaption>
+						</figure>
+						<div class="video__actions">
+							<button class="mb-3 video__actions-button">
+								<img src="img/landing-page/icons/icon-sound.svg" alt="" />
+							</button>
+							<button class="video__actions-button">
+								<img src="img/landing-page/icons/icon-adults.svg" alt="" />
+							</button>
+						</div>
+					</div>
+					<div class="video__slide">
+						<figure class="video__cover">
+							<img class="video__figure" src="img/hero-cover.png" alt="cover" />
+							<figcaption class="video__slidecontent">
+								<img
+									class="mb-3 video__title"
+									src="img/landing-page/icons/icon-movie-title.svg"
+									alt="movie title icon"
+								/>
+								<h3 class="secondary-heading-bold-lg">Bye Bye London</h3>
+								<ul class="mb-3 video__genre">
+									<li class="video__genre-name">Play</li>
+									<li class="video__genre-name">Genre</li>
+								</ul>
+								<p class="mb-3 video__description">
+									A satirical play, a wealthy Kuwaiti businessman travels to London after he lied to
+									his family that he was sick to spend good time in London. He meet a group of
+									strange characters there, so
+								</p>
+								<div class="mb-3">
+									<p class="mb-0 video__content-faded">
+										Stars: Abdul Hussein Abdel Reda,Ghanem Al-Saleh,Maryam AlGhadhban
+									</p>
+									<p class="mb-0 video__content-faded">Written by: Abdul Hussein Abdul-Redha</p>
+									<p class="mb-0 video__content-faded">Directed by: Monsef Al-Souissi</p>
+								</div>
+								<div class="video__cta">
+									<button class="video__button me-2">Watch Now</button>
+									<button class="video__button-outline me-2">Add To List</button>
+									<button class="video__button">More Info</button>
+								</div>
+							</figcaption>
+						</figure>
+						<div class="video__actions">
+							<button class="mb-3 video__actions-button">
+								<img src="img/landing-page/icons/icon-sound.svg" alt="" />
+							</button>
+							<button class="video__actions-button">
+								<img src="img/landing-page/icons/icon-adults.svg" alt="" />
+							</button>
+						</div>
+					</div>
+					<div class="video__slide">
+						<figure class="video__cover">
+							<img class="video__figure" src="img/hero-cover.png" alt="cover" />
+							<figcaption class="video__slidecontent">
+								<img
+									class="mb-3 video__title"
+									src="img/landing-page/icons/icon-movie-title.svg"
+									alt="movie title icon"
+								/>
+								<h3 class="secondary-heading-bold-lg">Bye Bye London</h3>
+								<ul class="mb-3 video__genre">
+									<li class="video__genre-name">Play</li>
+									<li class="video__genre-name">Genre</li>
+								</ul>
+								<p class="mb-3 video__description">
+									A satirical play, a wealthy Kuwaiti businessman travels to London after he lied to
+									his family that he was sick to spend good time in London. He meet a group of
+									strange characters there, so
+								</p>
+								<div class="mb-3">
+									<p class="mb-0 video__content-faded">
+										Stars: Abdul Hussein Abdel Reda,Ghanem Al-Saleh,Maryam AlGhadhban
+									</p>
+									<p class="mb-0 video__content-faded">Written by: Abdul Hussein Abdul-Redha</p>
+									<p class="mb-0 video__content-faded">Directed by: Monsef Al-Souissi</p>
+								</div>
+								<div class="video__cta">
+									<button class="video__button me-2">Watch Now</button>
+									<button class="video__button-outline me-2">Add To List</button>
+									<button class="video__button">More Info</button>
+								</div>
+							</figcaption>
+						</figure>
+						<div class="video__actions">
+							<button class="mb-3 video__actions-button">
+								<img src="img/landing-page/icons/icon-sound.svg" alt="" />
+							</button>
+							<button class="video__actions-button">
+								<img src="img/landing-page/icons/icon-adults.svg" alt="" />
+							</button>
+						</div>
+					</div>
+				</div>
+			</section>
+
+			<!-- DRAMA -->
+			<section class="movie">
+				<h1 class="mb-5 secondary-heading-bold-bg ml-res-50">Drama</h1>
+				<div class="movie-carousel owl-carousel owl-theme">
+					<div class="movie__item">
+						<figure class="movie__figure">
+							<img
+								class="movie__cover"
+								src="img/landing-page/movie/poster-1.jpg"
+								alt="movie title image"
+							/>
+						</figure>
+					</div>
+					<div class="movie__item">
+						<figure class="movie__figure">
+							<img
+								class="movie__cover"
+								src="img/landing-page/movie/poster-2.jpg"
+								alt="movie title image"
+							/>
+						</figure>
+					</div>
+					<div class="movie__item">
+						<figure class="movie__figure">
+							<img
+								class="movie__cover"
+								src="img/landing-page/movie/poster-3.jpg"
+								alt="movie title image"
+							/>
+						</figure>
+					</div>
+					<div class="movie__item">
+						<figure class="movie__figure">
+							<img
+								class="movie__cover"
+								src="img/landing-page/movie/poster-4.jpg"
+								alt="movie title image"
+							/>
+						</figure>
+					</div>
+					<div class="movie__item">
+						<figure class="movie__figure">
+							<img
+								class="movie__cover"
+								src="img/landing-page/movie/poster-5.jpg"
+								alt="movie title image"
+							/>
+						</figure>
+					</div>
+					<div class="movie__item">
+						<figure class="movie__figure">
+							<img
+								class="movie__cover"
+								src="img/landing-page/movie/poster-6.jpg"
+								alt="movie title image"
+							/>
+						</figure>
+					</div>
+					<div class="movie__item">
+						<figure class="movie__figure">
+							<img
+								class="movie__cover"
+								src="img/landing-page/movie/poster-7.jpg"
+								alt="movie title image"
+							/>
+						</figure>
+					</div>
+					<div class="movie__item">
+						<figure class="movie__figure">
+							<img
+								class="movie__cover"
+								src="img/landing-page/movie/poster-8.jpg"
+								alt="movie title image"
+							/>
+						</figure>
+					</div>
+					<div class="movie__item">
+						<figure class="movie__figure">
+							<img
+								class="movie__cover"
+								src="img/landing-page/movie/poster-9.png"
+								alt="movie title image"
+							/>
+						</figure>
+					</div>
+					<div class="movie__item">
+						<figure class="movie__figure">
+							<img
+								class="movie__cover"
+								src="img/landing-page/movie/poster-6.jpg"
+								alt="movie title image"
+							/>
+						</figure>
+					</div>
+					<div class="movie__item">
+						<figure class="movie__figure">
+							<img
+								class="movie__cover"
+								src="img/landing-page/movie/poster-2.jpg"
+								alt="movie title image"
+							/>
+						</figure>
+					</div>
+					<div class="movie__item">
+						<figure class="movie__figure">
+							<img
+								class="movie__cover"
+								src="img/landing-page/movie/poster-1.jpg"
+								alt="movie title image"
+							/>
+						</figure>
+					</div>
+				</div>
+			</section>
+
+			<!-- EXCLUSIVE -->
+			<section class="exclusive">
+				<h1 class="mb-5 secondary-heading-bold-bg ml-res-50">Funoonet Exclusive</h1>
+				<div class="exclusive-carousel owl-carousel owl-theme">
+					<div class="exclusive__item">
+						<figure class="exclusive__figure">
+							<img
+								class="exclusive__cover"
+								src="img/landing-page/exclusive/poster-1.png"
+								alt="movie title image"
+							/>
+						</figure>
+					</div>
+					<div class="exclusive__item">
+						<figure class="exclusive__figure">
+							<img
+								class="exclusive__cover"
+								src="img/landing-page/exclusive/poster-2.png"
+								alt="drama title image"
+							/>
+						</figure>
+					</div>
+					<div class="exclusive__item">
+						<figure class="exclusive__figure">
+							<img
+								class="exclusive__cover"
+								src="img/landing-page/exclusive/poster-3.png"
+								alt="drama title image"
+							/>
+						</figure>
+					</div>
+					<div class="exclusive__item">
+						<figure class="exclusive__figure">
+							<img
+								class="exclusive__cover"
+								src="img/landing-page/exclusive/poster-4.png"
+								alt="drama title image"
+							/>
+						</figure>
+					</div>
+					<div class="exclusive__item">
+						<figure class="exclusive__figure">
+							<img
+								class="exclusive__cover"
+								src="img/landing-page/exclusive/poster-1.png"
+								alt="drama title image"
+							/>
+						</figure>
+					</div>
+					<div class="exclusive__item">
+						<figure class="exclusive__figure">
+							<img
+								class="exclusive__cover"
+								src="img/landing-page/exclusive/poster-2.png"
+								alt="drama title image"
+							/>
+						</figure>
+					</div>
+					<div class="exclusive__item">
+						<figure class="exclusive__figure">
+							<img
+								class="exclusive__cover"
+								src="img/landing-page/exclusive/poster-3.png"
+								alt="drama title image"
+							/>
+						</figure>
+					</div>
+					<div class="exclusive__item">
+						<figure class="exclusive__figure">
+							<img
+								class="exclusive__cover"
+								src="img/landing-page/exclusive/poster-4.png"
+								alt="drama title image"
+							/>
+						</figure>
+					</div>
+				</div>
+			</section>
+
+			<!-- TOP -->
+			<section class="top">
+				<h1 class="mb-5 secondary-heading-bold-bg ml-res-50">Kuwait Top 10</h1>
+				<div class="top-carousel owl-carousel owl-theme">
+					<div class="top__item">
+						<figure class="top__number-figure">
+							<img
+								class="top__cover"
+								src="img/landing-page/numbers/item-1.png"
+								alt="number picture"
+							/>
+						</figure>
+						<figure class="top__figure">
+							<img
+								class="top__cover"
+								src="img/landing-page/movie/poster-1.jpg"
+								alt="drama title image"
+							/>
+						</figure>
+					</div>
+					<div class="top__item">
+						<figure class="top__number-figure">
+							<img
+								class="top__cover"
+								src="img/landing-page/numbers/item-2.png"
+								alt="number picture"
+							/>
+						</figure>
+						<figure class="top__figure">
+							<img
+								class="top__cover"
+								src="img/landing-page/movie/poster-2.jpg"
+								alt="drama title image"
+							/>
+						</figure>
+					</div>
+					<div class="top__item">
+						<figure class="top__number-figure">
+							<img
+								class="top__cover"
+								src="img/landing-page/numbers/item-3.png"
+								alt="number picture"
+							/>
+						</figure>
+						<figure class="top__figure">
+							<img
+								class="top__cover"
+								src="img/landing-page/movie/poster-3.jpg"
+								alt="drama title image"
+							/>
+						</figure>
+					</div>
+					<div class="top__item">
+						<figure class="top__number-figure">
+							<img
+								class="top__cover"
+								src="img/landing-page/numbers/item-4.png"
+								alt="number picture"
+							/>
+						</figure>
+						<figure class="top__figure">
+							<img
+								class="top__cover"
+								src="img/landing-page/movie/poster-4.jpg"
+								alt="drama title image"
+							/>
+						</figure>
+					</div>
+					<div class="top__item">
+						<figure class="top__number-figure">
+							<img
+								class="top__cover"
+								src="img/landing-page/numbers/item-5.png"
+								alt="number picture"
+							/>
+						</figure>
+						<figure class="top__figure">
+							<img
+								class="top__cover"
+								src="img/landing-page/movie/poster-5.jpg"
+								alt="drama title image"
+							/>
+						</figure>
+					</div>
+					<div class="top__item">
+						<figure class="top__number-figure">
+							<img
+								class="top__cover"
+								src="img/landing-page/numbers/item-6.png"
+								alt="number picture"
+							/>
+						</figure>
+						<figure class="top__figure">
+							<img
+								class="top__cover"
+								src="img/landing-page/movie/poster-6.jpg"
+								alt="drama title image"
+							/>
+						</figure>
+					</div>
+					<div class="top__item">
+						<figure class="top__number-figure">
+							<img
+								class="top__cover"
+								src="img/landing-page/numbers/item-7.png"
+								alt="number picture"
+							/>
+						</figure>
+						<figure class="top__figure">
+							<img
+								class="top__cover"
+								src="img/landing-page/movie/poster-7.jpg"
+								alt="drama title image"
+							/>
+						</figure>
+					</div>
+					<div class="top__item">
+						<figure class="top__number-figure">
+							<img
+								class="top__cover"
+								src="img/landing-page/numbers/item-8.png"
+								alt="number picture"
+							/>
+						</figure>
+						<figure class="top__figure">
+							<img
+								class="top__cover"
+								src="img/landing-page/movie/poster-8.jpg"
+								alt="drama title image"
+							/>
+						</figure>
+					</div>
+					<div class="top__item">
+						<figure class="top__number-figure">
+							<img
+								class="top__cover"
+								src="img/landing-page/numbers/item-9.png"
+								alt="number picture"
+							/>
+						</figure>
+						<figure class="top__figure">
+							<img
+								class="top__cover"
+								src="img/landing-page/movie/poster-9.png"
+								alt="drama title image"
+							/>
+						</figure>
+					</div>
+				</div>
+			</section>
+
+			<!-- RESUME -->
+			<section class="resume">
+				<h1 class="mb-5 secondary-heading-bold-bg ml-res-50">Resume Watching for Ali</h1>
+				<div class="resume-carousel owl-carousel owl-theme">
+					<div class="resume__item">
+						<figure class="resume__figure">
+							<img
+								class="resume__cover"
+								src="img/landing-page/resume/poster-1.png"
+								alt="drama title image"
+							/>
+						</figure>
+						<div class="resume__loaded-history">
+							<div class="resume__bar">
+								<div class="resume__progress"></div>
 							</div>
 						</div>
+					</div>
+					<div class="resume__item">
+						<figure class="resume__figure">
+							<img
+								class="resume__cover"
+								src="img/landing-page/resume/poster-2.png"
+								alt="drama title image"
+							/>
+						</figure>
+						<div class="resume__loaded-history">
+							<div class="resume__bar">
+								<div class="resume__progress"></div>
+							</div>
+						</div>
+					</div>
+					<div class="resume__item">
+						<figure class="resume__figure">
+							<img
+								class="resume__cover"
+								src="img/landing-page/resume/poster-3.png"
+								alt="drama title image"
+							/>
+						</figure>
+						<div class="resume__loaded-history">
+							<div class="resume__bar">
+								<div class="resume__progress"></div>
+							</div>
+						</div>
+					</div>
+					<div class="resume__item">
+						<figure class="resume__figure">
+							<img
+								class="resume__cover"
+								src="img/landing-page/resume/poster-4.png"
+								alt="drama title image"
+							/>
+						</figure>
+						<div class="resume__loaded-history">
+							<div class="resume__bar">
+								<div class="resume__progress"></div>
+							</div>
+						</div>
+					</div>
+					<div class="resume__item">
+						<figure class="resume__figure">
+							<img
+								class="resume__cover"
+								src="img/landing-page/resume/poster-1.png"
+								alt="drama title image"
+							/>
+						</figure>
+						<div class="resume__loaded-history">
+							<div class="resume__bar">
+								<div class="resume__progress"></div>
+							</div>
+						</div>
+					</div>
+					<div class="resume__item">
+						<figure class="resume__figure">
+							<img
+								class="resume__cover"
+								src="img/landing-page/resume/poster-2.png"
+								alt="drama title image"
+							/>
+						</figure>
+						<div class="resume__loaded-history">
+							<div class="resume__bar">
+								<div class="resume__progress"></div>
+							</div>
+						</div>
+					</div>
+					<div class="resume__item">
+						<figure class="resume__figure">
+							<img
+								class="resume__cover"
+								src="img/landing-page/resume/poster-3.png"
+								alt="drama title image"
+							/>
+						</figure>
+						<div class="resume__loaded-history">
+							<div class="resume__bar">
+								<div class="resume__progress"></div>
+							</div>
+						</div>
+					</div>
+					<div class="resume__item">
+						<figure class="resume__figure">
+							<img
+								class="resume__cover"
+								src="img/landing-page/resume/poster-4.png"
+								alt="drama title image"
+							/>
+						</figure>
+						<div class="resume__loaded-history">
+							<div class="resume__bar">
+								<div class="resume__progress"></div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+
+			<!-- TOP -->
+			<section class="top">
+				<h1 class="mb-5 secondary-heading-bold-bg ml-res-50">Funoonet Stars</h1>
+				<div class="top-carousel owl-carousel owl-theme">
+					<div class="top__item">
+						<figure class="top__number-figure top__number-figure--1">
+							<img
+								class="top__cover"
+								src="img/landing-page/favorites/star.png"
+								alt="number picture"
+							/>
+						</figure>
+						<figure class="top__figure">
+							<img
+								class="top__cover"
+								src="img/landing-page/favorites/poster-1.png"
+								alt="drama title image"
+							/>
+						</figure>
+					</div>
+					<div class="top__item">
+						<figure class="top__number-figure top__number-figure--1">
+							<img
+								class="top__cover"
+								src="img/landing-page/favorites/star.png"
+								alt="number picture"
+							/>
+						</figure>
+						<figure class="top__figure">
+							<img
+								class="top__cover"
+								src="img/landing-page/favorites/poster-2.png"
+								alt="drama title image"
+							/>
+						</figure>
+					</div>
+					<div class="top__item">
+						<figure class="top__number-figure top__number-figure--1">
+							<img
+								class="top__cover"
+								src="img/landing-page/favorites/star.png"
+								alt="number picture"
+							/>
+						</figure>
+						<figure class="top__figure">
+							<img
+								class="top__cover"
+								src="img/landing-page/favorites/poster-3.png"
+								alt="drama title image"
+							/>
+						</figure>
+					</div>
+					<div class="top__item">
+						<figure class="top__number-figure top__number-figure--1">
+							<img
+								class="top__cover"
+								src="img/landing-page/favorites/star.png"
+								alt="number picture"
+							/>
+						</figure>
+						<figure class="top__figure">
+							<img
+								class="top__cover"
+								src="img/landing-page/favorites/poster-4.png"
+								alt="drama title image"
+							/>
+						</figure>
+					</div>
+					<div class="top__item">
+						<figure class="top__number-figure top__number-figure--1">
+							<img
+								class="top__cover"
+								src="img/landing-page/favorites/star.png"
+								alt="number picture"
+							/>
+						</figure>
+						<figure class="top__figure">
+							<img
+								class="top__cover"
+								src="img/landing-page/favorites/poster-5.png"
+								alt="drama title image"
+							/>
+						</figure>
+					</div>
+					<div class="top__item">
+						<figure class="top__number-figure top__number-figure--1">
+							<img
+								class="top__cover"
+								src="img/landing-page/favorites/star.png"
+								alt="number picture"
+							/>
+						</figure>
+						<figure class="top__figure">
+							<img
+								class="top__cover"
+								src="img/landing-page/favorites/poster-6.png"
+								alt="drama title image"
+							/>
+						</figure>
+					</div>
+					<div class="top__item">
+						<figure class="top__number-figure top__number-figure--1">
+							<img
+								class="top__cover"
+								src="img/landing-page/favorites/star.png"
+								alt="number picture"
+							/>
+						</figure>
+						<figure class="top__figure">
+							<img
+								class="top__cover"
+								src="img/landing-page/favorites/poster-8.png"
+								alt="drama title image"
+							/>
+						</figure>
+					</div>
+				</div>
+			</section>
+
+			<!-- MOVIES -->
+			<section class="movie">
+				<h1 class="mb-5 secondary-heading-bold-bg ml-res-50">Movies</h1>
+				<div class="movie-carousel owl-carousel owl-theme">
+					<div class="movie__item">
+						<figure class="movie__figure">
+							<img
+								class="movie__cover"
+								src="img/landing-page/movie/poster-1.jpg"
+								alt="movie title image"
+							/>
+						</figure>
+					</div>
+					<div class="movie__item">
+						<figure class="movie__figure">
+							<img
+								class="movie__cover"
+								src="img/landing-page/movie/poster-2.jpg"
+								alt="movie title image"
+							/>
+						</figure>
+					</div>
+					<div class="movie__item">
+						<figure class="movie__figure">
+							<img
+								class="movie__cover"
+								src="img/landing-page/movie/poster-3.jpg"
+								alt="movie title image"
+							/>
+						</figure>
+					</div>
+					<div class="movie__item">
+						<figure class="movie__figure">
+							<img
+								class="movie__cover"
+								src="img/landing-page/movie/poster-4.jpg"
+								alt="movie title image"
+							/>
+						</figure>
+					</div>
+					<div class="movie__item">
+						<figure class="movie__figure">
+							<img
+								class="movie__cover"
+								src="img/landing-page/movie/poster-5.jpg"
+								alt="movie title image"
+							/>
+						</figure>
+					</div>
+					<div class="movie__item">
+						<figure class="movie__figure">
+							<img
+								class="movie__cover"
+								src="img/landing-page/movie/poster-6.jpg"
+								alt="movie title image"
+							/>
+						</figure>
+					</div>
+					<div class="movie__item">
+						<figure class="movie__figure">
+							<img
+								class="movie__cover"
+								src="img/landing-page/movie/poster-7.jpg"
+								alt="movie title image"
+							/>
+						</figure>
+					</div>
+					<div class="movie__item">
+						<figure class="movie__figure">
+							<img
+								class="movie__cover"
+								src="img/landing-page/movie/poster-8.jpg"
+								alt="movie title image"
+							/>
+						</figure>
+					</div>
+					<div class="movie__item">
+						<figure class="movie__figure">
+							<img
+								class="movie__cover"
+								src="img/landing-page/movie/poster-9.png"
+								alt="movie title image"
+							/>
+						</figure>
+					</div>
+					<div class="movie__item">
+						<figure class="movie__figure">
+							<img
+								class="movie__cover"
+								src="img/landing-page/movie/poster-6.jpg"
+								alt="movie title image"
+							/>
+						</figure>
+					</div>
+					<div class="movie__item">
+						<figure class="movie__figure">
+							<img
+								class="movie__cover"
+								src="img/landing-page/movie/poster-2.jpg"
+								alt="movie title image"
+							/>
+						</figure>
+					</div>
+					<div class="movie__item">
+						<figure class="movie__figure">
+							<img
+								class="movie__cover"
+								src="img/landing-page/movie/poster-1.jpg"
+								alt="movie title image"
+							/>
+						</figure>
 					</div>
 				</div>
 			</section>
 		</main>
 
-		<!-- VIDEO -->
-		<section class="video">
-			<div class="video-container">
-				<video src="video/banner-video.mp4" class="w-100" loop autoplay muted></video>
-			</div>
-		</section>
-
-		<!-- CIRCLE AROUND SECTION -->
-		<section class="circle">
-			<!-- DESCRIPTION -->
-			<section class="description">
-				<div class="container-fluid">
-					<div class="row">
-						<div class="col-lg-3">
-							<div class="description__content">
-								<div class="description__icon">
-									<i class="fas fa-video"></i>
-								</div>
-								<div class="description__details">
-									<h3>Best Collection of Kuwaiti Comic</h3>
-									<p>
-										Enjoy the most humourous Kuwaiti plays and series all at one place ! It’s
-										comeday for all ages and we will be adding more and more content everyday.
-									</p>
-								</div>
-							</div>
-						</div>
-						<div class="col-lg-3">
-							<div class="description__content">
-								<div class="description__icon">
-									<i class="fas fa-microphone"></i>
-								</div>
-								<div class="description__details">
-									<h3>Follow Your Favorites</h3>
-									<p>
-										Enjoy the most humourous Kuwaiti plays and series all at one place ! It’s
-										comeday for all ages and we will be adding more and more content everyday.
-									</p>
-								</div>
-							</div>
-						</div>
-						<div class="col-lg-3">
-							<div class="description__content">
-								<div class="description__icon">
-									<i class="fas fa-crown"></i>
-								</div>
-								<div class="description__details">
-									<h3>Exclusive Programs.</h3>
-									<p>
-										Enjoy the most humourous Kuwaiti plays and series all at one place ! It’s
-										comeday for all ages and we will be adding more and more content everyday.
-									</p>
-								</div>
-							</div>
-						</div>
-						<div class="col-lg-3">
-							<div class="description__content">
-								<div class="description__icon">
-									<i class="far fa-credit-card"></i>
-								</div>
-								<div class="description__details">
-									<h3>Pay with your Credit/Debit Cards.</h3>
-									<p>
-										Enjoy the most humourous Kuwaiti plays and series all at one place ! It’s
-										comeday for all ages and we will be adding more and more content everyday.
-									</p>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-			</section>
-
-			<!-- GET STARTED -->
-			<section class="get-started">
-				<div class="get-started__graphic">
-					<figure>
-						<img src="img/graphic-footer-circle.png" class="img-fluid" alt="graphic" />
-					</figure>
-				</div>
-				<div class="container-fluid">
-					<div class="get-started__row">
-						<img src="img/svg/logo-white.svg" alt="cover" />
-						<p class="get-started__desc">
-							You can sign up for either our Monthly Plan or enjoy discounts with our Monthley &
-							Yearly Plans. We'll be delighted to serve you with our range of Uniqe Content
-						</p>
-						<button class="button button--black ms-sm-auto">
-							Get Started <i class="button--black__icon fas fa-sort-down"></i>
-						</button>
-					</div>
-				</div>
-			</section>
-
-			<!-- FOOTER -->
-			<footer class="footer">
-				<div class="container">
-					<ul class="list-inline my-md-5">
-						<li class="list-inline-item">
-							<a href="#">Home</a>
-						</li>
-						<li class="list-inline-item">
-							<a href="#">Contact Us</a>
-						</li>
-						<li class="list-inline-item">
-							<a href="#">Help Center</a>
-						</li>
-						<li class="list-inline-item">
-							<a href="#">About Us</a>
-						</li>
-						<li class="list-inline-item">
-							<a href="#">Appliactions</a>
-						</li>
-						<li class="list-inline-item">
-							<a href="#">Latest News</a>
-						</li>
-						<li class="list-inline-item">
-							<a href="#">Terms & Conditions</a>
-						</li>
-						<li class="list-inline-item">
-							<a href="#">Privacy Policy</a>
-						</li>
-					</ul>
-					<ul class="footer__social my-md-5">
-						<li>
-							<a href="#"><i class="fab fa-fw fa-facebook-f"></i></a>
-						</li>
-						<li>
-							<a href="#"><i class="fab fa-fw fa-twitter"></i></a>
-						</li>
-						<li>
-							<a href="#"><i class="fab fa-fw fa-instagram"></i></a>
-						</li>
-						<li>
-							<a href="#"><i class="fab fa-fw fa-youtube"></i></a>
-						</li>
-					</ul>
-					<p class="footer__copyright py-md-5 m-0">
-						All rights reserved © Funoon Express Artistic Production 2021. Kuwait
-					</p>
-				</div>
-			</footer>
-		</section>
-
 		<!-- Bootstrap 4.6x -->
 		<!-- jQuery and Bootstrap Bundle (includes Popper)  -->
-		<!-- <script src="js/jquery.js"></script>
-		<script src="js/bootstrap-4.6x/bootstrap.bundle.min.js"></script> -->
-
+		<!-- <script src="js/jquery.js"></script> -->
+		<!--<script src="js/bootstrap-4.6x/bootstrap.bundle.min.js"></script> -->
+		<script src="js/jquery.js"></script>
+		<script src="js/owl-carousel/owl.carousel.min.js"></script>
 		<!-- Bootstrap 5.0 beta 2 -->
 		<!-- Bootstrap Bundle with Popper -->
 		<script src="js/bootstrap-5.0/bootstrap.bundle.min.js"></script>
