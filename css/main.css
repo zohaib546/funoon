@@ -137,6 +137,12 @@ media-query-px / root-size-browser => 600px/16px = 37.5em
 .footer--white .list-inline-item:not(:last-child) {
   border-right: 1px solid #333;
 }
+@media only screen and (max-width: 37.5em) {
+  .footer--white .list-inline-item:not(:last-child) {
+    border: none;
+    margin-right: 0;
+  }
+}
 
 .form-control {
   border-color: transparent;
@@ -165,8 +171,7 @@ media-query-px / root-size-browser => 600px/16px = 37.5em
 }
 
 @media only screen and (max-width: 37.5em) {
-  .input-group
-  > :not(:first-child):not(.dropdown-menu):not(.valid-tooltip):not(.valid-feedback):not(.invalid-tooltip):not(.invalid-feedback) {
+  .input-group > :not(:first-child):not(.dropdown-menu):not(.valid-tooltip):not(.valid-feedback):not(.invalid-tooltip):not(.invalid-feedback) {
     border-top-left-radius: 0.5rem;
     border-bottom-left-radius: 0.5rem;
     margin-left: 0;
