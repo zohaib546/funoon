@@ -5,6 +5,16 @@
 		padding: 6rem 0;
 	}
 
+	&--white a {
+		color: $primary-color;
+	}
+
+	&--white &__social {
+		a {
+			color: $white-color;
+		}
+	}
+
 	&__social {
 		display: flex;
 		justify-content: center;

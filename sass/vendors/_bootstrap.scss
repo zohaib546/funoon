@@ -72,6 +72,14 @@
 	}
 }
 
+.footer--white {
+	.list-inline-item {
+		&:not(:last-child) {
+			border-right: 1px solid #333;
+		}
+	}
+}
+
 .form-control {
 	border-color: transparent;
 	border-radius: 0.5rem;

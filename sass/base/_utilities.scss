@@ -54,6 +54,10 @@
 	color: $primary-color;
 }
 
+.dark-color {
+	color: #666;
+}
+
 .seperator {
 	text-align: center;
 	position: relative;
@@ -73,6 +77,17 @@
 		left: 0;
 		right: 0;
 		z-index: -1;
+	}
+
+	&--white {
+		&::before {
+			background-color: #808080;
+		}
+
+		span {
+			background-color: white;
+			color: #666;
+		}
 	}
 }
 

@@ -44,6 +44,22 @@
 		}
 	}
 
+	&--secondary {
+		background-color: #e6e6e6;
+		color: #4d4d4d;
+		padding: 1rem 2rem;
+		transition: all 0.2s;
+
+		&-huge {
+			width: 100%;
+		}
+
+		&:hover {
+			background-color: darken(#e6e6e6, 5%);
+			box-shadow: none;
+		}
+	}
+
 	&--black {
 		background-color: $black-color;
 		padding: 1rem 2rem;
