@@ -344,6 +344,10 @@ body {
   overflow-x: hidden;
 }
 
+h5 {
+  margin-bottom: 0;
+}
+
 a {
   text-decoration: none;
   color: #fff;
@@ -394,7 +398,7 @@ button:focus {
 }
 
 .secondary-heading-bold {
-  font-size: 1.8rem;
+  font-size: 2 .8rem;
   font-weight: bold;
   color: #fff;
 }
@@ -407,6 +411,22 @@ button:focus {
 
 .line-height-1 {
   line-height: 1;
+}
+
+.main-heading-md {
+  font-size: 1.6rem;
+  font-weight: bold;
+  color: #fff;
+}
+
+.heading-alignment {
+  margin-bottom: 1rem;
+}
+
+.main-heading-sm-2 {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #fff;
 }
 
 .bg-graphic {
@@ -462,6 +482,10 @@ button:focus {
 
 .primary-color {
   color: #0f98d5;
+}
+
+.primary-bg {
+  background-color: #0f98d5;
 }
 
 .dark-color {
@@ -528,6 +552,12 @@ button:focus {
 
 .pb-100 {
   padding-bottom: 10rem;
+}
+
+.vertical-body {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
 }
 
 .hero {
@@ -1387,6 +1417,29 @@ button:focus {
   width: 50%;
   height: 100%;
   background: #0f98d5;
+}
+
+.section-plan {
+  width: 100%;
+  width: 35%;
+  margin: auto;
+  border-radius: 2rem;
+  overflow: hidden;
+  line-height: 2;
+}
+.section-plan_monthly {
+  width: 50%;
+  border-right: 1px solid #fff;
+  padding: 10px 15px 5px 15px;
+}
+.section-plan_yearly {
+  width: 50%;
+  padding: 10px 15px 5px 15px;
+}
+.section-plan_details {
+  width: 100%;
+  border-top: 1px solid #fff;
+  padding: 10px 15px 8px 15px;
 }
 
 /*
