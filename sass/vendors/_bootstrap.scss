@@ -181,3 +181,14 @@
         padding: 1rem 0 0;
     }
 }
+
+.section-plan_details {
+    .form-check-inline {
+        display: inline-flex;
+        align-items: center;
+    }
+    .form-check-input {
+        margin-bottom: 5px;
+        margin-right: 5px;
+    }
+}

@@ -4,7 +4,7 @@
 
 .section-plan {
     width: 100%;
-    width: 35%;
+    max-width: 45rem;
     margin: auto;
     border-radius: 2rem;
     overflow: hidden;
@@ -13,14 +13,21 @@
         width: 50%;
         border-right: 1px solid $white-color;
         padding: 10px 15px 5px 15px;
+        position: relative;
     }
     &_yearly {
         width: 50%;
         padding: 10px 15px 5px 15px;
+        position: relative;
     }
     &_details {
         width: 100%;
         border-top: 1px solid $white-color;
-        padding: 10px 15px 8px 15px;
+        padding: 15px 15px 12px 15px;
+    }
+    &_check-box {
+        position: absolute;
+        top: 2.4rem;
+        right: .4rem;
     }
 }
