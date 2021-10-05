@@ -47,6 +47,7 @@ sass 7–1 pattern/
 @import "abstracts/mixins";
 // Vendors
 @import "vendors/bootstrap";
+@import "vendors/bootstrap-modal";
 @import "vendors/jquery-ui";
 @import "vendors/owl-overrides";
 // Base
@@ -65,6 +66,7 @@ sass 7–1 pattern/
 @import "components/buttons";
 @import "components/carousel";
 @import "components/slider";
+@import "components/movie-modal";
 // Pages
 @import "pages/home";
 @import "pages/about";
