@@ -91,6 +91,7 @@
 		}
 
 		&__item {
+			border-top: 3px solid transparent;
 			margin-top: -1px;
 			padding: 0.4rem 0.5rem 0;
 
@@ -109,6 +110,7 @@
 
 		&__link {
 			transition: color 0.15s ease-in-out;
+			color: $white-color;
 
 			&:hover {
 				color: rgba(255, 255, 255, 0.75);
