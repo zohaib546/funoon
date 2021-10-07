@@ -38,10 +38,14 @@ section[class] {
 	.owl-carousel .owl-nav button.owl-prev,
 	.owl-carousel .owl-nav button.owl-next {
 		position: absolute;
-		top: 0;
+		top: 5rem;
 		width: 5rem;
-		height: 100%;
+		height: 20rem;
 		margin: 0;
+
+		@include media-query(tab) {
+			height: 18rem;
+		}
 	}
 
 	.owl-carousel .owl-nav button.owl-prev {
@@ -59,6 +63,15 @@ section[class] {
 	}
 }
 
-// .owl-carousel .owl-stage-outer {
-// 	overflow: visible;
-// }
+.movie {
+	.owl-carousel .owl-item,
+	.owl-carousel .owl-wrapper {
+		-webkit-transform: initial;
+		-moz-transform: initial;
+		-ms-transform: initial;
+	}
+
+	.owl-carousel .owl-stage-outer {
+		padding: 5rem 0;
+	}
+}
