@@ -216,11 +216,12 @@
             
             .credit-form {
                 input {
-                    font-size: 1.2rem;
+                    font-size: 1.5rem;
+                    padding: .8rem 2rem;
                 }
                  ::placeholder {
                     padding-top: 0.8rem;
-                    font-size: 1.2rem;
+                    font-size: 1.5rem;
                     color: #999999;
                 }
             }
@@ -244,7 +245,7 @@
                 }
                 input[type='text'] {
                     font-size: 1.6rem;
-                    color: #808080;
+                    color: black;
                 }
                 .form-control:focus {
                     background-color: #fff;
@@ -263,7 +264,7 @@
                     li {
                         color: #808080;
                         padding: .5rem .8rem;
-                        border-bottom: 1px solid #808080;
+                        // border-bottom: 1px solid #808080;
                     }
                 }
             }
@@ -278,5 +279,25 @@
                     right: 1rem;
                     top: 2.4rem;
                     color: $primary-color;
+                }
+            }
+            
+            .section-billing {
+                .table {
+                    @include media-query(phone) {
+                        width: 69rem;
+                    }
+                }
+            }
+            
+            .section-subscribe {
+                .form-check {
+                    padding-left: 0;
+                }
+            }
+            
+            .section-autoplay {
+                .form-check {
+                    padding-left: 0;
                 }
             }

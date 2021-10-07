@@ -80,10 +80,11 @@
         color: $white-color;
     }
     &__options {
-        text-align: right;
+        text-align: left;
         @include media-query(tab) {
             text-align: left;
             margin-bottom: 2rem;
+            margin-left: .5rem;
         }
     }
 }
