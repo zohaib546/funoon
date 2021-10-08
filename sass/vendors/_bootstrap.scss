@@ -65,6 +65,34 @@
                 }
             }
             
+            ///////////header-navbar-items//////
+            .header {
+                &__navbar-item {
+                    .active {
+                        color: $primary-color;
+                    }
+                }
+                &__dropdown-profile {
+                    padding: 1.6rem 1rem;
+                }
+                &__dropdown {
+                    background-color: rgba(0, 0, 0, 0.9);
+                }
+                .dropdown-menu[data-bs-popper] {
+                    top: 100%;
+                    left: -11rem;
+                    margin-top: 0.125rem;
+                    width: 22rem;
+                    padding: 0;
+                }
+                &__item {
+                    padding: 1.5rem;
+                }
+                .dropdown-item:hover {
+                    background-color: rgba(0, 0, 0, 0.5);
+                }
+            }
+            
             .footer--white {
                 .list-inline-item {
                     &:not(:last-child) {
