@@ -38,7 +38,7 @@ $(".movie-carousel").owlCarousel({
 			items: 9,
 		},
 		1920: {
-			items: 12,
+			items: 9,
 		},
 	},
 });
@@ -66,7 +66,7 @@ $(".exclusive-carousel").owlCarousel({
 			items: 6,
 		},
 		1920: {
-			items: 9,
+			items: 6,
 		},
 	},
 });
