@@ -8,29 +8,60 @@
 		margin-bottom: 1rem;
 		position: absolute;
 		bottom: 0;
-		left: 5rem;
+		left: 50%;
+		transform: translateX(-50%);
 
 		@include media-query(phone) {
-			left: 50%;
-			transform: translateX(-50%);
+			// left: 50%;
+			// transform: translateX(-50%);
+			width: 100%;
 		}
 	}
 
+	.owl-theme .owl-dots .owl-dot:first-child span {
+		background: url(../img/slider-dots/1.png) center/6rem no-repeat;
+	}
+	.owl-theme .owl-dots .owl-dot:nth-child(2) span {
+		background: url(../img/slider-dots/2.png) center/6rem no-repeat;
+	}
+	.owl-theme .owl-dots .owl-dot:nth-child(3) span {
+		background: url(../img/slider-dots/3.png) center/6rem no-repeat;
+	}
+	.owl-theme .owl-dots .owl-dot:nth-child(4) span {
+		background: url(../img/slider-dots/4.png) center/6rem no-repeat;
+	}
+	.owl-theme .owl-dots .owl-dot:nth-child(5) span {
+		background: url(../img/slider-dots/5.png) center/6rem no-repeat;
+	}
+
 	.owl-theme .owl-dots .owl-dot span {
+		// background: $black-color;
+		// border: 1px solid $white-color;
+		background-size: 6rem;
+		width: 6rem;
+		height: 6rem;
+		border-radius: 0;
+		margin: 5px 2rem 5px 0;
 		transition: all 0.2s;
-		background: $black-color;
-		border: 1px solid $white-color;
-		margin: 5px 10px 5px 0;
 	}
 
 	.owl-theme .owl-dots .owl-dot.active span {
-		background: $primary-color;
-		border: 1px solid $primary-color;
-		width: 3rem;
+		// background: $primary-color;
+		// border: 1px solid $primary-color;
+		// width: 3rem;
 	}
 	.owl-theme .owl-dots .owl-dot:hover span {
-		background: $primary-color;
-		border-color: $primary-color;
+		// background: $primary-color;
+		// border-color: $primary-color;
+	}
+}
+
+.movie {
+	.owl-carousel .owl-nav button.owl-prev,
+	.owl-carousel .owl-nav button.owl-next {
+		top: 5rem;
+		width: 5rem;
+		height: 20rem;
 	}
 }
 
@@ -38,9 +69,9 @@ section[class] {
 	.owl-carousel .owl-nav button.owl-prev,
 	.owl-carousel .owl-nav button.owl-next {
 		position: absolute;
-		top: 5rem;
+		top: 0;
 		width: 5rem;
-		height: 20rem;
+		height: 100%;
 		margin: 0;
 
 		@include media-query(tab) {
