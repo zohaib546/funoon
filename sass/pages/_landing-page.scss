@@ -1,7 +1,7 @@
 .video {
 	position: relative;
 	margin-top: 2rem;
-	line-height: 1;
+	line-height: 1.3;
 
 	&__cover {
 		position: relative;
@@ -46,6 +46,14 @@
 		}
 	}
 
+	&__title-cover {
+		position: absolute;
+		width: 100%;
+		inset: 0;
+		object-fit: cover;
+		height: 100%;
+	}
+
 	&__figure {
 		width: 100%;
 		height: 100%;
@@ -54,14 +62,15 @@
 
 	&__title {
 		width: auto !important;
-		height: 10rem;
+		height: 15rem;
 	}
 
 	&__slidecontent {
 		max-width: 500px;
 		position: absolute;
 		left: 5rem;
-		bottom: 10rem;
+		bottom: 50%;
+		transform: translateY(50%);
 		z-index: 1;
 
 		@include media-query(phone) {
@@ -72,6 +81,7 @@
 
 	&__content-faded {
 		color: #afafaf;
+		font-size: 1.4rem;
 	}
 
 	&__cta {
@@ -80,8 +90,13 @@
 		}
 	}
 
+	&__description {
+		font-size: 1.4rem;
+	}
+
 	&__genre {
 		display: flex;
+		font-size: 1.4rem;
 
 		&-name {
 			padding-right: 1rem;
@@ -96,6 +111,7 @@
 	&__button {
 		font-weight: bold;
 		padding: 0.5rem 2rem;
+		border-radius: 5px;
 		border: 1px solid $primary-color;
 		background-color: $primary-color;
 		color: $white-color;
@@ -112,6 +128,8 @@
 	}
 
 	&__button-outline {
+		border-radius: 5px;
+
 		font-weight: bold;
 		background-color: transparent;
 		padding: 0.5rem 2rem;
@@ -156,8 +174,6 @@
 }
 
 .movie {
-	margin: 5rem 0;
-
 	&__carousel {
 		position: relative;
 	}
@@ -166,7 +182,7 @@
 		position: relative;
 	}
 
-	&__item:hover &__controls {
+	&__item:hover .item-controls {
 		display: flex;
 		animation: fadeIn 0.3s ease-out forwards;
 
@@ -175,71 +191,9 @@
 		}
 	}
 
-	&__controls {
-		background-color: $black-color;
-		width: 23rem;
-		height: 100%;
-		border-radius: 0.5rem;
-		position: absolute;
-		left: -4.8rem;
-		top: 0;
-		z-index: 5;
-		box-shadow: 0 0 2rem rgba(0, 0, 0, 0.15);
-		flex-direction: column;
-		justify-content: space-between;
-		cursor: pointer;
-		display: none;
-		transform-origin: center;
-
-		&-details {
-			padding: 1.5rem;
-			display: flex;
-			flex: 1;
-			flex-direction: column;
-			justify-content: space-between;
-			background: $radial-gradient;
-		}
-
-		&-figure {
-			height: 60%;
-			position: relative;
-		}
-
-		&-thumbnail {
-			position: absolute;
-			max-width: 100%;
-			height: 100%;
-			animation: fadeOut 0.5s linear 1s forwards;
-		}
-
-		&-video {
-			width: 100%;
-			height: 100%;
-		}
-
-		&-title {
-			font-weight: bold;
-		}
-
-		&-list {
-			display: flex;
-			justify-content: space-between;
-		}
-
-		&-action {
-			@include notLastChild {
-				margin-right: 1rem;
-			}
-		}
-
-		&-icon {
-			width: 2rem;
-			height: 2rem;
-		}
-	}
-
 	&__figure {
 		height: 20rem;
+		border-radius: 3px;
 		overflow: hidden;
 
 		@include media-query(big-desktop) {
@@ -261,8 +215,6 @@
 }
 
 .exclusive {
-	margin: 5rem 0;
-
 	&__carousel {
 		position: relative;
 	}
@@ -270,9 +222,16 @@
 	&__item {
 	}
 
+	&__item:hover &__figure::before {
+		transform: scale(1.02);
+		filter: drop-shadow(0 0 0.5rem black);
+	}
+
 	&__figure {
 		position: relative;
 		height: 30rem;
+		border-radius: 5px;
+		box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
 		overflow: hidden;
 
 		&::before {
@@ -284,6 +243,7 @@
 			height: 8rem;
 			background: url(../img/landing-page/exclusive/flag.png) no-repeat;
 			background-size: contain;
+			transition: all 0.2s ease-out;
 		}
 
 		@include media-query(big-desktop) {
@@ -301,12 +261,20 @@
 }
 
 .top {
-	margin: 5rem 0;
 	&__carousel {
 	}
 
 	&__item {
 		display: flex;
+	}
+
+	&__item:hover .item-controls {
+		display: flex;
+		animation: fadeIn 0.3s ease-out forwards;
+
+		@include media-query(tab) {
+			display: none;
+		}
 	}
 
 	&__number-figure {
@@ -326,8 +294,16 @@
 		}
 	}
 
+	&__number-figure &__cover {
+		filter: drop-shadow(0 0 0.5rem black);
+	}
+
 	&__figure {
 		height: 20rem;
+		border-radius: 4px;
+		overflow: hidden;
+		box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+		position: relative;
 
 		@include media-query(tab) {
 			height: 15rem;
@@ -340,12 +316,24 @@
 }
 
 .resume {
-	margin: 5rem 0;
 	&__item {
+		position: relative;
+	}
+
+	&__item:hover .item-controls {
+		display: flex;
+		animation: fadeInModified 0.3s ease-out forwards;
+
+		@include media-query(tab) {
+			display: none;
+		}
 	}
 
 	&__figure {
 		height: 20rem;
+		border-radius: 5px;
+		overflow: hidden;
+		box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
 	}
 
 	&__cover {
@@ -365,6 +353,114 @@
 	}
 
 	&__progress {
+		position: absolute;
+		left: 0;
+		top: 0;
+		width: 50%;
+		height: 100%;
+		background: $primary-color;
+	}
+}
+
+.item-controls {
+	background-color: $black-color;
+	height: 100%;
+	border-radius: 5px;
+	overflow: hidden;
+	position: absolute;
+	top: 0;
+	z-index: 5;
+	box-shadow: 0 0 2rem rgba(0, 0, 0, 0.15);
+	flex-direction: column;
+	justify-content: space-between;
+	cursor: pointer;
+	display: none;
+	transform-origin: center;
+
+	&--movie {
+		left: -4.8rem;
+		width: 23rem;
+	}
+
+	&--resume {
+		left: 0;
+		width: 100%;
+	}
+
+	&--resume &__figure {
+		height: 50%;
+	}
+
+	&--top {
+		top: 0;
+		left: 2rem;
+		width: 80%;
+	}
+
+	&__details {
+		padding: 1.5rem;
+		display: flex;
+		flex: 1;
+		flex-direction: column;
+		justify-content: space-between;
+		background: $radial-gradient;
+	}
+
+	&__figure {
+		height: 60%;
+		position: relative;
+		overflow: hidden;
+	}
+
+	&__thumbnail {
+		position: absolute;
+		max-width: 100%;
+		height: 100%;
+		transform: scale(1.05);
+		animation: fadeOut 0.5s linear 1s forwards;
+	}
+
+	&__video {
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
+	}
+
+	&__title {
+		font-weight: bold;
+		font-size: 1.4rem;
+	}
+
+	&__list {
+		display: flex;
+		justify-content: space-between;
+	}
+
+	&__action {
+		@include notLastChild {
+			margin-right: 1rem;
+		}
+	}
+
+	&__icon {
+		width: 2rem;
+		height: 2rem;
+	}
+
+	&__bar {
+		@include flex(space-between, center);
+		// padding: 0 1rem 1rem;
+	}
+
+	&__progress {
+		position: relative;
+		height: 5px;
+		background: #ccc;
+		margin-right: 5px;
+		flex: 1;
+	}
+
+	&__duration {
 		position: absolute;
 		left: 0;
 		top: 0;

@@ -3,6 +3,10 @@
 		position: relative;
 	}
 
+	.owl-item.active &__cover &__title-cover {
+		animation: fadeOut 1s linear 2s forwards;
+	}
+
 	.owl-dots {
 		margin-top: 0;
 		margin-bottom: 1rem;
@@ -10,58 +14,81 @@
 		bottom: 0;
 		left: 50%;
 		transform: translateX(-50%);
+		opacity: 0.5;
+		transition: all 0.2s linear;
+
+		&:hover {
+			opacity: 1;
+		}
 
 		@include media-query(phone) {
-			// left: 50%;
-			// transform: translateX(-50%);
 			width: 100%;
+			opacity: 1;
 		}
 	}
 
 	.owl-theme .owl-dots .owl-dot:first-child span {
-		background: url(../img/slider-dots/1.png) center/6rem no-repeat;
+		background: url(../img/slider/icons/title-icon-1.png) center/8rem 6rem no-repeat;
+
+		@include media-query(phone) {
+			background: url(../img/slider/icons/title-icon-1.png) center/6rem no-repeat;
+		}
 	}
 	.owl-theme .owl-dots .owl-dot:nth-child(2) span {
-		background: url(../img/slider-dots/2.png) center/6rem no-repeat;
+		background: url(../img/slider/icons/title-icon-2.png) center/8rem 6rem no-repeat;
+
+		@include media-query(phone) {
+			background: url(../img/slider/icons/title-icon-2.png) center/6rem no-repeat;
+		}
 	}
 	.owl-theme .owl-dots .owl-dot:nth-child(3) span {
-		background: url(../img/slider-dots/3.png) center/6rem no-repeat;
+		background: url(../img/slider/icons/title-icon-3.png) center/8rem 6rem no-repeat;
+
+		@include media-query(phone) {
+			background: url(../img/slider/icons/title-icon-3.png) center/6rem no-repeat;
+		}
 	}
 	.owl-theme .owl-dots .owl-dot:nth-child(4) span {
-		background: url(../img/slider-dots/4.png) center/6rem no-repeat;
+		background: url(../img/slider/icons/title-icon-4.png) center/8rem 6rem no-repeat;
+
+		@include media-query(phone) {
+			background: url(../img/slider/icons/title-icon-4.png) center/6rem no-repeat;
+		}
 	}
 	.owl-theme .owl-dots .owl-dot:nth-child(5) span {
-		background: url(../img/slider-dots/5.png) center/6rem no-repeat;
+		background: url(../img/slider/icons/title-icon-5.png) center/8rem 6rem no-repeat;
+
+		@include media-query(phone) {
+			background: url(../img/slider/icons/title-icon-5.png) center/6rem no-repeat;
+		}
 	}
 
 	.owl-theme .owl-dots .owl-dot span {
-		// background: $black-color;
-		// border: 1px solid $white-color;
-		background-size: 6rem;
-		width: 6rem;
-		height: 6rem;
+		background-size: 8rem;
+		width: 8rem;
+		height: 8rem;
 		border-radius: 0;
 		margin: 5px 2rem 5px 0;
-		transition: all 0.2s;
+		border-bottom: 2px solid transparent;
+		transition: all 0.2s, border-bottom 1s ease;
+
+		@include media-query(phone) {
+			background-size: 6rem;
+			width: 6rem;
+			height: 6rem;
+		}
 	}
 
 	.owl-theme .owl-dots .owl-dot.active span {
-		// background: $primary-color;
-		// border: 1px solid $primary-color;
-		// width: 3rem;
+		border-bottom: 2px solid $primary-color;
+
+		@include media-query(phone) {
+			border-bottom: 2px solid transparent;
+		}
 	}
 	.owl-theme .owl-dots .owl-dot:hover span {
 		// background: $primary-color;
 		// border-color: $primary-color;
-	}
-}
-
-.movie {
-	.owl-carousel .owl-nav button.owl-prev,
-	.owl-carousel .owl-nav button.owl-next {
-		top: 5rem;
-		width: 5rem;
-		height: 20rem;
 	}
 }
 
@@ -94,7 +121,10 @@ section[class] {
 	}
 }
 
-.movie {
+.movie,
+.exclusive,
+.resume,
+.top {
 	.owl-carousel .owl-item,
 	.owl-carousel .owl-wrapper {
 		-webkit-transform: initial;
@@ -104,5 +134,49 @@ section[class] {
 
 	.owl-carousel .owl-stage-outer {
 		padding: 5rem 0;
+	}
+}
+
+section[class*="movie"] {
+	.owl-carousel .owl-nav button.owl-prev,
+	.owl-carousel .owl-nav button.owl-next {
+		top: 5rem;
+		width: 5rem;
+		height: 20rem;
+
+		@include media-query(big-desktop) {
+			height: 22rem;
+		}
+	}
+}
+
+section[class*="exclusive"] {
+	.owl-carousel .owl-nav button.owl-prev,
+	.owl-carousel .owl-nav button.owl-next {
+		top: 5rem;
+		width: 5rem;
+		height: 30rem;
+
+		@include media-query(big-desktop) {
+			height: 35rem;
+		}
+	}
+}
+
+section[class*="resume"] {
+	.owl-carousel .owl-nav button.owl-prev,
+	.owl-carousel .owl-nav button.owl-next {
+		top: 5rem;
+		width: 5rem;
+		height: 21.5rem;
+	}
+}
+
+section[class*="top"] {
+	.owl-carousel .owl-nav button.owl-prev,
+	.owl-carousel .owl-nav button.owl-next {
+		top: 5rem;
+		width: 5rem;
+		height: 20rem;
 	}
 }
