@@ -1,157 +1,128 @@
 .movie-popup {
-	&__modal {
-		background: $radial-gradient;
-	}
-
-	&__figure {
-		position: relative;
-
-		&::before {
-			content: "";
-			width: 100%;
-			height: 8rem;
-			background: linear-gradient(transparent, rgba(0, 0, 0, 1));
-			position: absolute;
-			bottom: 0;
-			left: 0;
-		}
-	}
-
-	&__cover {
-		width: 100%;
-	}
-
-	&__description {
-		background: $black-color;
-		padding: 3rem;
-	}
-
-	&__actions {
-		display: flex;
-	}
-
-	&__items {
-		cursor: pointer;
-
-		@include notLastChild {
-			margin-right: 1rem;
-		}
-	}
-
-	&__icons {
-		width: 3rem;
-		height: 3rem;
-	}
-
-	&__details {
-		padding: 3rem 3rem 1rem;
-	}
-
-	&__cast {
-	}
-
-	&__cast-detail {
-		margin-bottom: 0;
-		color: #b1b1b1;
-	}
-
-	&__more {
-		padding: 1rem 3rem 3rem;
-	}
-
-	&__movies {
-		display: grid;
-		grid-template-columns: repeat(5, 1fr);
-		gap: 5px;
-	}
-
-	&__movie-title {
-		width: 100%;
-		max-height: 24rem;
-	}
-
-	&__movie-actions {
-		@include flex(space-between, center);
-		margin-top: 1rem;
-	}
-
-	&__controls {
-		cursor: pointer;
-	}
-
-	&__show {
-		position: relative;
-		text-align: center;
-		z-index: 1;
-
-		&::before {
-			content: "";
-			width: 100%;
-			height: 1px;
-			background: #ccc;
-			position: absolute;
-			bottom: 50%;
-			left: 0;
-			z-index: -1;
-		}
-	}
+    &__modal {
+        background: $radial-gradient;
+    }
+    &__figure {
+        position: relative;
+        &::before {
+            content: "";
+            width: 100%;
+            height: 8rem;
+            background: linear-gradient(transparent, rgba(0, 0, 0, 1));
+            position: absolute;
+            bottom: 0;
+            left: 0;
+        }
+    }
+    &__cover {
+        width: 100%;
+    }
+    &__description {
+        background: $black-color;
+        padding: 3rem;
+    }
+    &__actions {
+        display: flex;
+    }
+    &__items {
+        cursor: pointer;
+        @include notLastChild {
+            margin-right: 1rem;
+        }
+    }
+    &__icons {
+        width: 3rem;
+        height: 3rem;
+    }
+    &__details {
+        padding: 3rem 3rem 1rem;
+    }
+    &__cast {}
+    &__cast-detail {
+        margin-bottom: 0;
+        color: #b1b1b1;
+    }
+    &__more {
+        padding: 1rem 3rem 3rem;
+    }
+    &__movies {
+        display: grid;
+        grid-template-columns: repeat(5, 1fr);
+        gap: 5px;
+    }
+    &__movie-title {
+        width: 100%;
+        max-height: 24rem;
+    }
+    &__movie-actions {
+        @include flex(space-between, center);
+        margin-top: 1rem;
+    }
+    &__controls {
+        cursor: pointer;
+    }
+    &__show {
+        position: relative;
+        text-align: center;
+        z-index: 1;
+        &::before {
+            content: "";
+            width: 100%;
+            height: 1px;
+            background: #ccc;
+            position: absolute;
+            bottom: 50%;
+            left: 0;
+            z-index: -1;
+        }
+    }
 }
 
 .movie-episodes {
-	padding: 1rem 3rem 1rem;
-
-	&__header {
-		@include flex(space-between, center);
-		margin-bottom: 1rem;
-	}
-
-	&__select {
-		background-color: $primary-color;
-		color: $white-color;
-		border: 1px solid $primary-color;
-		outline: 0;
-		padding: 0.5rem;
-		font-weight: bold;
-	}
-
-	&__row {
-		display: grid;
-		grid-template-columns: 0.5fr 1fr 3fr 1fr;
-		align-items: center;
-		padding: 1rem;
-		border-bottom: 1px solid #333;
-
-		@include media-query(phone) {
-			grid-template-columns: 1fr;
-		}
-
-		&:hover {
-			background-color: #333;
-		}
-	}
-
-	&__thumbnail {
-		border-radius: 1rem;
-		overflow: hidden;
-		border: 1px solid #333;
-	}
-
-	&__title {
-		width: 100%;
-	}
-
-	&__detail {
-		margin: 1rem;
-		text-align: center;
-
-		@include media-query(phone) {
-			@include selectFirstChild {
-				display: none;
-			}
-
-			@include selectLastChild {
-				display: none;
-			}
-		}
-	}
+    padding: 1rem 3rem 1rem;
+    &__header {
+        @include flex(space-between, center);
+        margin-bottom: 1rem;
+    }
+    &__select {
+        background-color: $primary-color;
+        color: $white-color;
+        border: 1px solid $primary-color;
+        outline: 0;
+        padding: 0.5rem;
+        font-weight: bold;
+    }
+    &__row {
+        display: grid;
+        grid-template-columns: 0.5fr 1fr 3fr 1fr;
+        align-items: center;
+        padding: 1rem;
+        border-bottom: 1px solid #333;
+        @include media-query(phone) {
+            grid-template-columns: 1fr;
+        }
+        &:hover {
+            background-color: #333;
+        }
+    }
+    &__thumbnail {
+        border-radius: 1rem;
+        overflow: hidden;
+        border: 1px solid #333;
+    }
+    &__title {
+        width: 100%;
+    }
+    &__detail {
+        margin: 1rem;
+        text-align: center;
+        @include media-query(phone) {
+            @include selectFirstChild {
+                display: none;
+            }
+            @include selectLastChild {
+                display: none;
+            }
+        }
+    }
 }
