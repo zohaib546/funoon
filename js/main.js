@@ -16,6 +16,55 @@ $(".video-carousel").owlCarousel({
 	},
 });
 
+// mute and unmute
+const mute = document.querySelectorAll(".btn-mute");
+const unmute = document.querySelectorAll(".btn-unmute");
+const videos = document.querySelectorAll(".video__figure");
+
+// hide all mute buttons on load
+unmute.forEach((el) => {
+	el.style.display = "none";
+});
+
+// mute all videos except first after image animation delay '2s'
+videos.forEach((el) => (el.muted = true));
+setTimeout(() => {
+	videos[0].muted = true;
+}, 2000);
+
+var video = $(".video-carousel");
+video.owlCarousel();
+
+// Listen to owl events:
+video.on("changed.owl.carousel", function (event) {
+	// const section = event.target;
+	// const sm = section.querySelector(".owl-item.active");
+	unmute.forEach((el) => {
+		el.style.display = "none";
+	});
+	mute.forEach((el) => {
+		el.style.display = "";
+	});
+
+	videos.forEach((el) => (el.muted = true));
+});
+
+unmute.forEach((el, ind) =>
+	el.addEventListener("click", (e) => {
+		mute[ind].style.display = "";
+		el.style.display = "none";
+		videos[ind].muted = true;
+	})
+);
+
+mute.forEach((el, ind) => {
+	el.addEventListener("click", (e) => {
+		unmute[ind].style.display = "";
+		el.style.display = "none";
+		videos[ind].muted = false;
+	});
+});
+
 $(".movie-carousel").owlCarousel({
 	loop: true,
 	margin: 5,

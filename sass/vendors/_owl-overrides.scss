@@ -28,49 +28,32 @@
 	}
 
 	.owl-theme .owl-dots .owl-dot:first-child span {
-		background: url(../img/slider/icons/title-icon-1.png) center/8rem 6rem no-repeat;
-
-		@include media-query(phone) {
-			background: url(../img/slider/icons/title-icon-1.png) center/6rem no-repeat;
-		}
+		background-image: url(../img/slider/icons/title-icon-1.png);
 	}
 	.owl-theme .owl-dots .owl-dot:nth-child(2) span {
-		background: url(../img/slider/icons/title-icon-2.png) center/8rem 6rem no-repeat;
-
-		@include media-query(phone) {
-			background: url(../img/slider/icons/title-icon-2.png) center/6rem no-repeat;
-		}
+		background-image: url(../img/slider/icons/title-icon-2.png);
 	}
 	.owl-theme .owl-dots .owl-dot:nth-child(3) span {
-		background: url(../img/slider/icons/title-icon-3.png) center/8rem 6rem no-repeat;
-
-		@include media-query(phone) {
-			background: url(../img/slider/icons/title-icon-3.png) center/6rem no-repeat;
-		}
+		background-image: url(../img/slider/icons/title-icon-3.png);
 	}
 	.owl-theme .owl-dots .owl-dot:nth-child(4) span {
-		background: url(../img/slider/icons/title-icon-4.png) center/8rem 6rem no-repeat;
-
-		@include media-query(phone) {
-			background: url(../img/slider/icons/title-icon-4.png) center/6rem no-repeat;
-		}
+		background-image: url(../img/slider/icons/title-icon-4.png);
 	}
 	.owl-theme .owl-dots .owl-dot:nth-child(5) span {
-		background: url(../img/slider/icons/title-icon-5.png) center/8rem 6rem no-repeat;
-
-		@include media-query(phone) {
-			background: url(../img/slider/icons/title-icon-5.png) center/6rem no-repeat;
-		}
+		background-image: url(../img/slider/icons/title-icon-5.png);
 	}
 
 	.owl-theme .owl-dots .owl-dot span {
-		background-size: 8rem;
-		width: 8rem;
-		height: 8rem;
+		background-position: center;
+		background-size: 6rem;
+		background-repeat: no-repeat;
+		background-color: transparent;
+		width: 10rem;
+		height: 10rem;
 		border-radius: 0;
 		margin: 5px 2rem 5px 0;
 		border-bottom: 2px solid transparent;
-		transition: all 0.2s, border-bottom 1s ease;
+		transition: all 0.5s ease, border-bottom 1s ease;
 
 		@include media-query(phone) {
 			background-size: 6rem;
@@ -81,14 +64,11 @@
 
 	.owl-theme .owl-dots .owl-dot.active span {
 		border-bottom: 2px solid $primary-color;
+		background-size: 8rem;
 
 		@include media-query(phone) {
 			border-bottom: 2px solid transparent;
 		}
-	}
-	.owl-theme .owl-dots .owl-dot:hover span {
-		// background: $primary-color;
-		// border-color: $primary-color;
 	}
 }
 
