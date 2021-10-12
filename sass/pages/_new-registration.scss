@@ -12,7 +12,7 @@
     &_monthly {
         width: 50%;
         border-right: 1px solid $white-color;
-        padding: 1rem 1.5rem 0.5rem 1.5rem;
+        padding: 1rem 1.5rem 0 1.5rem;
         position: relative;
         @include media-query(phone) {
             border-right: none;
@@ -22,6 +22,10 @@
         width: 50%;
         padding: 10px 15px 5px 15px;
         position: relative;
+    }
+    &__price-off {
+        color: #fff700;
+        font-size: 1.6rem;
     }
     &_details {
         width: 100%;
