@@ -361,6 +361,10 @@
 		background: #ccc;
 	}
 
+	&__item:hover &__progress {
+		animation: progress 1s linear 1s forwards;
+	}
+
 	&__progress {
 		position: absolute;
 		left: 0;
@@ -368,6 +372,7 @@
 		width: 50%;
 		height: 100%;
 		background: $primary-color;
+		transform-origin: left;
 	}
 }
 

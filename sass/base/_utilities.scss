@@ -160,3 +160,12 @@
 .fade-out {
 	animation: fadeOut 1s linear 2s forwards;
 }
+
+.visible-md {
+	max-height: 50rem;
+	overflow-y: auto;
+
+	&::-webkit-scrollbar {
+		opacity: 0;
+	}
+}
