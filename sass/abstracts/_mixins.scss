@@ -144,4 +144,10 @@ media-query-px / root-size-browser => 600px/16px = 37.5em
 			@content;
 		}
 	}
+	@if $breakpoint == desktop-xl {
+		//2000px
+		@media only screen and(min-width: 125em) {
+			@content;
+		}
+	}
 }
