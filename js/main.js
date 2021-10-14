@@ -183,3 +183,12 @@ $(".resume-carousel").owlCarousel({
 		},
 	},
 });
+
+// Show and Hide SideNav
+const menuBtn = document.querySelector(".header-nav__menu");
+const sidebar = document.querySelector(".header-sidenav");
+const menuList = document.querySelector(".header-nav__sidelist");
+
+menuBtn.addEventListener("click", () => {
+	sidebar.classList.toggle("show");
+});

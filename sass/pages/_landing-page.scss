@@ -1,6 +1,5 @@
 .video {
 	position: relative;
-	margin-top: 2rem;
 	line-height: 1.3;
 
 	&__cover {
@@ -40,9 +39,16 @@
 				rgba(0, 0, 0, 1) 100%
 			);
 		}
+	}
+
+	&__heading {
+		font-size: 5rem;
+		font-weight: bold;
+		color: #fff;
 
 		@include media-query(phone) {
-			height: 60vh;
+			text-align: center;
+			font-size: 3.5rem;
 		}
 	}
 
@@ -63,6 +69,11 @@
 	&__title {
 		width: auto !important;
 		height: 15rem;
+
+		@include media-query(phone) {
+			height: 10rem;
+			margin: auto;
+		}
 	}
 
 	&__slidecontent {
@@ -75,7 +86,10 @@
 
 		@include media-query(phone) {
 			left: 0;
+			bottom: 6rem;
 			padding: 0 2rem;
+			width: 100%;
+			transform: translateY(0);
 		}
 	}
 
@@ -87,6 +101,8 @@
 	&__cta {
 		@include media-query(phone) {
 			display: flex;
+			align-items: center;
+			justify-content: center;
 		}
 	}
 
@@ -105,6 +121,10 @@
 			@include notLastChild {
 				border-right: 1px solid $white-color;
 			}
+		}
+
+		@include media-query(phone) {
+			justify-content: center;
 		}
 	}
 

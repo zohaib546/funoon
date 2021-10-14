@@ -27,6 +27,7 @@
 			padding: 3rem 0;
 			display: flex;
 			flex-direction: column;
+			justify-content: center;
 		}
 	}
 
@@ -82,6 +83,83 @@
 		}
 	}
 
+	&-sidenav {
+		background: rgba(0, 0, 0, 0.65);
+		width: 100%;
+		height: 100%;
+		position: fixed;
+		z-index: 4;
+		transition: all 0.3s ease;
+		visibility: hidden;
+		opacity: 0;
+		display: none;
+
+		@include media-query(phone) {
+			display: block;
+		}
+
+		&__sidelist {
+			position: fixed;
+			top: 78px;
+			bottom: 0;
+			z-index: 4;
+			overflow-y: auto;
+			background: $black-color;
+			padding: 2rem;
+			display: flex;
+			flex-direction: column;
+			transform: translateX(-100%);
+			transition: transform 0.2s ease-out;
+		}
+
+		&__item {
+			padding: 0.5rem 0;
+
+			@include notLastChild {
+				margin: 0.5rem 0;
+			}
+		}
+
+		&__item.active &__text {
+			color: $primary-color;
+			font-size: 1.4rem;
+		}
+
+		&__icon {
+			width: 5rem;
+			height: 5rem;
+		}
+
+		&__link {
+			color: $white-color;
+			display: flex;
+			align-items: center;
+
+			&:hover {
+				color: rgba(255, 255, 255, 0.75);
+			}
+		}
+
+		&__name {
+			font-weight: bold;
+			margin-bottom: 0.5rem;
+		}
+
+		&__subtext {
+			font-size: 1rem;
+			font-weight: light;
+		}
+	}
+
+	&-sidenav.show {
+		opacity: 1;
+		visibility: visible;
+	}
+
+	&-sidenav.show &-sidenav__sidelist {
+		transform: translateX(0);
+	}
+
 	&-nav {
 		border-top: 1px solid #9a9999;
 
@@ -128,63 +206,25 @@
 
 			@include media-query(phone) {
 				z-index: 5;
-				display: block;
-				margin-top: 0;
-				border-top: none;
+				display: flex;
+				align-items: center;
+				justify-content: space-between;
+				padding: 3rem 2rem 2rem;
 				position: fixed;
-				bottom: 0;
+				top: 0;
 				left: 0;
 				right: 0;
-				background-color: $black-color;
+				background-color: $primary-color;
 				box-shadow: 0 0 15px rgba(34, 34, 34, 0.5);
 			}
 		}
 
-		&--smartphone &__list {
-			@include media-query(phone) {
-				justify-content: space-between;
-				padding: 2.5rem 0;
-			}
+		&__menu {
+			cursor: pointer;
 		}
 
-		&--smartphone &__item {
-			@include notLastChild {
-				margin-right: 4rem;
-
-				@include media-query(phone) {
-					margin-right: 0;
-				}
-			}
-
-			@include selectLastChild {
-				margin-right: 2rem;
-
-				@include media-query(phone) {
-					margin-right: 0;
-				}
-			}
-
-			@include media-query(phone) {
-				margin-top: 0;
-				flex: 1;
-				text-align: center;
-				padding: 0;
-			}
-		}
-
-		&--smartphone &__link {
-			display: flex;
-			flex-direction: column;
-			align-items: center;
-		}
-
-		&--smartphone &__icon {
-			width: 3rem;
-			height: 3rem;
-		}
-
-		&--smartphone &__text {
-			margin-top: 1rem;
+		&__link {
+			color: $white-color;
 		}
 	}
 }

@@ -44,29 +44,32 @@
 .main {
 	background: url(../img/graphic-circle-2.png), url(../img/graphic-circle-3.png),
 		url(../img/graphic-circle-3.png);
-	background-size: 120%;
-	background-position: -10rem 0, -10rem 50%, -10rem 100%;
+	background-size: 100%, 110%, 110%;
+	background-position: 0rem -10%, -5rem 50%, -5rem 110%;
 	background-repeat: no-repeat;
 
 	@include media-query(tab-land) {
-		background-image: url(../img/graphic-circle-2.png), url(../img/graphic-circle-3.png);
-		background-position: -10rem 0, -10rem 100%;
+		background-image: url(../img/graphic-circle-2.png), url(../img/graphic-circle-3.png),
+			url(../img/graphic-circle-3.png);
+		// background-position: -10rem 0, -10rem 100%;
+		background-position: 0 -5%, 0 50%, 0 100%;
 	}
 
 	@include media-query(phone) {
 		background-image: url(../img/graphic-circle-2.png), url(../img/graphic-circle-3.png),
 			url(../img/graphic-circle-3.png);
 
-		background-size: 250%, 200%, 500%;
-		background-position: 120% 24rem, -20rem 60%, 20rem 125%;
+		background-size: 200%, 200%, 150%;
+		background-position: 140% 0, -20rem 60%, -20rem 100%;
 	}
 }
 
 .feature {
-	min-height: 100vh;
+	min-height: 75vh;
 	display: flex;
 	align-items: center;
 	position: relative;
+	padding: 5rem 0;
 
 	&::before {
 		content: "";
@@ -78,10 +81,6 @@
 
 	@include media-query(tab-land) {
 		min-height: 40vh;
-	}
-
-	@include media-query(phone) {
-		min-height: 75vh;
 	}
 }
 
