@@ -1,0 +1,264 @@
+.player {
+	&-body {
+		margin: 0;
+		padding: 0;
+		width: 100%;
+		height: 100vh;
+		overflow: hidden;
+	}
+}
+
+.video-container {
+	width: 100%;
+	height: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	position: relative;
+}
+
+.video-container video {
+	width: 100%;
+	height: 100%;
+}
+
+.video-container .controls-container {
+	position: fixed;
+	bottom: 0px;
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-end;
+	min-height: 40vh;
+	/* Thanks to theArtifacts */
+	background: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.9));
+	transition: opacity 0.5s linear;
+}
+
+.video-container .progress-controls {
+	width: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	color: white;
+}
+
+.video-container .progress-controls .time-remaining {
+	margin: 1vw;
+	width: 4vw;
+}
+
+.video-container .progress-controls .player-progress-bar {
+	width: 90vw;
+	height: 1vw;
+	max-height: 7px;
+	background: #5b5b5b;
+	display: flex;
+	align-items: center;
+	cursor: pointer;
+}
+
+.video-container .progress-controls .player-progress-bar .watched-bar,
+.video-container .progress-controls .player-progress-bar .playhead {
+	background: #e31221;
+	display: inline-block;
+	transition: all 0.2s;
+}
+
+.video-container .progress-controls .player-progress-bar .watched-bar {
+	height: 110%;
+	width: 20%;
+}
+
+.video-container .progress-controls .player-progress-bar .playhead {
+	height: 3vw;
+	width: 3vw;
+	max-height: 25px;
+	max-width: 25px;
+	border-radius: 50%;
+	transform: translateX(-50%);
+}
+
+.video-container .controls {
+	width: 100%;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.video-container .controls button {
+	background: none;
+	outline: none;
+	box-shadow: none;
+	border: none;
+	width: 3.5vw;
+	height: 3.5vw;
+	min-width: 30px;
+	min-height: 30px;
+	margin: 0px 1vw;
+	opacity: 0.4;
+	transform: scale(0.9);
+	transition: all 0.2s ease-in-out;
+	cursor: pointer;
+}
+
+.video-container .controls button:hover {
+	opacity: 1;
+	transform: scale(1.2);
+}
+
+.video-container .controls button svg {
+	fill: white;
+	stroke: white;
+	stroke-width: 2;
+	stroke-linecap: round;
+	stroke-linejoin: round;
+	width: 100%;
+	height: 100%;
+}
+
+.video-container .controls button.volume svg path,
+.video-container .controls button.help svg,
+.video-container .controls button.episodes svg,
+.video-container .controls button.full-screen svg,
+.video-container .controls button.volume svg path,
+.video-container .controls button.cast svg {
+	fill: none;
+}
+
+.video-container .controls button.rewind svg,
+.video-container .controls button.fast-forward svg {
+	stroke: none;
+}
+
+.video-container .controls button.captions svg {
+	stroke: none;
+}
+
+.video-container .controls .title {
+	font-size: 2vw;
+	width: 100%;
+	height: 100%;
+	display: flex;
+	justify-content: flex-start;
+	align-items: center;
+}
+
+@media only screen and (max-width: 768px) {
+	.video-container .controls .title {
+		display: none;
+	}
+}
+
+.video-container .controls .title .series {
+	color: #fefefe;
+	font-weight: bold;
+	font-size: 1em;
+}
+
+.video-container .controls .title .episode {
+	color: #a1a1a1;
+	font-size: 0.75em;
+	padding-left: 1vw;
+}
+
+.episodes {
+	position: relative;
+}
+
+.episodes:hover .episodes-series {
+	display: block;
+}
+
+.episodes-series {
+	position: absolute;
+	width: 400px;
+	height: 300px;
+	background: #333;
+	border-radius: 5px;
+	// box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+	left: -350px;
+	top: -320px;
+	padding: 10px;
+	display: none;
+}
+
+.episodes-list {
+	height: 100%;
+	overflow-y: scroll;
+	&::-webkit-scrollbar {
+		width: 5px;
+	}
+
+	&::-webkit-scrollbar-thumb {
+		background-color: #484848;
+		border-radius: 5px;
+	}
+}
+
+.episodes-series {
+	&::after {
+		content: "";
+		width: 0;
+		height: 0;
+		background-color: transparent;
+		border-top: 30px solid #333;
+		border-left: 30px solid transparent;
+		border-right: 30px solid transparent;
+		border-bottom: 30px solid transparent;
+		position: absolute;
+		bottom: -50px;
+		right: 10px;
+		z-index: -1;
+	}
+}
+
+.episodes-row {
+	display: grid;
+	grid-auto-flow: column;
+	align-items: center;
+	border-radius: 5px;
+	padding: 10px;
+	transition: all 0.3s;
+	text-align: left;
+}
+
+.episodes-row p {
+	color: #fff;
+	font-size: 1rem;
+}
+
+.episode-thumbnail {
+	border-radius: 5px;
+	overflow: hidden;
+	width: 150px;
+}
+
+.episodes-row:hover {
+	background-color: #585858;
+}
+
+.episode-name h5 {
+	font-size: 1rem;
+	color: #fff;
+	font-weight: bold;
+}
+
+.video-container .back-container {
+	position: absolute;
+	top: 0px;
+	width: 100%;
+	min-height: 40vh;
+	background: linear-gradient(rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0));
+	transition: opacity 0.5s linear;
+}
+
+.back-button {
+	background-color: transparent;
+	color: #8c8c8c;
+	font-weight: bold;
+	font-size: 2rem;
+	display: flex;
+	align-items: center;
+	padding: 3rem;
+}
