@@ -1,8 +1,7 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="46.5" height="46.5" viewBox="0 0 46.5 46.5">
-  <g id="Group_2799" data-name="Group 2799" transform="translate(-1429.33 -1007.074)">
-    <circle id="Ellipse_3650" data-name="Ellipse 3650" cx="23.25" cy="23.25" r="23.25" transform="translate(1429.33 1007.074)" fill="#e6e6e6"/>
-    <g id="Group_2784" data-name="Group 2784" transform="translate(1448.063 1014.587)">
-      <path id="Path_5093" data-name="Path 5093" d="M622.143,1312.079c.013,2.352-1.75,4.2-4.578,4.2a4.153,4.153,0,0,1-4.458-4.2c-.014-2.424,1.759-4.21,4.52-4.21A4.174,4.174,0,0,1,622.143,1312.079Zm-8.965,20.646V1323.2a4.446,4.446,0,0,1,4.447-4.447h0a4.445,4.445,0,0,1,4.445,4.447v9.527a4.444,4.444,0,0,1-4.445,4.445h0A4.446,4.446,0,0,1,613.178,1332.725Z" transform="translate(-613.106 -1307.869)" fill="#181818"/>
-    </g>
+<svg id="Group_2631" data-name="Group 2631" xmlns="http://www.w3.org/2000/svg" width="27.203" height="27.203" viewBox="0 0 27.203 27.203">
+  <text id="i" transform="translate(10.53 18.755)" fill="#fff" font-size="19" font-family="Arial-BoldMT, Arial" font-weight="700"><tspan x="0" y="0">i</tspan></text>
+  <g id="Ellipse_3655" data-name="Ellipse 3655" transform="translate(0 0)" fill="none" stroke="#fff" stroke-width="1">
+    <ellipse cx="13.602" cy="13.602" rx="13.602" ry="13.602" stroke="none"/>
+    <ellipse cx="13.602" cy="13.602" rx="13.102" ry="13.102" fill="none"/>
   </g>
 </svg>

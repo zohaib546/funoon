@@ -42,10 +42,11 @@
 }
 
 .main {
-	background: url(../img/graphic-circle-2.png), url(../img/graphic-circle-3.png),
-		url(../img/graphic-circle-3.png);
-	background-size: 100%, 110%, 110%;
-	background-position: 0rem -10%, -5rem 50%, -5rem 110%;
+	// background: url(../img/graphic-circle-2.png), url(../img/graphic-circle-3.png),
+	// 	url(../img/graphic-circle-3.png);
+	background: url(../img/graphic-circle-2.png), url(../img/graphic-circle-3.png);
+	background-size: 100%, 110%;
+	background-position: 0 5%, -5rem 80%;
 	background-repeat: no-repeat;
 
 	@include media-query(tab-land) {
@@ -71,13 +72,13 @@
 	position: relative;
 	padding: 5rem 0;
 
-	&::before {
-		content: "";
-		position: absolute;
-		inset: 0;
-		background: $radial-gradient;
-		z-index: -5;
-	}
+	// &::before {
+	// 	content: "";
+	// 	position: absolute;
+	// 	inset: 0;
+	// 	background: $radial-gradient;
+	// 	z-index: -5;
+	// }
 
 	@include media-query(tab-land) {
 		min-height: 40vh;

@@ -27,9 +27,13 @@ unmute.forEach((el) => {
 });
 
 // mute all videos except first after image animation delay '2s'
-videos.forEach((el) => (el.muted = true));
+videos.forEach((el) => {
+	el.muted = true;
+	el.pause();
+});
 setTimeout(() => {
 	videos[0].muted = true;
+	videos[0].play();
 }, 2000);
 
 var video = $(".video-carousel");
@@ -37,8 +41,6 @@ video.owlCarousel();
 
 // Listen to owl events:
 video.on("changed.owl.carousel", function (event) {
-	// const section = event.target;
-	// const sm = section.querySelector(".owl-item.active");
 	unmute.forEach((el) => {
 		el.style.display = "none";
 	});
@@ -46,7 +48,10 @@ video.on("changed.owl.carousel", function (event) {
 		el.style.display = "";
 	});
 
-	videos.forEach((el) => (el.muted = true));
+	videos.forEach((el) => {
+		el.muted = true;
+		el.play();
+	});
 });
 
 unmute.forEach((el, ind) =>
@@ -192,3 +197,136 @@ const menuList = document.querySelector(".header-nav__sidelist");
 menuBtn.addEventListener("click", () => {
 	sidebar.classList.toggle("show");
 });
+
+const movies = document.querySelectorAll(".movie__item");
+
+// add popup on mouse enter
+movies.forEach((movie) =>
+	movie.addEventListener("mouseenter", (e) => {
+		addPopup(e);
+	})
+);
+
+// remove popup on mouse leave
+movies.forEach((movie) =>
+	movie.addEventListener("mouseleave", (e) => {
+		console.log("mouse leave");
+		removePopup(e);
+	})
+);
+
+function addPopup(e) {
+	let moviePost = e.target.closest(".movie__item");
+	removePopup(e);
+	console.log("mouse enter");
+	setTimeout(() => {
+		moviePost.insertAdjacentHTML(
+			"beforeend",
+			`<div class="item-controls item-controls--movie">
+					<figure class="item-controls__figure">
+						<img
+							class="item-controls__thumbnail"
+							src="img/landing-page/resume/poster-1.png"
+							alt="icon"
+						/>
+						<video
+							class="item-controls__video"
+							src="video/banner-video.mp4"
+							loop
+							autoplay
+							muted
+						></video>
+					</figure>
+					<div class="item-controls__details">
+						<h3 class="mb-3 item-controls__title">Bye Bye London</h3>
+						<ul class="item-controls__list">
+							<li class="item-controls__action">
+								<a href="./player.html">
+									<img
+										class="item-controls__icon"
+										src="img/popup/icons/icon-play.svg"
+										alt="icon"
+									/>
+								</a>
+							</li>
+							<li class="item-controls__action">
+								<img
+									class="item-controls__icon"
+									src="img/popup/icons/icon-add.svg"
+									alt="icon"
+								/>
+							</li>
+							<li class="item-controls__action">
+								<img
+									class="item-controls__icon"
+									src="img/popup/icons/icon-like.svg"
+									alt="icon"
+								/>
+							</li>
+							<li class="item-controls__action">
+								<img
+									class="item-controls__icon"
+									src="img/popup/icons/icon-dislike.svg"
+									alt="icon"
+								/>
+							</li>
+							<li class="item-controls__action">
+								<img
+									class="item-controls__icon"
+									src="img/popup/icons/icon-adult.svg"
+									alt="icon"
+								/>
+							</li>
+							<li class="item-controls__action ms-auto">
+								<img
+									class="item-controls__icon"
+									src="img/popup/icons/icon-remove-list.svg"
+									alt="icon"
+								/>
+							</li>
+							<li class="item-controls__action">
+								<img
+									class="item-controls__icon"
+									src="img/popup/icons/icon-favorite.svg"
+									alt="icon"
+								/>
+							</li>
+							<li
+								class="item-controls__action"
+								data-bs-toggle="modal"
+								data-bs-target="#movieModal"
+							>
+								<img
+									class="item-controls__icon"
+									src="img/popup/icons/icon-info.svg"
+									alt="icon"
+								/>
+							</li>
+						</ul>
+					</div>
+				</div>
+			`
+		);
+	}, 500);
+}
+
+function removePopup(e) {
+	setTimeout(() => {
+		let moviePost = e.target.closest(".movie__item");
+		let popup = moviePost.lastElementChild;
+
+		if (popup.classList.contains("item-controls--movie")) {
+			moviePost.removeChild(popup);
+		}
+	}, 500);
+}
+
+const movieContainer = document.querySelectorAll(".movie-popup__movies");
+const movieShowMore = document.querySelectorAll(".movie-popup__show");
+
+movieShowMore.forEach((shwMre) =>
+	shwMre.addEventListener("click", (e) => {
+		shwMre.classList.toggle("rotate");
+		movieContainer.forEach((cont) => cont.classList.toggle("show-less"));
+	})
+);
