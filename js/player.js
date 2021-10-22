@@ -16,6 +16,33 @@ const mutedButton = volumeButton.querySelector(".muted");
 const maximizeButton = fullScreenButton.querySelector(".maximize");
 const minimizeButton = fullScreenButton.querySelector(".minimize");
 
+const speedButton = document.querySelectorAll(".speed-circle");
+
+speedButton.forEach((button) =>
+	button.addEventListener("click", (e) => {
+		speedButton.forEach((btn) => btn.classList.remove("selected"));
+		const clickedElement = e.target;
+		const classes = e.target.classList;
+		clickedElement.classList.add("selected");
+
+		if (classes.contains("speed-0.5")) {
+			video.playbackRate = 0.5;
+		}
+		if (classes.contains("speed-0.7")) {
+			video.playbackRate = 0.7;
+		}
+		if (classes.contains("speed-1.0")) {
+			video.playbackRate = 1.0;
+		}
+		if (classes.contains("speed-1.2")) {
+			video.playbackRate = 1.2;
+		}
+		if (classes.contains("speed-1.5")) {
+			video.playbackRate = 1.5;
+		}
+	})
+);
+
 const progressBar = document.querySelector(
 	".video-container .progress-controls .player-progress-bar"
 );
@@ -43,7 +70,7 @@ const displayControls = () => {
 		controlsContainer.style.opacity = "0";
 		backContainer.style.opacity = "0";
 		document.body.style.cursor = "none";
-	}, 5000);
+	}, 50000);
 };
 
 const playPause = () => {

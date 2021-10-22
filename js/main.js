@@ -1,7 +1,23 @@
-$(".video-carousel").owlCarousel({
+// dom elements
+const mute = document.querySelectorAll(".btn-mute");
+const unmute = document.querySelectorAll(".btn-unmute");
+const videos = document.querySelectorAll(".video__figure");
+const menuBtn = document.querySelector(".header-nav__menu");
+const sidebar = document.querySelector(".header-sidenav");
+const menuList = document.querySelector(".header-nav__sidelist");
+const movies = document.querySelectorAll(".movie__item");
+const movieContainer = document.querySelectorAll(".movie-popup__movies");
+const movieShowMore = document.querySelectorAll(".movie-popup__show");
+
+const videoDetails = {
+	element: ".video-carousel",
 	loop: false,
 	margin: 0,
 	nav: false,
+	mouseDrag: false,
+	stagePadding: 0,
+	dots: true,
+	navText: [`&#x27;next&#x27;,&#x27;prev&#x27;`], // default navText
 	animateOut: "fadeOut",
 	responsive: {
 		0: {
@@ -14,13 +30,152 @@ $(".video-carousel").owlCarousel({
 			items: 1,
 		},
 	},
-});
+};
 
-// mute and unmute
-const mute = document.querySelectorAll(".btn-mute");
-const unmute = document.querySelectorAll(".btn-unmute");
-const videos = document.querySelectorAll(".video__figure");
+const movieDetails = {
+	element: ".movie-carousel",
+	loop: true,
+	margin: 5,
+	nav: true,
+	mouseDrag: false,
+	stagePadding: 50,
+	dots: false,
+	navText: [
+		"<span class='carousel-nav-left'><i class='fa fa-chevron-left'></i></span>",
+		"<span class='carousel-nav-right'><i class='fa fa-chevron-right'></i></span>",
+	],
+	responsive: {
+		0: {
+			items: 3,
+			nav: false,
+		},
+		600: {
+			items: 6,
+		},
+		1000: {
+			items: 9,
+		},
+		1920: {
+			items: 9,
+		},
+	},
+};
 
+const exclusiveDetails = {
+	element: ".exclusive-carousel",
+	loop: true,
+	margin: 5,
+	nav: true,
+	mouseDrag: false,
+	dots: false,
+	navText: [
+		"<span class='carousel-nav-left'><i class='fa fa-chevron-left'></i></span>",
+		"<span class='carousel-nav-right'><i class='fa fa-chevron-right'></i></span>",
+	],
+	responsive: {
+		0: {
+			items: 2,
+			nav: false,
+			stagePadding: 50,
+		},
+		600: {
+			items: 5,
+		},
+		1000: {
+			items: 6,
+		},
+		1920: {
+			items: 6,
+		},
+	},
+};
+
+const topDetails = {
+	element: ".top-carousel",
+	loop: true,
+	margin: 10,
+	nav: true,
+	mouseDrag: false,
+	stagePadding: 80,
+	dots: false,
+	navText: [
+		"<span class='carousel-nav-left'><i class='fa fa-chevron-left'></i></span>",
+		"<span class='carousel-nav-right'><i class='fa fa-chevron-right'></i></span>",
+	],
+	responsive: {
+		0: {
+			items: 2,
+			nav: false,
+			stagePadding: 30,
+		},
+		600: {
+			items: 3,
+		},
+		1000: {
+			items: 4,
+			stagePadding: 50,
+		},
+		1920: {
+			items: 6,
+		},
+		2000: {
+			items: 8,
+		},
+	},
+};
+
+const resumeDetails = {
+	element: ".resume-carousel",
+	loop: true,
+	margin: 5,
+	nav: true,
+	mouseDrag: false,
+	stagePadding: 0,
+	dots: false,
+	navText: [
+		"<span class='carousel-nav-left'><i class='fa fa-chevron-left'></i></span>",
+		"<span class='carousel-nav-right'><i class='fa fa-chevron-right'></i></span>",
+	],
+	responsive: {
+		0: {
+			items: 1,
+			nav: false,
+			stagePadding: 50,
+		},
+		600: {
+			items: 3,
+		},
+		1000: {
+			items: 4,
+			stagePadding: 50,
+		},
+		1920: {
+			items: 6,
+		},
+	},
+};
+
+function slider(details) {
+	$(details.element).owlCarousel({
+		loop: details.loop,
+		margin: details.margin,
+		nav: details.nav,
+		mouseDrag: details.mouseDrag,
+		stagePadding: details.stagePadding,
+		dots: details.dots,
+		navText: details.navText,
+		animateOut: details.animateOut || false,
+		responsive: details.responsive,
+	});
+}
+
+slider({ ...videoDetails });
+slider({ ...movieDetails });
+slider({ ...exclusiveDetails });
+slider({ ...topDetails });
+slider({ ...resumeDetails });
+
+// MUTE AND UNMUTE:
 // hide all mute buttons on load
 unmute.forEach((el) => {
 	el.style.display = "none";
@@ -36,7 +191,7 @@ setTimeout(() => {
 	videos[0].play();
 }, 2000);
 
-var video = $(".video-carousel");
+let video = $(".video-carousel");
 video.owlCarousel();
 
 // Listen to owl events:
@@ -70,151 +225,12 @@ mute.forEach((el, ind) => {
 	});
 });
 
-$(".movie-carousel").owlCarousel({
-	loop: true,
-	margin: 5,
-	nav: true,
-	mouseDrag: false,
-	stagePadding: 50,
-	dots: false,
-	navText: [
-		"<span class='carousel-nav-left'><i class='fa fa-chevron-left'></i></span>",
-		"<span class='carousel-nav-right'><i class='fa fa-chevron-right'></i></span>",
-	],
-	responsive: {
-		0: {
-			items: 3,
-			nav: false,
-		},
-		600: {
-			items: 6,
-		},
-		1000: {
-			items: 9,
-		},
-		1920: {
-			items: 9,
-		},
-	},
-});
-
-$(".exclusive-carousel").owlCarousel({
-	loop: true,
-	margin: 5,
-	nav: true,
-	mouseDrag: false,
-	dots: false,
-	navText: [
-		"<span class='carousel-nav-left'><i class='fa fa-chevron-left'></i></span>",
-		"<span class='carousel-nav-right'><i class='fa fa-chevron-right'></i></span>",
-	],
-	responsive: {
-		0: {
-			items: 2,
-			nav: false,
-			stagePadding: 50,
-		},
-		600: {
-			items: 5,
-		},
-		1000: {
-			items: 6,
-		},
-		1920: {
-			items: 6,
-		},
-	},
-});
-
-$(".top-carousel").owlCarousel({
-	loop: true,
-	margin: 10,
-	nav: true,
-	mouseDrag: false,
-	stagePadding: 80,
-	dots: false,
-	navText: [
-		"<span class='carousel-nav-left'><i class='fa fa-chevron-left'></i></span>",
-		"<span class='carousel-nav-right'><i class='fa fa-chevron-right'></i></span>",
-	],
-	responsive: {
-		0: {
-			items: 2,
-			nav: false,
-			stagePadding: 30,
-		},
-		600: {
-			items: 3,
-		},
-		1000: {
-			items: 4,
-			stagePadding: 50,
-		},
-		1920: {
-			items: 6,
-		},
-		2000: {
-			items: 8,
-		},
-	},
-});
-
-$(".resume-carousel").owlCarousel({
-	loop: true,
-	margin: 5,
-	nav: true,
-	mouseDrag: false,
-	stagePadding: 0,
-	dots: false,
-	navText: [
-		"<span class='carousel-nav-left'><i class='fa fa-chevron-left'></i></span>",
-		"<span class='carousel-nav-right'><i class='fa fa-chevron-right'></i></span>",
-	],
-	responsive: {
-		0: {
-			items: 1,
-			nav: false,
-			stagePadding: 50,
-		},
-		600: {
-			items: 3,
-		},
-		1000: {
-			items: 4,
-			stagePadding: 50,
-		},
-		1920: {
-			items: 6,
-		},
-	},
-});
-
-// Show and Hide SideNav
-const menuBtn = document.querySelector(".header-nav__menu");
-const sidebar = document.querySelector(".header-sidenav");
-const menuList = document.querySelector(".header-nav__sidelist");
-
+// SHOW AND HIDE SIDENAV:
 menuBtn.addEventListener("click", () => {
 	sidebar.classList.toggle("show");
 });
 
-const movies = document.querySelectorAll(".movie__item");
-
-// add popup on mouse enter
-movies.forEach((movie) =>
-	movie.addEventListener("mouseenter", (e) => {
-		addPopup(e);
-	})
-);
-
-// remove popup on mouse leave
-movies.forEach((movie) =>
-	movie.addEventListener("mouseleave", (e) => {
-		console.log("mouse leave");
-		removePopup(e);
-	})
-);
-
+// ADD POPUP ON POST HOVER:
 function addPopup(e) {
 	let moviePost = e.target.closest(".movie__item");
 	removePopup(e);
@@ -321,9 +337,21 @@ function removePopup(e) {
 	}, 500);
 }
 
-const movieContainer = document.querySelectorAll(".movie-popup__movies");
-const movieShowMore = document.querySelectorAll(".movie-popup__show");
+// add popup on mouse enter
+movies.forEach((movie) =>
+	movie.addEventListener("mouseenter", (e) => {
+		addPopup(e);
+	})
+);
 
+// remove popup on mouse leave
+movies.forEach((movie) =>
+	movie.addEventListener("mouseleave", (e) => {
+		removePopup(e);
+	})
+);
+
+// event listeners
 movieShowMore.forEach((shwMre) =>
 	shwMre.addEventListener("click", (e) => {
 		shwMre.classList.toggle("rotate");

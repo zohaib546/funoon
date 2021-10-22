@@ -24,221 +24,9 @@
 		<title>Player</title>
 	</head>
 
-	<body class="player-body bg-radial-simple">
-		<!-- HEADER -->
-		<header class="header">
-			<!-- NAVBAR SMARTPHONE -->
-			<nav class="header-nav header-nav--smartphone">
-				<div class="header-nav__menu">
-					<img src="img/landing-page/icons/icon-smartphone-menu.svg" alt="menu icon" />
-				</div>
-				<div>
-					<img src="img/landing-page/icons/icon-smartphone-logo.svg" alt="white logo" />
-				</div>
-				<div>
-					<img src="img/landing-page/icons/icon-smartphone-search.svg" alt="menu icon" />
-				</div>
-			</nav>
-			<!-- NAVBAR -->
-			<nav class="navbar navbar-expand-sm navbar-dark d-none d-sm-flex">
-				<div class="container-fluid">
-					<a class="navbar-brand" href="landing-page.html">
-						<img src="img/svg/logo.svg" alt="logo" />
-					</a>
-					<button
-						class="navbar-toggler d-none"
-						type="button"
-						data-bs-toggle="collapse"
-						data-bs-target="#navbarNavAltMarkup"
-						aria-controls="navbarNavAltMarkup"
-						aria-expanded="false"
-						aria-label="Toggle navigation"
-					>
-						<span class="navbar-toggler-icon"></span>
-					</button>
-					<div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-						<!-- TOP NAVBAR DESKTOP -->
-						<div class="navbar-nav ms-auto align-items-center">
-							<li class="nav-item">
-								<a class="nav-link" href="#"><i class="fas fa-search"></i> Search</a>
-							</li>
-							<li class="nav-item header__navbar-item d-flex align-items-center">
-								<a class="mx-3 navbar-link active" href="profile-1.html">English</a>
-								<a class="mx-3 navbar-link main-heading-sm-2" href="arabic/index.html">العربية</a>
-							</li>
-							<li class="nav-item dropdown">
-								<a
-									class="nav-link dropdown-toggle"
-									href="#"
-									id="navbarDropdown"
-									role="button"
-									data-bs-toggle="dropdown"
-									aria-expanded="false"
-								>
-									<img
-										src="img/profile.png"
-										class="me-2 rounded-circle"
-										width="30px"
-										height="30px"
-										alt="profile picture"
-									/>
-									Ali Haider
-								</a>
-								<ul class="dropdown-menu header__dropdown" aria-labelledby="navbarDropdown">
-									<div
-										class="
-											header__dropdown-profile
-											d-flex
-											justify-content-between
-											align-items-center
-										"
-									>
-										<img
-											class="me-2 header__avatar"
-											src="img/profile.png"
-											width="60px"
-											height="60px"
-											alt="profile picture"
-										/>
-										<a class="white-color" href="#">
-											<span class="main-heading-bold-2">Ali Haider</span> <br />
-											Manage Profile
-										</a>
-										<img src="img/svg/profile-arrow.svg" width="20px" height="20px" alt="Arrow" />
-									</div>
-									<li>
-										<hr class="dropdown-divider white-color" />
-									</li>
-									<li>
-										<a class="dropdown-item header__item white-color" href="profile-1.html"
-											>My Profile</a
-										>
-										<a class="dropdown-item header__item white-color" href="my-collections.html"
-											>My Collections</a
-										>
-										<a class="dropdown-item header__item white-color" href="logout.html">Logout</a>
-									</li>
-								</ul>
-							</li>
-						</div>
-					</div>
-					<!-- TOP NAVBAR MOBILE-->
-					<div class="header__mobile-nav">
-						<div class="dropdown me-3">
-							<button
-								class="button button--primary-sm dropdown-toggle"
-								type="button"
-								id="headerMobileDropdown"
-								data-bs-toggle="dropdown"
-								aria-expanded="false"
-							>
-								English
-							</button>
-							<ul class="dropdown-menu" aria-labelledby="headerMobileDropdown">
-								<li><a class="dropdown-item" href="#">Arabic</a></li>
-								<li><a class="dropdown-item" href="#">French</a></li>
-								<li><a class="dropdown-item" href="#">Deutsch</a></li>
-							</ul>
-						</div>
-						<a href="login.html" class="button button--primary-sm">Sign in</a>
-					</div>
-				</div>
-			</nav>
-			<!-- NAVBAR DESKTOP -->
-			<nav class="header-nav header-nav--desktop">
-				<ul class="header-nav__list">
-					<li class="header-nav__item active">
-						<a class="header-nav__link" href="landing-page.html">Home</a>
-					</li>
-					<li class="header-nav__item">
-						<a class="header-nav__link" href="plays.html">Plays</a>
-					</li>
-					<li class="header-nav__item">
-						<a class="header-nav__link" href="operettas.html">Operettas</a>
-					</li>
-					<li class="header-nav__item">
-						<a class="header-nav__link" href="series.html">Series</a>
-					</li>
-					<li class="header-nav__item">
-						<a class="header-nav__link" href="programs.html">Programs</a>
-					</li>
-					<li class="header-nav__item">
-						<a class="header-nav__link" href="movies.html">Movies</a>
-					</li>
-				</ul>
-			</nav>
-			<!-- SIDENAV -->
-			<nav class="header-sidenav">
-				<ul class="header-sidenav__sidelist">
-					<li class="header-sidenav__item">
-						<a class="header-sidenav__link" href="#">
-							<img
-								class="header-sidenav__icon me-3"
-								src="img/svg/icon-default-profile-4.svg"
-								alt="icon"
-							/>
-							<div class="header-sidenav__profile">
-								<h3 class="header-sidenav__name">Ali</h3>
-								<span class="header-sidenav__subtext">All Maturity Ratings</span>
-							</div>
-						</a>
-					</li>
-					<li class="header-sidenav__item active">
-						<a class="header-sidenav__link" href="landing-page.html">
-							<span class="header-sidenav__text"> Home</span>
-						</a>
-					</li>
-					<li class="header-sidenav__item">
-						<a class="header-sidenav__link" href="plays.html">
-							<span class="header-sidenav__text"> Plays </span>
-						</a>
-					</li>
-					<li class="header-sidenav__item">
-						<a class="header-sidenav__link" href="programs.html">
-							<span class="header-sidenav__text"> Programs </span>
-						</a>
-					</li>
-					<li class="header-sidenav__item">
-						<a class="header-sidenav__link" href="series.html">
-							<span class="header-sidenav__text"> Series </span>
-						</a>
-					</li>
-					<li class="header-sidenav__item">
-						<a class="header-sidenav__link" href="movies.html">
-							<span class="header-sidenav__text">Movies</span>
-						</a>
-					</li>
-					<li class="header-sidenav__item">
-						<a class="header-sidenav__link" href="operettas.html">
-							<span class="header-sidenav__text">Operettas</span>
-						</a>
-					</li>
-					<li class="header-sidenav__item">
-						<a class="header-sidenav__link" href="#">
-							<span class="header-sidenav__text">Downloads</span>
-						</a>
-					</li>
-					<li class="header-sidenav__item">
-						<a class="header-sidenav__link" href="profile-1.html">
-							<span class="header-sidenav__text">Settings</span>
-						</a>
-					</li>
-					<li class="header-sidenav__item">
-						<a class="header-sidenav__link" href="contact-us.html">
-							<span class="header-sidenav__text"> Contact us </span>
-						</a>
-					</li>
-					<li class="header-sidenav__item">
-						<a class="header-sidenav__link" href="logout.html">
-							<span class="header-sidenav__text"> Logout </span>
-						</a>
-					</li>
-				</ul>
-			</nav>
-		</header>
-
+	<body class="player-body">
 		<!-- PLAYER -->
-		<section class="video-container mt-5">
+		<section class="video-container">
 			<!-- <video src="./video/1.mp4"></video> -->
 			<video src="./video/1.mp4"></video>
 			<div class="back-container">
@@ -292,7 +80,7 @@
 							/>
 						</svg>
 					</button>
-					<p class="title mb-0">
+					<p class="mb-0 title">
 						<span class="series">Bye Bye London</span>
 						<!-- <span class="episode">Big Buck Bunny</span> -->
 					</p>
@@ -394,6 +182,88 @@
 							<polygon points="12 2 2 7 12 12 22 7 12 2"></polygon>
 							<polyline points="2 17 12 22 22 17"></polyline>
 							<polyline points="2 12 12 17 22 12"></polyline>
+						</svg>
+					</button>
+					<button class="speed-controller">
+						<div class="speed-popup">
+							<h3 class="speed-title">Playback Speed</h3>
+							<div class="speed-stage">
+								<div class="speed-indicator">
+									<div class="speed-circle speed-0.5"></div>
+									<span class="speed-info">0.5x</span>
+								</div>
+								<div class="speed-indicator">
+									<div class="speed-circle speed-0.7"></div>
+									<span class="speed-info">0.7x</span>
+								</div>
+								<div class="speed-indicator">
+									<div class="speed-circle speed-1.0 selected"></div>
+									<span class="speed-info">1x(Normal)</span>
+								</div>
+								<div class="speed-indicator">
+									<div class="speed-circle speed-1.2"></div>
+									<span class="speed-info">1.2x</span>
+								</div>
+								<div class="speed-indicator">
+									<div class="speed-circle speed-1.5"></div>
+									<span class="speed-info">1.5x</span>
+								</div>
+							</div>
+						</div>
+						<svg
+							data-name="Group 1110"
+							xmlns="http://www.w3.org/2000/svg"
+							viewBox="0 0 37.715 31.816"
+						>
+							<path
+								id="Path_9822"
+								data-name="Path 9822"
+								d="M933.791,605.6a.693.693,0,0,0-.547-1.265l-9.5,2.97a2.95,2.95,0,1,0,1.073,3.346Z"
+								transform="translate(-903.169 -590.841)"
+								fill="#fff"
+							/>
+							<path
+								id="Path_9823"
+								data-name="Path 9823"
+								d="M935.185,609.817h4.541a18.8,18.8,0,0,0-5.146-12.427l-3.212,3.212A14.275,14.275,0,0,1,935.185,609.817Z"
+								transform="translate(-902.011 -591.492)"
+								fill="#fff"
+							/>
+							<path
+								id="Path_9824"
+								data-name="Path 9824"
+								d="M934.685,597.146A18.793,18.793,0,0,0,922.258,592v4.541a14.27,14.27,0,0,1,9.217,3.817Z"
+								transform="translate(-902.87 -592)"
+								fill="#fff"
+							/>
+							<path
+								id="Path_9825"
+								data-name="Path 9825"
+								d="M931.367,618.934l3.211,3.211a18.8,18.8,0,0,0,5.147-12.426h-4.541A14.266,14.266,0,0,1,931.367,618.934Z"
+								transform="translate(-902.011 -590.33)"
+								fill="#fff"
+							/>
+							<path
+								id="Path_9826"
+								data-name="Path 9826"
+								d="M922.356,592a18.793,18.793,0,0,0-12.426,5.146l3.212,3.213a14.264,14.264,0,0,1,9.214-3.818Z"
+								transform="translate(-904.031 -592)"
+								fill="#fff"
+							/>
+							<path
+								id="Path_9827"
+								data-name="Path 9827"
+								d="M904.539,609.72a18.794,18.794,0,0,0,5.147,12.426l3.212-3.213a14.272,14.272,0,0,1-3.816-9.213Z"
+								transform="translate(-904.539 -590.33)"
+								fill="#fff"
+							/>
+							<path
+								id="Path_9828"
+								data-name="Path 9828"
+								d="M912.9,600.6l-3.212-3.212a18.788,18.788,0,0,0-5.146,12.426h4.543A14.273,14.273,0,0,1,912.9,600.6Z"
+								transform="translate(-904.539 -591.492)"
+								fill="#fff"
+							/>
 						</svg>
 					</button>
 					<!-- <button class="captions">

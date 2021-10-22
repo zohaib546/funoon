@@ -44,7 +44,8 @@
 }
 
 .video-container .progress-controls .time-remaining {
-	margin: 1vw;
+	// margin: 1vw;
+	margin: 0 1vw;
 	width: 4vw;
 }
 
@@ -52,7 +53,8 @@
 	width: 90vw;
 	height: 1vw;
 	max-height: 7px;
-	background: #5b5b5b;
+	// background: #5b5b5b;
+	background: #8c8c8c;
 	display: flex;
 	align-items: center;
 	cursor: pointer;
@@ -60,7 +62,8 @@
 
 .video-container .progress-controls .player-progress-bar .watched-bar,
 .video-container .progress-controls .player-progress-bar .playhead {
-	background: #e31221;
+	// background: #e31221;
+	background: $primary-color;
 	display: inline-block;
 	transition: all 0.2s;
 }
@@ -84,6 +87,8 @@
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
+
+	padding-bottom: 1rem;
 }
 
 .video-container .controls button {
@@ -104,7 +109,7 @@
 
 .video-container .controls button:hover {
 	opacity: 1;
-	transform: scale(1.2);
+	transform: scale(1.1);
 }
 
 .video-container .controls button svg {
@@ -115,6 +120,16 @@
 	stroke-linejoin: round;
 	width: 100%;
 	height: 100%;
+}
+
+.video-container .controls button:hover svg path,
+.video-container .controls button:hover svg path {
+	fill: $primary-color;
+}
+
+.video-container .controls button:hover svg {
+	fill: $primary-color;
+	stroke: $primary-color;
 }
 
 .video-container .controls button.volume svg path,
@@ -261,4 +276,104 @@
 	display: flex;
 	align-items: center;
 	padding: 3rem;
+}
+
+.speed-controller {
+	position: relative;
+}
+
+.video-container .controls .speed-controller svg,
+.video-container .controls .speed-controller:hover svg {
+	stroke: transparent;
+	stroke-width: initial;
+	stroke-linecap: initial;
+	stroke-linejoin: initial;
+}
+
+.speed-popup {
+	position: absolute;
+	right: 0;
+	top: -150px;
+	width: 500px;
+	padding: 1.5rem;
+	border-radius: 5px;
+	background-color: #333;
+	text-align: left;
+	display: none;
+
+	&::after {
+		content: "";
+		width: 0;
+		height: 0;
+		background-color: transparent;
+		border-top: 20px solid #333;
+		border-left: 20px solid transparent;
+		border-right: 20px solid transparent;
+		border-bottom: 20px solid transparent;
+		position: absolute;
+		bottom: -35px;
+		right: 10px;
+		z-index: -1;
+	}
+}
+
+.speed-title {
+	font-weight: bold;
+	color: $primary-color;
+	margin-bottom: 0;
+}
+
+.speed-stage {
+	padding: 1rem 0;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	position: relative;
+	z-index: 0;
+
+	&::before {
+		content: "";
+		display: block;
+		position: absolute;
+		top: 25px;
+		z-index: -1;
+		width: 100%;
+		height: 1px;
+		background-color: $white-color;
+	}
+}
+
+.speed-circle {
+	width: 12px;
+	height: 12px;
+	border-radius: 25px;
+	background-color: $white-color;
+	margin: auto;
+}
+
+.speed-info {
+	color: $white-color;
+	font-weight: bold;
+}
+
+.speed-circle.selected {
+	background-color: $primary-color;
+	border: 5px solid #333;
+	outline: 1px solid $white-color;
+	width: 25px;
+	height: 25px;
+}
+
+.speed-indicator:first-child .speed-circle {
+	margin-left: 0;
+	margin-right: auto;
+}
+
+.speed-indicator:last-child .speed-circle {
+	margin-left: auto;
+	margin-right: 0;
+}
+
+.speed-controller:hover .speed-popup {
+	display: block;
 }
