@@ -3,10 +3,17 @@ const video = document.querySelector(".video-container video");
 
 const controlsContainer = document.querySelector(".video-container .controls-container");
 const backContainer = document.querySelector(".video-container .back-container");
+const pauseContainer = document.querySelector(".video-container .pause-container");
 
 const playPauseButton = document.querySelector(".video-container .controls button.play-pause");
 const rewindButton = document.querySelector(".video-container .controls button.rewind");
 const fastForwardButton = document.querySelector(".video-container .controls button.fast-forward");
+const forwardIcon = document.querySelector(
+	".video-container .forward-backward-container .forward-10"
+);
+const backwardIcon = document.querySelector(
+	".video-container .forward-backward-container .backward-10"
+);
 const volumeButton = document.querySelector(".video-container .controls button.volume");
 const fullScreenButton = document.querySelector(".video-container .controls button.full-screen");
 const playButton = playPauseButton.querySelector(".playing");
@@ -17,6 +24,9 @@ const maximizeButton = fullScreenButton.querySelector(".maximize");
 const minimizeButton = fullScreenButton.querySelector(".minimize");
 
 const speedButton = document.querySelectorAll(".speed-circle");
+
+const volumeSlider = document.getElementById("volume-slider");
+const audioPlayerContainer = document.getElementById("audio-player-container");
 
 speedButton.forEach((button) =>
 	button.addEventListener("click", (e) => {
@@ -52,8 +62,12 @@ const watchedBar = document.querySelector(
 const timeLeft = document.querySelector(".video-container .progress-controls .time-remaining");
 
 let controlsTimeout;
+let iconsTimeout;
 controlsContainer.style.opacity = "0";
 backContainer.style.opacity = "0";
+pauseContainer.style.opacity = "0";
+forwardIcon.style.opacity = "0";
+backwardIcon.style.opacity = "0";
 watchedBar.style.width = "0px";
 pauseButton.style.display = "none";
 minimizeButton.style.display = "none";
@@ -61,6 +75,7 @@ minimizeButton.style.display = "none";
 const displayControls = () => {
 	controlsContainer.style.opacity = "1";
 	backContainer.style.opacity = "1";
+	pauseContainer.style.opacity = "0";
 
 	document.body.style.cursor = "initial";
 	if (controlsTimeout) {
@@ -69,8 +84,23 @@ const displayControls = () => {
 	controlsTimeout = setTimeout(() => {
 		controlsContainer.style.opacity = "0";
 		backContainer.style.opacity = "0";
+		if (video.paused) {
+			pauseContainer.style.opacity = "1";
+		}
 		document.body.style.cursor = "none";
-	}, 50000);
+	}, 5000);
+};
+
+const showHideIcon = (elementNode) => {
+	elementNode.style.opacity = "1";
+
+	if (iconsTimeout) {
+		clearTimeout(iconsTimeout);
+	}
+
+	iconsTimeout = setTimeout(() => {
+		elementNode.style.opacity = "0";
+	}, 500);
 };
 
 const playPause = () => {
@@ -90,9 +120,14 @@ const toggleMute = () => {
 	if (video.muted) {
 		fullVolumeButton.style.display = "none";
 		mutedButton.style.display = "";
+		volumeSlider.value = "0";
+		audioPlayerContainer.style.setProperty("--volume-before-width", 0 + "%");
 	} else {
 		fullVolumeButton.style.display = "";
 		mutedButton.style.display = "none";
+		volumeSlider.value = "50";
+		video.volume = 0.5;
+		audioPlayerContainer.style.setProperty("--volume-before-width", 50 + "%");
 	}
 };
 
@@ -153,6 +188,28 @@ video.addEventListener("timeupdate", () => {
 	timeLeft.textContent = `${hours ? hours : "00"}:${minutes}:${seconds}`;
 });
 
+const showRangeProgress = (rangeInput) => {
+	audioPlayerContainer.style.setProperty(
+		"--volume-before-width",
+		(rangeInput.value / rangeInput.max) * 100 + "%"
+	);
+};
+
+volumeSlider.addEventListener("input", (e) => {
+	const value = e.target.value;
+	const volumeValue = value / 100;
+
+	if (volumeValue === 0) {
+		fullVolumeButton.style.display = "none";
+		mutedButton.style.display = "";
+	} else {
+		fullVolumeButton.style.display = "";
+		mutedButton.style.display = "none";
+	}
+
+	video.volume = volumeValue;
+});
+
 progressBar.addEventListener("click", (event) => {
 	const pos =
 		(event.pageX - (progressBar.offsetLeft + progressBar.offsetParent.offsetLeft)) /
@@ -164,12 +221,18 @@ playPauseButton.addEventListener("click", playPause);
 
 rewindButton.addEventListener("click", () => {
 	video.currentTime -= 10;
+	showHideIcon(backwardIcon);
 });
 
 fastForwardButton.addEventListener("click", () => {
 	video.currentTime += 10;
+	showHideIcon(forwardIcon);
 });
 
 volumeButton.addEventListener("click", toggleMute);
 
 fullScreenButton.addEventListener("click", toggleFullScreen);
+
+volumeSlider.addEventListener("input", (e) => {
+	showRangeProgress(e.target);
+});

@@ -33,6 +33,7 @@
 	/* Thanks to theArtifacts */
 	background: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.9));
 	transition: opacity 0.5s linear;
+	z-index: 1;
 }
 
 .video-container .progress-controls {
@@ -109,7 +110,7 @@
 
 .video-container .controls button:hover {
 	opacity: 1;
-	transform: scale(1.1);
+	transform: scale(1.05);
 }
 
 .video-container .controls button svg {
@@ -266,6 +267,7 @@
 	min-height: 40vh;
 	background: linear-gradient(rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0));
 	transition: opacity 0.5s linear;
+	z-index: 1;
 }
 
 .back-button {
@@ -294,8 +296,8 @@
 	position: absolute;
 	right: 0;
 	top: -150px;
-	width: 500px;
-	padding: 1.5rem;
+	width: 400px;
+	padding: 20px;
 	border-radius: 5px;
 	background-color: #333;
 	text-align: left;
@@ -324,7 +326,7 @@
 }
 
 .speed-stage {
-	padding: 1rem 0;
+	padding: 12px 0 0;
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
@@ -376,4 +378,174 @@
 
 .speed-controller:hover .speed-popup {
 	display: block;
+}
+
+.backward-10 {
+	left: 150px;
+}
+
+.backward-10,
+.forward-10 {
+	width: 80px;
+	height: 80px;
+	position: absolute;
+	top: 50%;
+	padding: 15px;
+	border-radius: 50%;
+	background-color: rgba(0, 0, 0, 0.65);
+	transform: translateY(-50%);
+	transition: opacity 0.5s linear;
+}
+
+.forward-10 {
+	right: 150px;
+}
+
+.pause-container {
+	position: fixed;
+	inset: 0;
+	background-color: rgba(0, 0, 0, 0.7);
+}
+
+.icon-rating {
+	width: 50px;
+	height: 50px;
+}
+
+.icon-rating svg {
+	width: 100%;
+	height: 100%;
+}
+
+.pause-container {
+	pointer-events: none;
+	transition: opacity 0.5s linear;
+}
+
+.pause-title {
+	position: absolute;
+	bottom: 150px;
+	right: 150px;
+}
+
+.pause-content {
+	position: absolute;
+	bottom: 150px;
+	left: 150px;
+}
+
+.pause-container h3 {
+	font-size: 25px;
+	font-weight: bold;
+}
+
+.pause-container h1 {
+	font-size: 60px;
+	font-weight: bold;
+}
+
+.pause-container dd {
+	font-weight: lighter;
+	font-size: 18px;
+}
+
+// VOLUME CSS
+
+#audio-player-container {
+	--seek-before-width: 0%;
+	--volume-before-width: 50%;
+	--buffered-width: 0%;
+	position: relative;
+}
+#volume-slider {
+	width: 100px;
+}
+#volume-slider::-webkit-slider-runnable-track {
+	background: #8c8c8c;
+}
+#volume-slider::-moz-range-track {
+	background: $primary-color;
+}
+#volume-slider::-ms-fill-upper {
+	background: $primary-color;
+}
+#volume-slider::before {
+	width: var(--volume-before-width);
+}
+input[type="range"] {
+	position: relative;
+	-webkit-appearance: none;
+	// width: 48%;
+	margin: 0;
+	padding: 0;
+	height: 19px;
+	float: left;
+	outline: none;
+	background: transparent;
+}
+input[type="range"]::-webkit-slider-runnable-track {
+	width: 100%;
+	height: 3px;
+	cursor: pointer;
+	background: linear-gradient(
+		to right,
+		$primary-color var(--buffered-width),
+		$primary-color var(--buffered-width)
+	);
+}
+input[type="range"]::before {
+	position: absolute;
+	content: "";
+	top: 8px;
+	left: 0;
+	width: var(--seek-before-width);
+	height: 3px;
+	background-color: $primary-color;
+	cursor: pointer;
+}
+input[type="range"]::-webkit-slider-thumb {
+	position: relative;
+	-webkit-appearance: none;
+	box-sizing: content-box;
+	border: 1px solid $primary-color;
+	height: 15px;
+	width: 15px;
+	border-radius: 50%;
+	background-color: $primary-color;
+	cursor: pointer;
+	margin: -7px 0 0 0;
+}
+input[type="range"]:active::-webkit-slider-thumb {
+	transform: scale(1.2);
+	background: $primary-color;
+}
+
+input[type="range"]::-moz-range-track {
+	width: 100%;
+	height: 3px;
+	cursor: pointer;
+	background: linear-gradient(
+		to right,
+		$primary-color var(--buffered-width),
+		$primary-color var(--buffered-width)
+	);
+}
+input[type="range"]::-moz-range-progress {
+	background-color: $primary-color;
+}
+input[type="range"]::-moz-focus-outer {
+	border: 0;
+}
+input[type="range"]::-moz-range-thumb {
+	box-sizing: content-box;
+	border: 1px solid $primary-color;
+	height: 15px;
+	width: 15px;
+	border-radius: 50%;
+	background-color: $primary-color;
+	cursor: pointer;
+}
+input[type="range"]:active::-moz-range-thumb {
+	transform: scale(1.2);
+	background: $primary-color;
 }
