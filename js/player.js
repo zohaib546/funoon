@@ -1,10 +1,8 @@
 const videoContainer = document.querySelector(".video-container");
 const video = document.querySelector(".video-container video");
-
 const controlsContainer = document.querySelector(".video-container .controls-container");
 const backContainer = document.querySelector(".video-container .back-container");
-const pauseContainer = document.querySelector(".video-container .pause-container");
-
+const pauseContainer = document.querySelector(".video-container .pause-overlay-container");
 const playPauseButton = document.querySelector(".video-container .controls button.play-pause");
 const rewindButton = document.querySelector(".video-container .controls button.rewind");
 const fastForwardButton = document.querySelector(".video-container .controls button.fast-forward");
@@ -14,6 +12,9 @@ const forwardIcon = document.querySelector(
 const backwardIcon = document.querySelector(
 	".video-container .forward-backward-container .backward-10"
 );
+const pauseCenterIcon = document.querySelector(
+	".video-container .pause-center-container .pause-center-icon"
+);
 const volumeButton = document.querySelector(".video-container .controls button.volume");
 const fullScreenButton = document.querySelector(".video-container .controls button.full-screen");
 const playButton = playPauseButton.querySelector(".playing");
@@ -22,11 +23,19 @@ const fullVolumeButton = volumeButton.querySelector(".full-volume");
 const mutedButton = volumeButton.querySelector(".muted");
 const maximizeButton = fullScreenButton.querySelector(".maximize");
 const minimizeButton = fullScreenButton.querySelector(".minimize");
-
 const speedButton = document.querySelectorAll(".speed-circle");
-
 const volumeSlider = document.getElementById("volume-slider");
 const audioPlayerContainer = document.getElementById("audio-player-container");
+const progressBar = document.querySelector(
+	".video-container .progress-controls .player-progress-bar"
+);
+const watchedBar = document.querySelector(
+	".video-container .progress-controls .player-progress-bar .watched-bar"
+);
+const timeLeft = document.querySelector(".video-container .progress-controls .time-remaining");
+const videoThumbnailContainer = document.querySelector(".video-container .video-preview");
+const videoThumbnail = document.querySelector(".video-container .video-thumbnail");
+const timeThumbnail = document.querySelector(".video-container .time-preview");
 
 speedButton.forEach((button) =>
 	button.addEventListener("click", (e) => {
@@ -53,14 +62,6 @@ speedButton.forEach((button) =>
 	})
 );
 
-const progressBar = document.querySelector(
-	".video-container .progress-controls .player-progress-bar"
-);
-const watchedBar = document.querySelector(
-	".video-container .progress-controls .player-progress-bar .watched-bar"
-);
-const timeLeft = document.querySelector(".video-container .progress-controls .time-remaining");
-
 let controlsTimeout;
 let iconsTimeout;
 controlsContainer.style.opacity = "0";
@@ -68,6 +69,7 @@ backContainer.style.opacity = "0";
 pauseContainer.style.opacity = "0";
 forwardIcon.style.opacity = "0";
 backwardIcon.style.opacity = "0";
+pauseCenterIcon.style.opacity = "0";
 watchedBar.style.width = "0px";
 pauseButton.style.display = "none";
 minimizeButton.style.display = "none";
@@ -88,7 +90,7 @@ const displayControls = () => {
 			pauseContainer.style.opacity = "1";
 		}
 		document.body.style.cursor = "none";
-	}, 5000);
+	}, 5000000);
 };
 
 const showHideIcon = (elementNode) => {
@@ -109,6 +111,7 @@ const playPause = () => {
 		playButton.style.display = "none";
 		pauseButton.style.display = "";
 	} else {
+		showHideIcon(pauseCenterIcon);
 		video.pause();
 		playButton.style.display = "";
 		pauseButton.style.display = "none";
@@ -139,6 +142,24 @@ const toggleFullScreen = () => {
 	}
 };
 
+const convertHMS = (value) => {
+	const sec = parseInt(value, 10); // convert value to number if it's string
+	let hours = Math.floor(sec / 3600); // get hours
+	let minutes = Math.floor((sec - hours * 3600) / 60); // get minutes
+	let seconds = sec - hours * 3600 - minutes * 60; //  get seconds
+	// add 0 if value < 10; Example: 2 => 02
+	if (hours < 10) {
+		hours = "0" + hours;
+	}
+	if (minutes < 10) {
+		minutes = "0" + minutes;
+	}
+	if (seconds < 10) {
+		seconds = "0" + seconds;
+	}
+	return hours + ":" + minutes + ":" + seconds; // Return is HH : MM : SS
+};
+
 document.addEventListener("fullscreenchange", () => {
 	if (!document.fullscreenElement) {
 		maximizeButton.style.display = "";
@@ -162,6 +183,16 @@ document.addEventListener("keyup", (event) => {
 		toggleFullScreen();
 	}
 
+	if (event.code === "ArrowLeft") {
+		video.currentTime -= 10;
+		showHideIcon(backwardIcon);
+	}
+
+	if (event.code === "ArrowRight") {
+		video.currentTime += 10;
+		showHideIcon(forwardIcon);
+	}
+
 	displayControls();
 });
 
@@ -171,6 +202,7 @@ document.addEventListener("mousemove", () => {
 
 video.addEventListener("timeupdate", () => {
 	watchedBar.style.width = (video.currentTime / video.duration) * 100 + "%";
+
 	// TODO: calculate hours as well...
 	const totalSecondsRemaining = video.duration - video.currentTime;
 	// THANK YOU: BEGANOVICH
@@ -188,16 +220,62 @@ video.addEventListener("timeupdate", () => {
 	timeLeft.textContent = `${hours ? hours : "00"}:${minutes}:${seconds}`;
 });
 
-const showRangeProgress = (rangeInput) => {
+// PLAY/PAUSE
+playPauseButton.addEventListener("click", playPause);
+
+// FORWARD/REWIND by CLICK
+progressBar.addEventListener("click", (event) => {
+	const pos =
+		(event.pageX - (progressBar.offsetLeft + progressBar.offsetParent.offsetLeft)) /
+		progressBar.offsetWidth;
+	video.currentTime = pos * video.duration;
+});
+
+// VIDEO THUMBNAIL PREVIEW
+progressBar.addEventListener("mousemove", (event) => {
+	const pos =
+		(event.pageX - (progressBar.offsetLeft + progressBar.offsetParent.offsetLeft)) /
+		progressBar.offsetWidth;
+	videoThumbnail.currentTime = pos * videoThumbnail.duration;
+
+	if (pos > 0.88) {
+		videoThumbnailContainer.style.right = 0;
+		videoThumbnailContainer.style.left = "unset";
+	} else {
+		videoThumbnailContainer.style.left =
+			(videoThumbnail.currentTime / videoThumbnail.duration) * 100 + "%";
+	}
+
+	let time = convertHMS(videoThumbnail.currentTime);
+	timeThumbnail.textContent = time;
+});
+
+// FORWARD by 10ms
+fastForwardButton.addEventListener("click", () => {
+	video.currentTime += 10;
+	showHideIcon(forwardIcon);
+});
+
+// REWIND by 10ms
+rewindButton.addEventListener("click", () => {
+	video.currentTime -= 10;
+	showHideIcon(backwardIcon);
+});
+
+// FULLSCREEN TOGGLE
+fullScreenButton.addEventListener("click", toggleFullScreen);
+
+// VOLUME CONTROL
+volumeSlider.addEventListener("input", (e) => {
+	const target = e.target;
+	const targetValue = e.target.value;
+
 	audioPlayerContainer.style.setProperty(
 		"--volume-before-width",
-		(rangeInput.value / rangeInput.max) * 100 + "%"
+		(targetValue / target.max) * 100 + "%"
 	);
-};
 
-volumeSlider.addEventListener("input", (e) => {
-	const value = e.target.value;
-	const volumeValue = value / 100;
+	const volumeValue = targetValue / 100;
 
 	if (volumeValue === 0) {
 		fullVolumeButton.style.display = "none";
@@ -210,29 +288,25 @@ volumeSlider.addEventListener("input", (e) => {
 	video.volume = volumeValue;
 });
 
-progressBar.addEventListener("click", (event) => {
-	const pos =
-		(event.pageX - (progressBar.offsetLeft + progressBar.offsetParent.offsetLeft)) /
-		progressBar.offsetWidth;
-	video.currentTime = pos * video.duration;
-});
-
-playPauseButton.addEventListener("click", playPause);
-
-rewindButton.addEventListener("click", () => {
-	video.currentTime -= 10;
-	showHideIcon(backwardIcon);
-});
-
-fastForwardButton.addEventListener("click", () => {
-	video.currentTime += 10;
-	showHideIcon(forwardIcon);
-});
-
+// MUTE/UNMUTE
 volumeButton.addEventListener("click", toggleMute);
 
-fullScreenButton.addEventListener("click", toggleFullScreen);
+// PLAY/PAUSE on RANDOM CLICK
+videoContainer.addEventListener("click", function (e) {
+	const targetNode = e.target;
 
-volumeSlider.addEventListener("input", (e) => {
-	showRangeProgress(e.target);
+	if (pauseContainer.style.opacity == "1") {
+		pauseContainer.style.opacity = "0";
+		displayControls();
+		return;
+	}
+
+	if (
+		targetNode.closest(".controls") ||
+		targetNode.closest(".back-button") ||
+		targetNode.closest(".progress-controls")
+	)
+		return;
+
+	playPause();
 });
