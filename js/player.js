@@ -90,7 +90,7 @@ const displayControls = () => {
 			pauseContainer.style.opacity = "1";
 		}
 		document.body.style.cursor = "none";
-	}, 5000000);
+	}, 5000);
 };
 
 const showHideIcon = (elementNode) => {

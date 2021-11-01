@@ -53,10 +53,10 @@ const movieDetails = {
 			items: 6,
 		},
 		1000: {
-			items: 9,
+			items: 7,
 		},
 		1920: {
-			items: 9,
+			items: 7,
 		},
 	},
 };
@@ -234,7 +234,6 @@ menuBtn.addEventListener("click", () => {
 function addPopup(e) {
 	let moviePost = e.target.closest(".movie__item");
 	removePopup(e);
-	console.log("mouse enter");
 	setTimeout(() => {
 		moviePost.insertAdjacentHTML(
 			"beforeend",

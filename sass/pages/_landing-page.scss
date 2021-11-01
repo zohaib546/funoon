@@ -218,11 +218,11 @@
 		overflow: hidden;
 
 		@include media-query(big-desktop) {
-			height: 22rem;
+			height: 24rem;
 		}
 
 		@include media-query(desktop-xl) {
-			height: 28rem;
+			height: 33rem;
 		}
 
 		@include media-query(tab) {
@@ -413,8 +413,13 @@
 	transform-origin: center;
 
 	&--movie {
-		left: -4.8rem;
+		left: -1rem;
 		width: 23rem;
+
+		@include media-query(desktop-xl) {
+			left: -2rem;
+			width: 32rem;
+		}
 	}
 
 	&--movie &__figure {
