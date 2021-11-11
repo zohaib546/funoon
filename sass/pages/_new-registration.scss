@@ -159,3 +159,152 @@
         }
     }
 }
+
+.monthly-plan {
+    display: flex;
+    // background-color: $primary-color;
+    // padding: .3rem;
+    border: 3px solid #f5f5f5;
+    border-radius: .7rem;
+    overflow: hidden;
+    box-shadow: 0 10px 10px -5px rgba(0, 0, 0, 0.1);
+    &__plans {
+        position: relative;
+        padding: 2.6rem 7rem;
+        border-right: 1px solid #E3E3E3;
+        background-color: #f5f5f5;
+        overflow: hidden;
+        // border-radius: .7rem 0 0 .7rem;
+        // border-radius: 1rem 0 0 1rem;
+        .form-check {
+            position: absolute;
+            left: .7rem;
+            top: .7rem;
+        }
+    }
+    &__details {
+        flex-grow: 1;
+        font-size: 1.4rem;
+        flex-shrink: 1;
+        font-weight: lighter;
+        color: #333;
+        text-align: center;
+        background-color: #f5f5f5;
+        padding: 36px 0;
+    }
+    &__prices {
+        background-color: $primary-color;
+        padding: 1.6rem 5rem;
+        // border-radius: 0rem 1rem 1rem 0rem;
+    }
+}
+
+.page-discription {
+    padding: 2rem;
+    p {
+        color: #A3A3A3;
+        line-height: 2;
+    }
+}
+
+.month {
+    background-color: #f5f5f5;
+    border-radius: .7rem;
+}
+
+.month .active {
+    border-color: $primary-color;
+    border-radius: .7rem;
+}
+
+@media screen and (max-width: 768px) {
+    .monthly-plan {
+        flex-direction: column;
+        margin-top: 2rem;
+    }
+    .monthly-plan__details {
+        padding: 9px 0;
+    }
+    .monthly-plan__plans {
+        text-align: center;
+    }
+}
+
+.img-lock {
+    height: 4rem;
+}
+
+.credit-card {
+    display: flex;
+    align-items: center;
+    padding: 2rem 2rem;
+    border-radius: 1rem;
+    background-color: #e6dfdf;
+    position: relative;
+    @include media-query(phone) {
+        flex-direction: column;
+        // flex-basis: auto;
+    }
+    &__code {
+        color: #333;
+        font-size: 1.6rem;
+        display: flex;
+        flex-basis: 16rem;
+        flex-grow: 1;
+        position: relative;
+        @include media-query(phone) {
+            flex-basis: 5rem;
+        }
+        img {
+            height: 4rem;
+        }
+        &::after {
+            content: "";
+            width: 1px;
+            height: 4rem;
+            border-right: 1px solid #BCBCBC;
+            display: block;
+            position: absolute;
+            left: 20rem;
+            @include media-query(phone) {
+                display: none;
+            }
+        }
+    }
+    &__default {
+        flex-grow: 1;
+        @include media-query(phone) {
+            padding: 2rem 0;
+        }
+        &::after {
+            content: "";
+            width: 1px;
+            height: 4rem;
+            border-right: 1px solid #BCBCBC;
+            display: block;
+            position: absolute;
+            right: 20rem;
+            top: 2rem;
+            @include media-query(phone) {
+                display: none;
+            }
+        }
+        button {
+            color: $primary-color;
+            font-weight: 700;
+            padding: .5rem 3rem;
+            border: 2px solid $primary-color;
+            border-radius: 3rem;
+            background-color: transparent;
+            transition: all .4s;
+            &:hover {
+                background-color: $primary-color;
+                color: white;
+            }
+        }
+    }
+    &__edit {
+        flex-grow: 1;
+        text-align: end;
+    }
+}
