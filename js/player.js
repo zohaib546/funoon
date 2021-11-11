@@ -238,12 +238,18 @@ progressBar.addEventListener("mousemove", (event) => {
 		progressBar.offsetWidth;
 	videoThumbnail.currentTime = pos * videoThumbnail.duration;
 
-	if (pos > 0.88) {
+	if (pos > 0.077 && pos < 0.88) {
+		videoThumbnailContainer.style.transform = "translateX(-50%)";
+		videoThumbnailContainer.style.left =
+			(videoThumbnail.currentTime / videoThumbnail.duration) * 100 + "%";
+	} else if (pos > 0.88) {
+		videoThumbnailContainer.style.transform = "translateX(0)";
 		videoThumbnailContainer.style.right = 0;
 		videoThumbnailContainer.style.left = "unset";
 	} else {
 		videoThumbnailContainer.style.left =
 			(videoThumbnail.currentTime / videoThumbnail.duration) * 100 + "%";
+		videoThumbnailContainer.style.transform = "translateX(0)";
 	}
 
 	let time = convertHMS(videoThumbnail.currentTime);

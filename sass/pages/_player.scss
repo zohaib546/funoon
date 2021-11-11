@@ -48,6 +48,7 @@
 	// margin: 1vw;
 	margin: 0 1vw;
 	width: 4vw;
+	font-size: 18px;
 }
 
 .video-container .progress-controls .player-progress-bar {
@@ -78,8 +79,8 @@
 .video-container .progress-controls .player-progress-bar .playhead {
 	height: 3vw;
 	width: 3vw;
-	max-height: 25px;
-	max-width: 25px;
+	max-height: 22px;
+	max-width: 22px;
 	border-radius: 50%;
 	transform: translateX(-50%);
 }
