@@ -37,6 +37,21 @@
 	}
 	&__nav-list {
 		display: flex;
+
+		&--white {
+			justify-content: flex-end;
+			align-items: center;
+
+			@include media-query(phone) {
+				justify-content: center;
+			}
+			a,
+			a:hover,
+			a:active,
+			a:focus {
+				color: #717171;
+			}
+		}
 	}
 	&__nav-item {
 		border-bottom: 3px solid transparent;

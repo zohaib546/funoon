@@ -247,8 +247,7 @@ progressBar.addEventListener("mousemove", (event) => {
 		videoThumbnailContainer.style.right = 0;
 		videoThumbnailContainer.style.left = "unset";
 	} else {
-		videoThumbnailContainer.style.left =
-			(videoThumbnail.currentTime / videoThumbnail.duration) * 100 + "%";
+		videoThumbnailContainer.style.left = 0;
 		videoThumbnailContainer.style.transform = "translateX(0)";
 	}
 
