@@ -336,3 +336,9 @@
 		padding-left: 0;
 	}
 }
+
+.dropdown {
+	&--md &-menu {
+		min-width: 20rem;
+	}
+}
