@@ -138,19 +138,23 @@ const resumeDetails = {
 	],
 	responsive: {
 		0: {
-			items: 1,
+			items: 2,
 			nav: false,
 			stagePadding: 50,
 		},
 		600: {
-			items: 3,
+			items: 4,
 		},
 		1000: {
 			items: 4,
 			stagePadding: 50,
 		},
+		1300: {
+			items: 5,
+			stagePadding: 50,
+		},
 		1920: {
-			items: 6,
+			items: 7,
 		},
 	},
 };

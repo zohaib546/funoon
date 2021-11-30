@@ -347,7 +347,7 @@
 
 	&__item:hover .item-controls {
 		display: flex;
-		animation: fadeIn 0.3s ease-out forwards;
+		animation: fadeInResume 0.3s ease-out forwards;
 
 		@include media-query(tab) {
 			display: none;
@@ -355,7 +355,8 @@
 	}
 
 	&__figure {
-		height: 16rem;
+		// height: 16rem;
+		height: 22rem;
 		border-top-left-radius: 5px;
 		border-top-right-radius: 5px;
 		overflow: hidden;
@@ -369,7 +370,7 @@
 
 	&__loaded-history {
 		@include flex(space-between, center);
-		padding: 2rem 1.5rem;
+		padding: 1.5rem;
 		border-bottom-left-radius: 5px;
 		border-bottom-right-radius: 5px;
 		background-color: #1e2429;
@@ -433,8 +434,10 @@
 	}
 
 	&--resume {
-		left: 0;
-		width: 100%;
+		// left: 0;
+		// width: 100%;
+		left: -15%;
+		width: 130%;
 	}
 
 	&--resume &__figure {
