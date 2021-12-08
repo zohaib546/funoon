@@ -67,6 +67,12 @@
 	}
 }
 
+@mixin arabicRTL {
+	body.rtl {
+		@content;
+	}
+}
+
 @mixin multiLineClamp($lines) {
 	display: -webkit-box;
 	-webkit-line-clamp: $lines;

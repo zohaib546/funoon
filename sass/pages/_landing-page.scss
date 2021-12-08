@@ -356,11 +356,15 @@
 
 	&__figure {
 		// height: 16rem;
-		height: 22rem;
+		height: 25rem;
 		border-top-left-radius: 5px;
 		border-top-right-radius: 5px;
 		overflow: hidden;
 		box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+
+		@include media-query(phone) {
+			height: 20rem;
+		}
 	}
 
 	&__cover {
@@ -436,8 +440,8 @@
 	&--resume {
 		// left: 0;
 		// width: 100%;
-		left: -15%;
-		width: 130%;
+		left: -40%;
+		width: 180%;
 	}
 
 	&--resume &__figure {

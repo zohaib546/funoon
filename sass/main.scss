@@ -55,6 +55,7 @@ sass 7–1 pattern/
 @import "base/typography";
 @import "base/utilities";
 @import "base/animations";
+@import "base/fonts";
 // Layout
 @import "layout/navigation";
 @import "layout/grid";
@@ -83,6 +84,7 @@ sass 7–1 pattern/
 // Themes
 @import "themes/theme";
 @import "themes/admin";
+@import "themes/rtl";
 
 /*
 
