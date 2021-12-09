@@ -229,3 +229,21 @@
 		}
 	}
 }
+
+@include arabicRTL {
+	.header-nav__item {
+		@include notLastChild {
+			margin-right: 0;
+			margin-left: 4rem;
+		}
+
+		@include selectLastChild {
+			margin-right: 0;
+			margin-left: 2rem;
+		}
+	}
+
+	.header-sidenav__sidelist {
+		transform: translateX(100%);
+	}
+}

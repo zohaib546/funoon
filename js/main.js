@@ -10,7 +10,7 @@ const movieContainer = document.querySelectorAll(".movie-popup__movies");
 const movieShowMore = document.querySelectorAll(".movie-popup__show");
 
 const videoDetails = {
-	element: ".video-carousel",
+	element: ".video-carousel-en",
 	loop: false,
 	margin: 0,
 	nav: false,
@@ -32,8 +32,32 @@ const videoDetails = {
 	},
 };
 
+const videoDetailsRTL = {
+	element: ".video-carousel-ar",
+	loop: false,
+	margin: 0,
+	nav: false,
+	mouseDrag: false,
+	stagePadding: 0,
+	dots: true,
+	navText: [`&#x27;next&#x27;,&#x27;prev&#x27;`], // default navText
+	animateOut: "fadeOut",
+	rtl: true,
+	responsive: {
+		0: {
+			items: 1,
+		},
+		600: {
+			items: 1,
+		},
+		1000: {
+			items: 1,
+		},
+	},
+};
+
 const movieDetails = {
-	element: ".movie-carousel",
+	element: ".movie-carousel-en",
 	loop: true,
 	margin: 5,
 	nav: true,
@@ -61,8 +85,38 @@ const movieDetails = {
 	},
 };
 
+const movieDetailsRTL = {
+	element: ".movie-carousel-ar",
+	loop: true,
+	margin: 5,
+	nav: true,
+	mouseDrag: false,
+	stagePadding: 50,
+	dots: false,
+	navText: [
+		"<span class='carousel-nav-left'><i class='fa fa-chevron-left'></i></span>",
+		"<span class='carousel-nav-right'><i class='fa fa-chevron-right'></i></span>",
+	],
+	rtl: true,
+	responsive: {
+		0: {
+			items: 3,
+			nav: false,
+		},
+		600: {
+			items: 6,
+		},
+		1000: {
+			items: 7,
+		},
+		1920: {
+			items: 7,
+		},
+	},
+};
+
 const exclusiveDetails = {
-	element: ".exclusive-carousel",
+	element: ".exclusive-carousel-en",
 	loop: true,
 	margin: 5,
 	nav: true,
@@ -90,8 +144,38 @@ const exclusiveDetails = {
 	},
 };
 
+const exclusiveDetailsRTL = {
+	element: ".exclusive-carousel-ar",
+	loop: true,
+	margin: 5,
+	nav: true,
+	mouseDrag: false,
+	dots: false,
+	navText: [
+		"<span class='carousel-nav-left'><i class='fa fa-chevron-left'></i></span>",
+		"<span class='carousel-nav-right'><i class='fa fa-chevron-right'></i></span>",
+	],
+	rtl: true,
+	responsive: {
+		0: {
+			items: 2,
+			nav: false,
+			stagePadding: 50,
+		},
+		600: {
+			items: 5,
+		},
+		1000: {
+			items: 6,
+		},
+		1920: {
+			items: 6,
+		},
+	},
+};
+
 const topDetails = {
-	element: ".top-carousel",
+	element: ".top-carousel-en",
 	loop: true,
 	margin: 10,
 	nav: true,
@@ -124,8 +208,43 @@ const topDetails = {
 	},
 };
 
+const topDetailsRTL = {
+	element: ".top-carousel-ar",
+	loop: true,
+	margin: 10,
+	nav: true,
+	mouseDrag: false,
+	stagePadding: 80,
+	dots: false,
+	navText: [
+		"<span class='carousel-nav-left'><i class='fa fa-chevron-left'></i></span>",
+		"<span class='carousel-nav-right'><i class='fa fa-chevron-right'></i></span>",
+	],
+	rtl: true,
+	responsive: {
+		0: {
+			items: 2,
+			nav: false,
+			stagePadding: 30,
+		},
+		600: {
+			items: 3,
+		},
+		1000: {
+			items: 4,
+			stagePadding: 50,
+		},
+		1920: {
+			items: 6,
+		},
+		2000: {
+			items: 8,
+		},
+	},
+};
+
 const resumeDetails = {
-	element: ".resume-carousel",
+	element: ".resume-carousel-en",
 	loop: true,
 	margin: 5,
 	nav: true,
@@ -136,6 +255,42 @@ const resumeDetails = {
 		"<span class='carousel-nav-left'><i class='fa fa-chevron-left'></i></span>",
 		"<span class='carousel-nav-right'><i class='fa fa-chevron-right'></i></span>",
 	],
+	responsive: {
+		0: {
+			items: 2,
+			nav: false,
+			stagePadding: 50,
+		},
+		600: {
+			items: 4,
+		},
+		1000: {
+			items: 4,
+			stagePadding: 50,
+		},
+		1300: {
+			items: 5,
+			stagePadding: 50,
+		},
+		1920: {
+			items: 7,
+		},
+	},
+};
+
+const resumeDetailsRTL = {
+	element: ".resume-carousel-ar",
+	loop: true,
+	margin: 5,
+	nav: true,
+	mouseDrag: false,
+	stagePadding: 0,
+	dots: false,
+	navText: [
+		"<span class='carousel-nav-left'><i class='fa fa-chevron-left'></i></span>",
+		"<span class='carousel-nav-right'><i class='fa fa-chevron-right'></i></span>",
+	],
+	rtl: true,
 	responsive: {
 		0: {
 			items: 2,
@@ -170,14 +325,20 @@ function slider(details) {
 		navText: details.navText,
 		animateOut: details.animateOut || false,
 		responsive: details.responsive,
+		rtl: details.rtl || false,
 	});
 }
 
 slider({ ...videoDetails });
+slider({ ...videoDetailsRTL });
 slider({ ...movieDetails });
+slider({ ...movieDetailsRTL });
 slider({ ...exclusiveDetails });
+slider({ ...exclusiveDetailsRTL });
 slider({ ...topDetails });
+slider({ ...topDetailsRTL });
 slider({ ...resumeDetails });
+slider({ ...resumeDetailsRTL });
 
 // MUTE AND UNMUTE:
 // hide all mute buttons on load
@@ -196,7 +357,7 @@ setTimeout(() => {
 }, 2000);
 
 let video = $(".video-carousel");
-video.owlCarousel();
+// video.owlCarousel();
 
 // Listen to owl events:
 video.on("changed.owl.carousel", function (event) {

@@ -99,6 +99,15 @@
 	}
 }
 
+@include arabicRTL {
+	.header {
+		.dropdown-menu[data-bs-popper] {
+			left: unset;
+			right: -11rem;
+		}
+	}
+}
+
 .footer--white {
 	.list-inline-item {
 		&:not(:last-child) {

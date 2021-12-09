@@ -1,8 +1,8 @@
 .video {
-	&__carousel {
+	&__carousel,
+	&__carousel-rtl {
 		position: relative;
 	}
-
 	.owl-item.active &__cover &__title-cover {
 		animation: fadeOut 1s linear 2s forwards;
 	}
