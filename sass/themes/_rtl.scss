@@ -1,4 +1,51 @@
 @include arabicRTL {
-	font-family: $almarai-regular;
-	font-weight: 400;
+    font-family: $almarai-regular;
+    font-weight: 400;
+}
+
+@include arabicRTL {
+    .footer {
+        &__social li:not(:last-child) {
+            margin-right: 0rem;
+            margin-left: 2rem;
+        }
+    }
+    .get-started__graphic {
+        left: unset;
+        right: -50%;
+    }
+}
+
+@include arabicRTL {
+    .circle {
+        .footer {
+            &__social li:not(:last-child) {
+                margin-right: 0rem;
+                margin-left: 2rem;
+            }
+        }
+        .description {
+            &__icon {
+                margin-left: 1.5rem;
+            }
+        }
+    }
+}
+
+@include arabicRTL {
+    .invoice__billing {
+        .border-gray-right {
+            border-right: none;
+            border-left: 2px solid #e0e0e0;
+        }
+    }
+}
+
+@include arabicRTL {
+    .about {
+        &__graphic {
+            right: -5%;
+            left: unset;
+        }
+    }
 }
