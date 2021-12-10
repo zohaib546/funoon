@@ -10,399 +10,402 @@ const movieContainer = document.querySelectorAll(".movie-popup__movies");
 const movieShowMore = document.querySelectorAll(".movie-popup__show");
 
 const videoDetails = {
-    element: ".video-carousel-en",
-    loop: false,
-    margin: 0,
-    nav: false,
-    mouseDrag: false,
-    stagePadding: 0,
-    dots: true,
-    navText: [`&#x27;next&#x27;,&#x27;prev&#x27;`], // default navText
-    animateOut: "fadeOut",
-    responsive: {
-        0: {
-            items: 1,
-        },
-        600: {
-            items: 1,
-        },
-        1000: {
-            items: 1,
-        },
-    },
+	element: ".video-carousel-en",
+	loop: false,
+	margin: 0,
+	nav: false,
+	mouseDrag: false,
+	stagePadding: 0,
+	dots: true,
+	navText: [`&#x27;next&#x27;,&#x27;prev&#x27;`], // default navText
+	animateOut: "fadeOut",
+	responsive: {
+		0: {
+			items: 1,
+		},
+		600: {
+			items: 1,
+		},
+		1000: {
+			items: 1,
+		},
+	},
 };
 
 const videoDetailsRTL = {
-    element: ".video-carousel-ar",
-    loop: false,
-    margin: 0,
-    nav: false,
-    mouseDrag: false,
-    stagePadding: 0,
-    dots: true,
-    navText: [`&#x27;next&#x27;,&#x27;prev&#x27;`], // default navText
-    animateOut: "fadeOut",
-    rtl: true,
-    responsive: {
-        0: {
-            items: 1,
-        },
-        600: {
-            items: 1,
-        },
-        1000: {
-            items: 1,
-        },
-    },
+	element: ".video-carousel-ar",
+	loop: false,
+	margin: 0,
+	nav: false,
+	mouseDrag: false,
+	stagePadding: 0,
+	dots: true,
+	navText: [`&#x27;next&#x27;,&#x27;prev&#x27;`], // default navText
+	animateOut: "fadeOut",
+	rtl: true,
+	responsive: {
+		0: {
+			items: 1,
+		},
+		600: {
+			items: 1,
+		},
+		1000: {
+			items: 1,
+		},
+	},
 };
 
 const movieDetails = {
-    element: ".movie-carousel-en",
-    loop: true,
-    margin: 5,
-    nav: true,
-    mouseDrag: false,
-    stagePadding: 50,
-    dots: false,
-    navText: [
-        "<span class='carousel-nav-left'><i class='fa fa-chevron-left'></i></span>",
-        "<span class='carousel-nav-right'><i class='fa fa-chevron-right'></i></span>",
-    ],
-    responsive: {
-        0: {
-            items: 3,
-            nav: false,
-        },
-        600: {
-            items: 6,
-        },
-        1000: {
-            items: 7,
-        },
-        1920: {
-            items: 7,
-        },
-    },
+	element: ".movie-carousel-en",
+	loop: true,
+	margin: 5,
+	nav: true,
+	mouseDrag: false,
+	stagePadding: 50,
+	dots: false,
+	navText: [
+		"<span class='carousel-nav-left'><i class='fa fa-chevron-left'></i></span>",
+		"<span class='carousel-nav-right'><i class='fa fa-chevron-right'></i></span>",
+	],
+	responsive: {
+		0: {
+			items: 3,
+			nav: false,
+		},
+		600: {
+			items: 6,
+		},
+		1000: {
+			items: 7,
+		},
+		1920: {
+			items: 7,
+		},
+	},
 };
 
 const movieDetailsRTL = {
-    element: ".movie-carousel-ar",
-    loop: true,
-    margin: 5,
-    nav: true,
-    mouseDrag: false,
-    stagePadding: 50,
-    dots: false,
-    navText: [
-        "<span class='carousel-nav-left'><i class='fa fa-chevron-left'></i></span>",
-        "<span class='carousel-nav-right'><i class='fa fa-chevron-right'></i></span>",
-    ],
-    rtl: true,
-    responsive: {
-        0: {
-            items: 3,
-            nav: false,
-        },
-        600: {
-            items: 6,
-        },
-        1000: {
-            items: 7,
-        },
-        1920: {
-            items: 7,
-        },
-    },
+	element: ".movie-carousel-ar",
+	loop: true,
+	margin: 5,
+	nav: true,
+	mouseDrag: false,
+	stagePadding: 50,
+	dots: false,
+	navText: [
+		"<span class='carousel-nav-left'><i class='fa fa-chevron-left'></i></span>",
+		"<span class='carousel-nav-right'><i class='fa fa-chevron-right'></i></span>",
+	],
+	rtl: true,
+	responsive: {
+		0: {
+			items: 3,
+			nav: false,
+		},
+		600: {
+			items: 6,
+		},
+		1000: {
+			items: 7,
+		},
+		1920: {
+			items: 7,
+		},
+	},
 };
 
 const exclusiveDetails = {
-    element: ".exclusive-carousel-en",
-    loop: true,
-    margin: 5,
-    nav: true,
-    mouseDrag: false,
-    dots: false,
-    navText: [
-        "<span class='carousel-nav-left'><i class='fa fa-chevron-left'></i></span>",
-        "<span class='carousel-nav-right'><i class='fa fa-chevron-right'></i></span>",
-    ],
-    responsive: {
-        0: {
-            items: 2,
-            nav: false,
-            stagePadding: 50,
-        },
-        600: {
-            items: 5,
-        },
-        1000: {
-            items: 6,
-        },
-        1920: {
-            items: 6,
-        },
-    },
+	element: ".exclusive-carousel-en",
+	loop: true,
+	margin: 5,
+	nav: true,
+	mouseDrag: false,
+	dots: false,
+	navText: [
+		"<span class='carousel-nav-left'><i class='fa fa-chevron-left'></i></span>",
+		"<span class='carousel-nav-right'><i class='fa fa-chevron-right'></i></span>",
+	],
+	responsive: {
+		0: {
+			items: 2,
+			nav: false,
+			stagePadding: 50,
+		},
+		600: {
+			items: 5,
+		},
+		1000: {
+			items: 6,
+		},
+		1920: {
+			items: 6,
+		},
+	},
 };
 
 const exclusiveDetailsRTL = {
-    element: ".exclusive-carousel-ar",
-    loop: true,
-    margin: 5,
-    nav: true,
-    mouseDrag: false,
-    dots: false,
-    navText: [
-        "<span class='carousel-nav-left'><i class='fa fa-chevron-left'></i></span>",
-        "<span class='carousel-nav-right'><i class='fa fa-chevron-right'></i></span>",
-    ],
-    rtl: true,
-    responsive: {
-        0: {
-            items: 2,
-            nav: false,
-            stagePadding: 50,
-        },
-        600: {
-            items: 5,
-        },
-        1000: {
-            items: 6,
-        },
-        1920: {
-            items: 6,
-        },
-    },
+	element: ".exclusive-carousel-ar",
+	loop: true,
+	margin: 5,
+	nav: true,
+	mouseDrag: false,
+	dots: false,
+	navText: [
+		"<span class='carousel-nav-left'><i class='fa fa-chevron-left'></i></span>",
+		"<span class='carousel-nav-right'><i class='fa fa-chevron-right'></i></span>",
+	],
+	rtl: true,
+	responsive: {
+		0: {
+			items: 2,
+			nav: false,
+			stagePadding: 50,
+		},
+		600: {
+			items: 5,
+		},
+		1000: {
+			items: 6,
+		},
+		1920: {
+			items: 6,
+		},
+	},
 };
 
 const topDetails = {
-    element: ".top-carousel-en",
-    loop: true,
-    margin: 10,
-    nav: true,
-    mouseDrag: false,
-    stagePadding: 80,
-    dots: false,
-    navText: [
-        "<span class='carousel-nav-left'><i class='fa fa-chevron-left'></i></span>",
-        "<span class='carousel-nav-right'><i class='fa fa-chevron-right'></i></span>",
-    ],
-    responsive: {
-        0: {
-            items: 2,
-            nav: false,
-            stagePadding: 30,
-        },
-        600: {
-            items: 3,
-        },
-        1000: {
-            items: 4,
-            stagePadding: 50,
-        },
-        1920: {
-            items: 6,
-        },
-        2000: {
-            items: 8,
-        },
-    },
+	element: ".top-carousel-en",
+	loop: true,
+	margin: 10,
+	nav: true,
+	mouseDrag: false,
+	stagePadding: 80,
+	dots: false,
+	navText: [
+		"<span class='carousel-nav-left'><i class='fa fa-chevron-left'></i></span>",
+		"<span class='carousel-nav-right'><i class='fa fa-chevron-right'></i></span>",
+	],
+	responsive: {
+		0: {
+			items: 2,
+			nav: false,
+			stagePadding: 30,
+		},
+		600: {
+			items: 3,
+		},
+		1000: {
+			items: 4,
+			stagePadding: 50,
+		},
+		1920: {
+			items: 6,
+		},
+		2000: {
+			items: 8,
+		},
+	},
 };
 
 const topDetailsRTL = {
-    element: ".top-carousel-ar",
-    loop: true,
-    margin: 10,
-    nav: true,
-    mouseDrag: false,
-    stagePadding: 80,
-    dots: false,
-    navText: [
-        "<span class='carousel-nav-left'><i class='fa fa-chevron-left'></i></span>",
-        "<span class='carousel-nav-right'><i class='fa fa-chevron-right'></i></span>",
-    ],
-    rtl: true,
-    responsive: {
-        0: {
-            items: 2,
-            nav: false,
-            stagePadding: 30,
-        },
-        600: {
-            items: 3,
-        },
-        1000: {
-            items: 4,
-            stagePadding: 50,
-        },
-        1920: {
-            items: 6,
-        },
-        2000: {
-            items: 8,
-        },
-    },
+	element: ".top-carousel-ar",
+	loop: true,
+	margin: 10,
+	nav: true,
+	mouseDrag: false,
+	stagePadding: 80,
+	dots: false,
+	navText: [
+		"<span class='carousel-nav-left'><i class='fa fa-chevron-left'></i></span>",
+		"<span class='carousel-nav-right'><i class='fa fa-chevron-right'></i></span>",
+	],
+	rtl: true,
+	responsive: {
+		0: {
+			items: 2,
+			nav: false,
+			stagePadding: 30,
+		},
+		600: {
+			items: 3,
+		},
+		1000: {
+			items: 4,
+			stagePadding: 50,
+		},
+		1920: {
+			items: 6,
+		},
+		2000: {
+			items: 8,
+		},
+	},
 };
 
 const resumeDetails = {
-    element: ".resume-carousel-en",
-    loop: true,
-    margin: 5,
-    nav: true,
-    mouseDrag: false,
-    stagePadding: 0,
-    dots: false,
-    navText: [
-        "<span class='carousel-nav-left'><i class='fa fa-chevron-left'></i></span>",
-        "<span class='carousel-nav-right'><i class='fa fa-chevron-right'></i></span>",
-    ],
-    responsive: {
-        0: {
-            items: 2,
-            nav: false,
-            stagePadding: 50,
-        },
-        600: {
-            items: 4,
-        },
-        1000: {
-            items: 4,
-            stagePadding: 50,
-        },
-        1300: {
-            items: 5,
-            stagePadding: 50,
-        },
-        1920: {
-            items: 7,
-        },
-    },
+	element: ".resume-carousel-en",
+	loop: true,
+	margin: 5,
+	nav: true,
+	mouseDrag: false,
+	stagePadding: 0,
+	dots: false,
+	navText: [
+		"<span class='carousel-nav-left'><i class='fa fa-chevron-left'></i></span>",
+		"<span class='carousel-nav-right'><i class='fa fa-chevron-right'></i></span>",
+	],
+	responsive: {
+		0: {
+			items: 2,
+			nav: false,
+			stagePadding: 50,
+		},
+		600: {
+			items: 4,
+		},
+		1000: {
+			items: 4,
+			stagePadding: 50,
+		},
+		1300: {
+			items: 5,
+			stagePadding: 50,
+		},
+		1920: {
+			items: 7,
+		},
+		2000: {
+			items: 8,
+		},
+	},
 };
 
 const resumeDetailsRTL = {
-    element: ".resume-carousel-ar",
-    loop: true,
-    margin: 5,
-    nav: true,
-    mouseDrag: false,
-    stagePadding: 0,
-    dots: false,
-    navText: [
-        "<span class='carousel-nav-left'><i class='fa fa-chevron-left'></i></span>",
-        "<span class='carousel-nav-right'><i class='fa fa-chevron-right'></i></span>",
-    ],
-    rtl: true,
-    responsive: {
-        0: {
-            items: 2,
-            nav: false,
-            stagePadding: 50,
-        },
-        600: {
-            items: 4,
-        },
-        1000: {
-            items: 4,
-            stagePadding: 50,
-        },
-        1300: {
-            items: 5,
-            stagePadding: 50,
-        },
-        1920: {
-            items: 7,
-        },
-    },
+	element: ".resume-carousel-ar",
+	loop: true,
+	margin: 5,
+	nav: true,
+	mouseDrag: false,
+	stagePadding: 0,
+	dots: false,
+	navText: [
+		"<span class='carousel-nav-left'><i class='fa fa-chevron-left'></i></span>",
+		"<span class='carousel-nav-right'><i class='fa fa-chevron-right'></i></span>",
+	],
+	rtl: true,
+	responsive: {
+		0: {
+			items: 2,
+			nav: false,
+			stagePadding: 50,
+		},
+		600: {
+			items: 4,
+		},
+		1000: {
+			items: 4,
+			stagePadding: 50,
+		},
+		1300: {
+			items: 5,
+			stagePadding: 50,
+		},
+		1920: {
+			items: 7,
+		},
+	},
 };
 
 function slider(details) {
-    $(details.element).owlCarousel({
-        loop: details.loop,
-        margin: details.margin,
-        nav: details.nav,
-        mouseDrag: details.mouseDrag,
-        stagePadding: details.stagePadding,
-        dots: details.dots,
-        navText: details.navText,
-        animateOut: details.animateOut || false,
-        responsive: details.responsive,
-        rtl: details.rtl || false,
-    });
+	$(details.element).owlCarousel({
+		loop: details.loop,
+		margin: details.margin,
+		nav: details.nav,
+		mouseDrag: details.mouseDrag,
+		stagePadding: details.stagePadding,
+		dots: details.dots,
+		navText: details.navText,
+		animateOut: details.animateOut || false,
+		responsive: details.responsive,
+		rtl: details.rtl || false,
+	});
 }
 
-slider({...videoDetails });
-slider({...videoDetailsRTL });
-slider({...movieDetails });
-slider({...movieDetailsRTL });
-slider({...exclusiveDetails });
-slider({...exclusiveDetailsRTL });
-slider({...topDetails });
-slider({...topDetailsRTL });
-slider({...resumeDetails });
-slider({...resumeDetailsRTL });
+slider({ ...videoDetails });
+slider({ ...videoDetailsRTL });
+slider({ ...movieDetails });
+slider({ ...movieDetailsRTL });
+slider({ ...exclusiveDetails });
+slider({ ...exclusiveDetailsRTL });
+slider({ ...topDetails });
+slider({ ...topDetailsRTL });
+slider({ ...resumeDetails });
+slider({ ...resumeDetailsRTL });
 
 // MUTE AND UNMUTE:
 // hide all mute buttons on load
 unmute.forEach((el) => {
-    el.style.display = "none";
+	el.style.display = "none";
 });
 
 // mute all videos except first after image animation delay '2s'
 videos.forEach((el) => {
-    el.muted = true;
-    el.pause();
+	el.muted = true;
+	el.pause();
 });
 setTimeout(() => {
-    videos[0].muted = true;
-    videos[0].play();
+	videos[0].muted = true;
+	videos[0].play();
 }, 2000);
 
 let video = $(".video-carousel");
 // video.owlCarousel();
 
 // Listen to owl events:
-video.on("changed.owl.carousel", function(event) {
-    unmute.forEach((el) => {
-        el.style.display = "none";
-    });
-    mute.forEach((el) => {
-        el.style.display = "";
-    });
+video.on("changed.owl.carousel", function (event) {
+	unmute.forEach((el) => {
+		el.style.display = "none";
+	});
+	mute.forEach((el) => {
+		el.style.display = "";
+	});
 
-    videos.forEach((el) => {
-        el.muted = true;
-        el.play();
-    });
+	videos.forEach((el) => {
+		el.muted = true;
+		el.play();
+	});
 });
 
 unmute.forEach((el, ind) =>
-    el.addEventListener("click", (e) => {
-        mute[ind].style.display = "";
-        el.style.display = "none";
-        videos[ind].muted = true;
-    })
+	el.addEventListener("click", (e) => {
+		mute[ind].style.display = "";
+		el.style.display = "none";
+		videos[ind].muted = true;
+	})
 );
 
 mute.forEach((el, ind) => {
-    el.addEventListener("click", (e) => {
-        unmute[ind].style.display = "";
-        el.style.display = "none";
-        videos[ind].muted = false;
-    });
+	el.addEventListener("click", (e) => {
+		unmute[ind].style.display = "";
+		el.style.display = "none";
+		videos[ind].muted = false;
+	});
 });
 
 // SHOW AND HIDE SIDENAV:
 menuBtn.addEventListener("click", () => {
-    sidebar.classList.toggle("show");
+	sidebar.classList.toggle("show");
 });
 
 // ADD POPUP ON POST HOVER:
 function addPopup(e) {
-    let moviePost = e.target.closest(".movie__item");
-    removePopup(e);
-    setTimeout(() => {
-        moviePost.insertAdjacentHTML(
-            "beforeend",
-            `<div class="item-controls item-controls--movie">
+	let moviePost = e.target.closest(".movie__item");
+	removePopup(e);
+	setTimeout(() => {
+		moviePost.insertAdjacentHTML(
+			"beforeend",
+			`<div class="item-controls item-controls--movie">
 					<figure class="item-controls__figure">
 						<img
 							class="item-controls__thumbnail"
@@ -486,39 +489,39 @@ function addPopup(e) {
 					</div>
 				</div>
 			`
-        );
-    }, 500);
+		);
+	}, 500);
 }
 
 function removePopup(e) {
-    setTimeout(() => {
-        let moviePost = e.target.closest(".movie__item");
-        let popup = moviePost.lastElementChild;
+	setTimeout(() => {
+		let moviePost = e.target.closest(".movie__item");
+		let popup = moviePost.lastElementChild;
 
-        if (popup.classList.contains("item-controls--movie")) {
-            moviePost.removeChild(popup);
-        }
-    }, 500);
+		if (popup.classList.contains("item-controls--movie")) {
+			moviePost.removeChild(popup);
+		}
+	}, 500);
 }
 
 // add popup on mouse enter
 movies.forEach((movie) =>
-    movie.addEventListener("mouseenter", (e) => {
-        addPopup(e);
-    })
+	movie.addEventListener("mouseenter", (e) => {
+		addPopup(e);
+	})
 );
 
 // remove popup on mouse leave
 movies.forEach((movie) =>
-    movie.addEventListener("mouseleave", (e) => {
-        removePopup(e);
-    })
+	movie.addEventListener("mouseleave", (e) => {
+		removePopup(e);
+	})
 );
 
 // event listeners
 movieShowMore.forEach((shwMre) =>
-    shwMre.addEventListener("click", (e) => {
-        shwMre.classList.toggle("rotate");
-        movieContainer.forEach((cont) => cont.classList.toggle("show-less"));
-    })
+	shwMre.addEventListener("click", (e) => {
+		shwMre.classList.toggle("rotate");
+		movieContainer.forEach((cont) => cont.classList.toggle("show-less"));
+	})
 );

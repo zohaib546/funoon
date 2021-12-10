@@ -13,6 +13,8 @@
 
 .navbar-dark .navbar-nav .nav-link {
 	color: $white-color;
+	font-size: 1.4rem;
+	font-weight: bold;
 }
 
 .nav-item {
@@ -71,6 +73,10 @@
 		.active {
 			color: $primary-color;
 		}
+	}
+	.navbar-link {
+		font-size: 1.4rem;
+		font-weight: bold;
 	}
 	&__dropdown-profile {
 		padding: 1.6rem 1rem;

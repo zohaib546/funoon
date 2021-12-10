@@ -293,10 +293,10 @@
 			content: "";
 			position: absolute;
 			right: 0;
-			top: -4px;
+			top: -5px;
 			width: 5rem;
 			height: 8rem;
-			background: url(../img/landing-page/exclusive/flag-new.png) no-repeat;
+			background: url(../img/landing-page/exclusive/flag.png) no-repeat;
 			background-size: contain;
 			transition: all 0.2s ease-out;
 		}
@@ -400,15 +400,14 @@
 	}
 
 	&__figure {
-		// height: 16rem;
-		height: 25rem;
+		height: 30rem;
 		border-top-left-radius: 5px;
 		border-top-right-radius: 5px;
 		overflow: hidden;
 		box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
 
 		@include media-query(phone) {
-			height: 20rem;
+			height: 25rem;
 		}
 	}
 
