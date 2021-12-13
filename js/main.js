@@ -1,4 +1,4 @@
-// dom elements
+// DOM ELEMENTS
 const mute = document.querySelectorAll(".btn-mute");
 const unmute = document.querySelectorAll(".btn-unmute");
 const videos = document.querySelectorAll(".video__figure");
@@ -8,6 +8,11 @@ const menuList = document.querySelector(".header-nav__sidelist");
 const movies = document.querySelectorAll(".movie__item");
 const movieContainer = document.querySelectorAll(".movie-popup__movies");
 const movieShowMore = document.querySelectorAll(".movie-popup__show");
+
+// GLOBAL DATA
+let prevSlideIndex = 0;
+const mainCarousel = ".video-carousel";
+const activeSlideClasses = ".video .owl-item.active .video__figure";
 
 const videoDetails = {
 	element: ".video-carousel-en",
@@ -317,20 +322,22 @@ const resumeDetailsRTL = {
 	},
 };
 
-function slider(details) {
-	$(details.element).owlCarousel({
-		loop: details.loop,
-		margin: details.margin,
-		nav: details.nav,
-		mouseDrag: details.mouseDrag,
-		stagePadding: details.stagePadding,
-		dots: details.dots,
-		navText: details.navText,
-		animateOut: details.animateOut || false,
-		responsive: details.responsive,
-		rtl: details.rtl || false,
-	});
-}
+// HIDE ALL MUTE BUTTONS 'onLoad'
+unmute.forEach((el) => {
+	el.style.display = "none";
+});
+
+// MUTE & PAUSE ALL VIDEOS 'onLoad'
+videos.forEach((el) => {
+	el.muted = true;
+	el.pause();
+});
+
+// PLAY FIRST VIDEO AFTER 'cover-animation' DELAY 2S 'onLoad'
+setTimeout(() => {
+	videos[0].muted = true;
+	videos[0].play();
+}, 2000);
 
 slider({ ...videoDetails });
 slider({ ...videoDetailsRTL });
@@ -343,53 +350,43 @@ slider({ ...topDetailsRTL });
 slider({ ...resumeDetails });
 slider({ ...resumeDetailsRTL });
 
-// MUTE AND UNMUTE:
-// hide all mute buttons on load
-unmute.forEach((el) => {
-	el.style.display = "none";
+// CALLS WHEN SLIDE CHANGES
+$(mainCarousel).on("changed.owl.carousel", function (event) {
+	const currentSlideIndex = event.item.index;
+
+	if (videos[prevSlideIndex].muted === true) {
+		resetPrevSlide();
+		handleCurrentSlide(currentSlideIndex, true, "", "none");
+	} else {
+		resetPrevSlide();
+		handleCurrentSlide(currentSlideIndex, false, "none", "");
+	}
+
+	prevSlideIndex = currentSlideIndex;
 });
 
-// mute all videos except first after image animation delay '2s'
-videos.forEach((el) => {
-	el.muted = true;
-	el.pause();
-});
-setTimeout(() => {
-	videos[0].muted = true;
-	videos[0].play();
-}, 2000);
-
-let video = $(".video-carousel");
-// video.owlCarousel();
-
-// Listen to owl events:
-video.on("changed.owl.carousel", function (event) {
-	unmute.forEach((el) => {
-		el.style.display = "none";
-	});
-	mute.forEach((el) => {
-		el.style.display = "";
-	});
-
-	videos.forEach((el) => {
-		el.muted = true;
-		el.play();
-	});
+// PAUSE SLIDE ON SCROLL
+window.addEventListener("scroll", () => {
+	if (document.documentElement.scrollTop > 300) {
+		if (document.querySelector(activeSlideClasses).paused === false) {
+			document.querySelector(activeSlideClasses).pause();
+		}
+	} else {
+		document.querySelector(activeSlideClasses).play();
+	}
 });
 
-unmute.forEach((el, ind) =>
-	el.addEventListener("click", (e) => {
-		mute[ind].style.display = "";
-		el.style.display = "none";
-		videos[ind].muted = true;
+// UNMUTE: WHEN USER CLICKS UNMUTE BUTTON
+unmute.forEach((element, index) =>
+	element.addEventListener("click", (e) => {
+		handleMuteAndUnmute("mute", element, index, "", "none", true);
 	})
 );
 
-mute.forEach((el, ind) => {
-	el.addEventListener("click", (e) => {
-		unmute[ind].style.display = "";
-		el.style.display = "none";
-		videos[ind].muted = false;
+// MUTE: WHEN USER CLICKS MUTE BUTTON
+mute.forEach((element, index) => {
+	element.addEventListener("click", (e) => {
+		handleMuteAndUnmute("unmute", element, index, "", "none", false);
 	});
 });
 
@@ -398,7 +395,28 @@ menuBtn.addEventListener("click", () => {
 	sidebar.classList.toggle("show");
 });
 
-// ADD POPUP ON POST HOVER:
+// ADD POPUP ON MOUSE ENTER
+movies.forEach((movie) =>
+	movie.addEventListener("mouseenter", (e) => {
+		addPopup(e);
+	})
+);
+
+// REMOVE 'POPUP' ON MOUSE LEAVE
+movies.forEach((movie) =>
+	movie.addEventListener("mouseleave", (e) => {
+		removePopup(e);
+	})
+);
+
+// SHOW MORE
+movieShowMore.forEach((shwMre) =>
+	shwMre.addEventListener("click", (e) => {
+		shwMre.classList.toggle("rotate");
+		movieContainer.forEach((cont) => cont.classList.toggle("show-less"));
+	})
+);
+
 function addPopup(e) {
 	let moviePost = e.target.closest(".movie__item");
 	removePopup(e);
@@ -504,24 +522,39 @@ function removePopup(e) {
 	}, 500);
 }
 
-// add popup on mouse enter
-movies.forEach((movie) =>
-	movie.addEventListener("mouseenter", (e) => {
-		addPopup(e);
-	})
-);
+function handleMuteAndUnmute(btnType, element, index, btnStyle, elementStyle, isMuted) {
+	btnType === "mute"
+		? (mute[index].style.display = btnStyle)
+		: (unmute[index].style.display = btnStyle);
+	element.style.display = elementStyle;
+	videos[index].muted = isMuted;
+}
 
-// remove popup on mouse leave
-movies.forEach((movie) =>
-	movie.addEventListener("mouseleave", (e) => {
-		removePopup(e);
-	})
-);
+function slider(details) {
+	$(details.element).owlCarousel({
+		loop: details.loop,
+		margin: details.margin,
+		nav: details.nav,
+		mouseDrag: details.mouseDrag,
+		stagePadding: details.stagePadding,
+		dots: details.dots,
+		navText: details.navText,
+		animateOut: details.animateOut || false,
+		responsive: details.responsive,
+		rtl: details.rtl || false,
+	});
+}
 
-// event listeners
-movieShowMore.forEach((shwMre) =>
-	shwMre.addEventListener("click", (e) => {
-		shwMre.classList.toggle("rotate");
-		movieContainer.forEach((cont) => cont.classList.toggle("show-less"));
-	})
-);
+function resetPrevSlide() {
+	videos[prevSlideIndex].pause();
+	videos[prevSlideIndex].muted = true;
+	mute[prevSlideIndex].style.display = "";
+	unmute[prevSlideIndex].style.display = "none";
+}
+
+function handleCurrentSlide(curInd, isMuted, muteStye, unmuteStyle) {
+	videos[curInd].play();
+	videos[curInd].muted = isMuted;
+	mute[curInd].style.display = muteStye;
+	unmute[curInd].style.display = unmuteStyle;
+}
