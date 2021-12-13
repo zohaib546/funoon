@@ -18,10 +18,10 @@
     <link rel="stylesheet" href="../css/owl-carousel/owl.theme.default.min.css" />
     <!-- Custom CSS -->
     <link rel="stylesheet" href="../css/main.css" />
-    <title>Availibility</title>
+    <title>Login</title>
 </head>
 
-<body class="rtl bg-graphic-radial">
+<body class="rtl bg-graphic">
     <!-- HEADER -->
     <header class="header">
         <nav class="navbar navbar-expand-sm navbar-dark">
@@ -75,85 +75,73 @@
         </nav>
     </header>
 
-    <!-- AVAILIBILITY -->
-    <section class="my-auto availibility py-70">
+    <!-- AUTHENTICATION -->
+    <section class="my-auto auth">
         <div class="container">
             <div class="row justify-content-center">
-                <div class="col-md-10">
-                    <div class="text-center font-sm availibility__box">
-                        <figure class="mb-3 availibility__figure">
-                            <img class="img-fluid" src="../img/screens.png" alt="screens" />
-                        </figure>
-                        <div class="availibility__platforms">
-                            <button class="availibility__button">
-									<img class="img-fluid" src="../img/svg/icon-samsung-smarttv.svg" alt="icon" />
-								</button>
-                            <button class="availibility__button">
-									<img class="img-fluid" src="../img/svg/icon-android.svg" alt="icon" />
-								</button>
-                            <button class="availibility__button">
-									<img class="img-fluid" src="../img/svg/icon-iphone.svg" alt="icon" />
-								</button>
-                            <button class="availibility__button">
-									<img class="img-fluid" src="../img/svg/icon-ipad.svg" alt="icon" />
-								</button>
-                            <button class="availibility__button">
-									<img class="img-fluid" src="../img/svg/icon-appletv.svg" alt="icon" />
-								</button>
-                        </div>
-                        <div class="mb-3 availibility__platforms">
-                            <button class="availibility__button">
-									<img src="../img/svg/icon-androidtv.svg" alt="icon" />
-								</button>
-                            <button class="availibility__button">
-									<img src="../img/svg/icon-lgtv.svg" alt="icon" />
-								</button>
-                            <button class="availibility__button">
-									<img src="../img/svg/icon-wansa.svg" alt="icon" />
-								</button>
-                        </div>
-                        <div class="mb-4 fw-light">
-                            <p class="mb-0">
-                                استمتع بمحتوى Funoon.net عبر مجموعة متنوعة من الأجهزة والأنظمة الأساسية. سواء كان تلفزيون Samsung SMART أو جهاز Apple iPhone أو Android ، فإن Funoon.net يعمل على نطاق واسع.
-                            </p>
-                            <p class="mb-0 primary-color">
-                                يمكنك أيضًا استخدام أجهزة متعددة لحساب واحد ، مما يتيح لجميع أفراد الأسرة الاستمتاع بمشاهدة ما يحلو لهم.
-                            </p>
-                            <p class="mb-0">
-                                تتكيف تطبيقاتنا أيضًا مع سرعة شبكتك لضمان تجربة مشاهدة مثالية على أي جهاز.
-                            </p>
+                <div class="col-lg-6">
+                    <form class="form">
+                        <h3 class="mb-4 main-heading-bold">دخول الأعضاء</h3>
+                        <div class="mb-4">
+                            <input class="form__input" type="email" placeholder="أدخل بريدك الإلكتروني" style="text-align: right;" />
                         </div>
                         <div class="mb-4">
-                            <button class="availibility__button">
-									<img src="../img/svg/icon-rokutv.svg" alt="icon" />
-								</button>
-                        </div>
-                        <div class="mb-3 fw-light">
-                            <p>
-                                Roku هو أحد أشهر أجهزة البث الرقمي. إنه موثوق به مع واجهة مستخدم نظيفة وسريعة الاستجابة وجهاز تحكم عن بعد بديهي. يمكنه الاتصال بكل من أجهزة التلفاز القديمة والتلفزيونات الذكية الجديدة. Funoonet يعمل على Roku
-                            </p>
-                        </div>
-                        <div class="mb-3">
-                            <h2 class="main-heading-bold">قم بتنزيل تطبيق Funoon.net الآن من</h2>
+                            <input class="mb-3 form__input" type="password" placeholder="ادخل رقمك السري" />
+                            <div class="d-flex justify-content-between">
+                                <div class="d-flex me-3">
+                                    <label class="form-checkbox form-checkbox--primary">
+																		<input type="checkbox" />
+																		<svg viewBox="0 0 21 18">
+																			<symbol
+																				id="formCheckbox"
+																				viewBox="0 0 21 18"
+																				xmlns="http://www.w3.org/2000/svg"
+																			>
+																				<path
+																					d="M5.22003 7.26C5.72003 7.76 7.57 9.7 8.67 11.45C12.2 6.05 15.65 3.5 19.19 1.69"
+																					fill="none"
+																					stroke-width="2.25"
+																					stroke-linecap="round"
+																					stroke-linejoin="round"
+																				/>
+																			</symbol>
+																			<defs>
+																				<mask id="formCheckboxSm">
+																					<use class="tick mask" href="#formCheckbox" />
+																				</mask>
+																			</defs>
+																			<use class="tick" href="#formCheckbox" stroke="currentColor" />
+																			<path
+																				fill="white"
+																				mask="url(#formCheckboxSm)"
+																				d="M18 9C18 10.4464 17.9036 11.8929 17.7589 13.1464C17.5179 15.6054 15.6054 17.5179 13.1625 17.7589C11.8929 17.9036 10.4464 18 9 18C7.55357 18 6.10714 17.9036 4.85357 17.7589C2.39464 17.5179 0.498214 15.6054 0.241071 13.1464C0.0964286 11.8929 0 10.4464 0 9C0 7.55357 0.0964286 6.10714 0.241071 4.8375C0.498214 2.39464 2.39464 0.482143 4.85357 0.241071C6.10714 0.0964286 7.55357 0 9 0C10.4464 0 11.8929 0.0964286 13.1625 0.241071C15.6054 0.482143 17.5179 2.39464 17.7589 4.8375C17.9036 6.10714 18 7.55357 18 9Z"
+																			/>
+																		</svg>
+																		<svg class="lines" viewBox="0 0 11 11">
+																			<path d="M5.88086 5.89441L9.53504 4.26746" />
+																			<path d="M5.5274 8.78838L9.45391 9.55161" />
+																			<path d="M3.49371 4.22065L5.55387 0.79198" />
+																		</svg>
+																		</label>
+                                    <label class="form-check-label primary-color" for="formCheckbox">تذكرني على هذا الكمبيوتر</label>
+                                </div>
+                                <a href="forgot-password.html">هل نسيت كلمة السر؟</a>
+                            </div>
                         </div>
                         <div class="">
-                            <button class="availibility__social-button me-3">
-									<img src="../img/svg/icon-appstore.svg" alt="icon" />
-								</button>
-                            <button class="availibility__social-button">
-									<img src="../img/svg/icon-playstore.svg" alt="icon" />
-								</button>
+                            <button class="button button--primary">تسجيل الدخول</button>
                         </div>
-                    </div>
+                    </form>
                 </div>
             </div>
         </div>
     </section>
+
     <!-- GET STARTED -->
     <section class="get-started">
         <div class="get-started__graphic">
             <figure>
-                <img src="img/graphic-footer-circle.png" class="img-fluid" alt="graphic" />
+                <img src="../img/graphic-footer-circle.png" class="img-fluid" alt="graphic" />
             </figure>
         </div>
         <div class="container-fluid">
@@ -163,25 +151,26 @@
                     يمكنك الاشتراك إما في خطتنا الشهرية أو الاستمتاع بخصومات مع خطتنا الشهرية والسنوية. سنكون سعداء لخدمتك مع مجموعتنا من المحتوى الفريد
                 </p>
                 <button class="button button--black ms-sm-auto">
-                  البدء <i class="button--black__icon fas fa-sort-down"></i>
+                  البدء	<i class="button--black__icon fas fa-sort-down"></i>
 					</button>
             </div>
         </div>
     </section>
+
     <!-- FOOTER -->
     <footer class="footer">
         <div class="container">
             <ul class="list-inline my-md-5">
                 <li class="list-inline-item">
-                    <a href="landing-page.html">الصفحة الرئيسية</a>
+                    <a href="landing-page.html">مسكن</a>
                 </li>
-                <li class="list-inline-item active">
+                <li class="list-inline-item">
                     <a href="contact-us.html">اتصل بنا</a>
                 </li>
                 <li class="list-inline-item">
                     <a href="#">مركز المساعدة</a>
                 </li>
-                <li class="list-inline-item">
+                <li class="list-inline-item active">
                     <a href="about-us.html">معلومات عنا</a>
                 </li>
                 <li class="list-inline-item">
@@ -194,7 +183,7 @@
                     <a href="terms-conditions.html">البنود و الظروف</a>
                 </li>
                 <li class="list-inline-item">
-                    <a href="privacy-policy.html">سياسة خاصة</a>
+                    <a href="privacy-policy.html">سياسة الخصوصية</a>
                 </li>
             </ul>
             <ul class="footer__social my-md-5">
@@ -211,7 +200,7 @@
                     <a href="#"><i class="fab fa-fw fa-youtube"></i></a>
                 </li>
             </ul>
-            <p class="m-0 footer__copyright py-md-5">
+            <p class="footer__copyright my-md-5">
                 جميع الحقوق محفوظة © فنون اكسبرس للانتاج الفني 2021. الكويت
             </p>
         </div>
@@ -219,10 +208,8 @@
 
     <!-- Bootstrap 4.6x -->
     <!-- jQuery and Bootstrap Bundle (includes Popper)  -->
-    <!-- <script src="../js/jquery.js"></script> -->
-    <!-- <script src="js/bootstrap-4.6x/bootstrap.bundle.min.js"></script>  -->
-    <script src="../js/jquery.js"></script>
-    <script src="../js/owl-carousel/owl.carousel.min.js"></script>
+    <!-- <script src="js/jquery.js"></script>
+		<script src="js/bootstrap-4.6x/bootstrap.bundle.min.js"></script> -->
 
     <!-- Bootstrap 5.0 beta 2 -->
     <!-- Bootstrap Bundle with Popper -->

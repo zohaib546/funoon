@@ -1,51 +1,121 @@
-@include arabicRTL {
-    font-family: $almarai-regular;
-    font-weight: 400;
-}
-
-@include arabicRTL {
-    .footer {
-        &__social li:not(:last-child) {
-            margin-right: 0rem;
-            margin-left: 2rem;
-        }
+    @include arabicRTL {
+        font-family: $almarai-regular;
+        font-weight: 400;
     }
-    .get-started__graphic {
-        left: unset;
-        right: -50%;
-    }
-}
-
-@include arabicRTL {
-    .circle {
+    
+    @include arabicRTL {
         .footer {
             &__social li:not(:last-child) {
                 margin-right: 0rem;
                 margin-left: 2rem;
             }
         }
-        .description {
-            &__icon {
-                margin-left: 1.5rem;
+        .get-started__graphic {
+            left: unset;
+            right: -50%;
+        }
+    }
+    
+    @include arabicRTL {
+        .circle {
+            .footer {
+                &__social li:not(:last-child) {
+                    margin-right: 0rem;
+                    margin-left: 2rem;
+                }
+            }
+            .description {
+                &__icon {
+                    margin-left: 1.5rem;
+                }
             }
         }
     }
-}
-
-@include arabicRTL {
-    .invoice__billing {
-        .border-gray-right {
-            border-right: none;
-            border-left: 2px solid #e0e0e0;
+    
+    @include arabicRTL {
+        .invoice__billing {
+            .border-gray-right {
+                border-right: none;
+                border-left: 2px solid #e0e0e0;
+            }
         }
     }
-}
-
-@include arabicRTL {
-    .about {
-        &__graphic {
-            right: -5%;
-            left: unset;
+    
+    @include arabicRTL {
+        .about {
+            &__graphic {
+                right: -5%;
+                left: unset;
+            }
         }
     }
-}
+    
+    ////Latest news
+    @include arabicRTL {
+        .latest-news-heading {
+            .new-icons {
+                left: unset;
+                top: 13.3rem;
+                right: -2.8rem;
+            }
+        }
+    }
+    
+    ///movie info
+    @include arabicRTL {
+        .video__content {
+            .video__details {
+                margin-left: 0;
+                margin-right: 2rem;
+            }
+            .video__nav-item:not(:first-child) {
+                margin-left: 0;
+                margin-right: 3rem;
+            }
+        }
+        .section-episode {
+            &__select {
+                margin-left: 0;
+                margin-right: 3rem;
+            }
+        }
+    }
+    
+    ///new registration
+    @include arabicRTL {
+        .section-plan {
+            .section-plan_monthly {
+                border-right: none;
+                border-left: 1px solid #fff;
+                @include media-query(phone) {
+                    border-left: none;
+                }
+                @media only screen and (max-width: 37.5em) {
+                    .section-plan_check-box {
+                        right: 1rem;
+                        top: 1.5rem;
+                    }
+                    .form-checkbox input+svg {
+                        left: 1.3rem;
+                    }
+                }
+            }
+            .section-plan_details .form-check-inline {
+                align-items: end;
+            }
+            .section-plan_details {
+                .form-check {
+                    padding-right: 0;
+                }
+            }
+        }
+        .monthly-plan {
+            &__plans .form-check {
+                left: unset;
+                right: 0.7rem;
+            }
+        }
+        .credit-card__code::after {
+            left: -22rem;
+        }
+    }
