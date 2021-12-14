@@ -119,3 +119,40 @@
             left: -22rem;
         }
     }
+    
+    /// profile
+    @include arabicRTL {
+        .profile {
+            &__over {
+                margin-right: 0;
+                margin-left: 1rem;
+            }
+            .section-autoplay {
+                .form-check {
+                    padding-right: 0;
+                }
+            }
+        }
+    }
+    
+    @include arabicRTL {
+        .auth {
+            .form {
+                .button--social img,
+                .button--social span {
+                    margin-left: auto;
+                    margin-right: 0;
+                }
+            }
+        }
+    }
+    
+    ///view acitivity
+    @include arabicRTL {
+        .activitiy__wrapper {
+            .video__nav-item:not(:first-child) {
+                margin-left: 0rem;
+                margin-right: 3rem;
+            }
+        }
+    }
