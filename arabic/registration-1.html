@@ -18,11 +18,10 @@
     <link rel="stylesheet" href="../css/owl-carousel/owl.theme.default.min.css" />
     <!-- Custom CSS -->
     <link rel="stylesheet" href="../css/main.css" />
-    <title>Logout</title>
+    <title>Profile</title>
 </head>
 
-
-<body class="rtl bg-graphic-radial">
+<body class="rtl bg-graphic">
     <!-- HEADER -->
     <header class="header">
         <nav class="navbar navbar-expand-sm navbar-dark">
@@ -31,8 +30,8 @@
                     <img src="../img/svg/logo.svg" alt="logo" />
                 </a>
                 <button class="navbar-toggler d-none" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
+        <span class="navbar-toggler-icon"></span>
+      </button>
                 <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
                     <div class="navbar-nav ms-auto align-items-center">
                         <li class="nav-item">
@@ -48,11 +47,11 @@
                             </a>
                             <ul class="dropdown-menu header__dropdown" aria-labelledby="navbarDropdown">
                                 <div class="
-                    header__dropdown-profile
-                    d-flex
-                    justify-content-between
-                    align-items-center
-                  ">
+                  header__dropdown-profile
+                  d-flex
+                  justify-content-between
+                  align-items-center
+                ">
                                     <img class="me-2 header__avatar" src="../img/profile.png" width="60px" height="60px" alt="profile picture" />
                                     <a class="white-color" href="#">
                                         <span class="main-heading-bold-2"></span>علي حيدر <br />إدارة الملف الشخصي
@@ -135,8 +134,8 @@
                 <div class="header__mobile-nav">
                     <div class="dropdown me-3">
                         <button class="button button--primary-sm dropdown-toggle" type="button" id="headerMobileDropdown" data-bs-toggle="dropdown" aria-expanded="false">
-                          علي حيدر
-            </button>
+                        علي حيدر
+          </button>
                         <ul class="dropdown-menu" aria-labelledby="headerMobileDropdown">
                             <li>
                                 <a class="dropdown-item" href="#">حسابي</a>
@@ -154,30 +153,74 @@
             </div>
         </nav>
     </header>
-    <!-- PROFILE INFORMATION -->
-    <section class="my-auto profile">
+    <!-- AUTHENTICATION -->
+    <section class="my-auto auth">
         <div class="container">
             <div class="row justify-content-center">
-                <div class="col-lg-4">
-                    <div class="profile__box">
-                        <h1 class="mb-5 main-heading-bold-lg">هل ستغادر قريبًا؟</h1>
-                        <p class="mb-3">
-                            فقط لكي تعلم ، لا تحتاج دائمًا إلى تسجيل الخروج من FUNOONET. إنه ضروري فقط إذا كنت تستخدم جهاز كمبيوتر مشترك أو عام.
-                        </p>
-                        <p class="mb-5">ستتم إعادة توجيهك إلى صفحة FUNOONET الرئيسية في غضون 30 ثانية</p>
-                        <button class="button button--primary button-primary-big">اذهب الآن</button>
-                    </div>
+                <div class="col-lg-6">
+                    <form class="form">
+                        <h3 class="mb-4 main-heading-bold d-flex justify-content-between">
+                            تسجيل دخول الأعضاء <span> الخطوة 1 من 2 </span>
+                        </h3>
+                        <div class="mb-4">
+                            <label class="mb-4" for="formEmail">أدخل بريدك الإلكتروني للمتابعة</label>
+                            <input class="form__input" id="formEmail" type="email" placeholder="أدخل بريدك الإلكتروني" />
+                        </div>
+                        <div class="mb-4 text-center">
+                            <a href="./new-registration-1.html" class="button button--primary button--primary-huge">يكمل</a>
+                        </div>
+                        <div class="mb-4">
+                            <p class="my-5 seperator"><span>أو عبر</span></p>
+                            <button class="mb-4 button button--social button--social-apple">
+									<img src="../img/svg/icon-apple.svg" alt="apple icon" />
+									<span>قم بتسجيل الدخول باستخدام Apple</span>
+								</button>
+                            <button class="mb-4 button button--social button--social-facebook">
+									<img src="../img/svg/icon-facebook.svg" alt="facebook icon" />
+									<span>قم بتسجيل الدخول إلى Facebook</span>
+								</button>
+                            <button class="button button--social button--social-google">
+									<img src="../img/svg/icon-google.svg" alt="google icon" />
+									<span>قم بتسجيل الدخول باستخدام Google</span>
+								</button>
+                        </div>
+                        <div class="mb-4">
+                            <p>
+                                هذا الموقع محمي بواسطة reCAPTCHA. لمعرفة المزيد من التفاصيل ، يرجى زيارة
+                                <a href="privacy-policy.html" class="primary-color">سياسة خاصة</a>ل Google
+                                <a href="terms-conditions.html" class="primary-color">شروط الخدمة</a>
+                            </p>
+                        </div>
+                    </form>
                 </div>
             </div>
         </div>
     </section>
-
+    <!-- GET STARTED -->
+    <section class="get-started">
+        <div class="get-started__graphic">
+            <figure>
+                <img src="../img/graphic-footer-circle.png" class="img-fluid" alt="graphic" />
+            </figure>
+        </div>
+        <div class="container-fluid">
+            <div class="get-started__row">
+                <img src="../img/svg/logo-white.svg" alt="cover" />
+                <p class="get-started__desc">
+                    يمكنك الاشتراك إما في خطتنا الشهرية أو الاستمتاع بخصومات مع خطتنا الشهرية والسنوية. سنكون سعداء لخدمتك مع مجموعتنا من المحتوى الفريد
+                </p>
+                <button class="button button--black ms-sm-auto">
+                  البدء <i class="button--black__icon fas fa-sort-down"></i>
+					</button>
+            </div>
+        </div>
+    </section>
     <!-- FOOTER -->
     <footer class="footer">
         <div class="container">
             <ul class="list-inline my-md-5">
                 <li class="list-inline-item">
-                    <a href="landing-page.html">مسكن</a>
+                    <a href="index.html">مسكن</a>
                 </li>
                 <li class="list-inline-item">
                     <a href="contact-us.html">اتصل بنا</a>
@@ -215,12 +258,11 @@
                     <a href="#"><i class="fab fa-fw fa-youtube"></i></a>
                 </li>
             </ul>
-            <p class="m-0 footer__copyright py-md-5">
+            <p class="footer__copyright my-md-5">
                 جميع الحقوق محفوظة © فنون اكسبرس للانتاج الفني 2021. الكويت
             </p>
         </div>
     </footer>
-
     <!-- Bootstrap 4.6x -->
     <!-- jQuery and Bootstrap Bundle (includes Popper)  -->
     <!-- <script src="js/jquery.js"></script>
