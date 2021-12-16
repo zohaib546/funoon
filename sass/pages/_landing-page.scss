@@ -235,7 +235,7 @@
 
 	&__item:hover .item-controls {
 		display: flex;
-		animation: fadeIn 0.3s ease-out forwards;
+		animation: fadeIn 0.3s ease 1 forwards;
 
 		@include media-query(tab) {
 			display: none;
@@ -247,20 +247,8 @@
 		border-radius: 3px;
 		overflow: hidden;
 
-		@include media-query(big-desktop) {
-			// height: 24rem;
-		}
-
 		@include media-query(desktop-xl) {
-			// height: 33rem;
-		}
-
-		@include media-query(tab) {
-			// height: 18rem;
-		}
-
-		@include media-query(phone) {
-			// height: 15rem;
+			height: 30rem;
 		}
 	}
 
@@ -277,14 +265,15 @@
 	&__item {
 	}
 
+	&__item:hover {
+		// box-shadow: 0px 3px 10px -5px $white-color;
+	}
+
 	&__item:hover &__figure::before {
-		transform: scale(1.02);
-		filter: drop-shadow(0 0 0.5rem black);
 	}
 
 	&__figure {
 		position: relative;
-		height: 30rem;
 		border-radius: 5px;
 		box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
 		overflow: hidden;
@@ -300,14 +289,11 @@
 			background: url(../img/landing-page/exclusive/flag.png) no-repeat;
 			background-size: contain;
 			transition: all 0.2s ease-out;
-		}
 
-		@include media-query(big-desktop) {
-			height: 35rem;
-		}
-
-		@include media-query(phone) {
-			height: 25rem;
+			@include media-query(phone) {
+				width: 3rem;
+				height: 5rem;
+			}
 		}
 	}
 
@@ -393,7 +379,7 @@
 
 	&__item:hover .item-controls {
 		display: flex;
-		animation: fadeInResume 0.3s ease-out forwards;
+		animation: fadeIn 0.3s ease-out 1 forwards;
 
 		@include media-query(tab) {
 			display: none;
@@ -408,7 +394,7 @@
 		box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
 
 		@include media-query(phone) {
-			height: 25rem;
+			height: 20rem;
 		}
 	}
 
@@ -463,8 +449,10 @@
 	transform-origin: center;
 
 	&--movie {
-		left: -1rem;
-		width: 23rem;
+		top: -1rem;
+		left: -7rem;
+		width: 35rem;
+		height: 110%;
 
 		@include media-query(desktop-xl) {
 			left: -2rem;
@@ -483,10 +471,10 @@
 	}
 
 	&--resume {
-		// left: 0;
-		// width: 100%;
-		left: -40%;
-		width: 180%;
+		top: -2rem;
+		left: -50%;
+		width: 45rem;
+		height: 110%;
 	}
 
 	&--resume &__figure {
@@ -494,13 +482,20 @@
 	}
 
 	&--top {
-		top: 0;
-		left: 2rem;
-		width: 100%;
+		top: -3rem;
+		left: -4rem;
+		width: 33rem;
+		height: 135%;
+	}
 
-		@include media-query(desktop) {
-			width: 80%;
-		}
+	&--top &__figure {
+		flex: 1;
+	}
+
+	&--top &__details {
+		display: block;
+		flex: 0;
+		border: 1px solid $black-color;
 	}
 
 	&__details {
@@ -572,5 +567,16 @@
 		width: 50%;
 		height: 100%;
 		background: $primary-color;
+	}
+}
+
+@include arabicRTL {
+	.item-controls {
+		&__action {
+			@include notLastChild {
+				margin-right: 0;
+				margin-left: 1rem;
+			}
+		}
 	}
 }

@@ -91,6 +91,10 @@ const movieDetails = {
 			items: 7,
 			slideBy: 7,
 		},
+		1921: {
+			items: 9,
+			slideBy: 9,
+		},
 	},
 };
 
@@ -124,6 +128,10 @@ const movieDetailsRTL = {
 		1920: {
 			items: 7,
 			slideBy: 7,
+		},
+		1921: {
+			items: 9,
+			slideBy: 9,
 		},
 	},
 };
@@ -446,7 +454,7 @@ movies.forEach((movie) =>
 // REMOVE 'POPUP' ON MOUSE LEAVE
 movies.forEach((movie) =>
 	movie.addEventListener("mouseleave", (e) => {
-		removePopup(e);
+		removePopupWithDelay(e);
 	})
 );
 
@@ -460,107 +468,206 @@ movieShowMore.forEach((shwMre) =>
 
 function addPopup(e) {
 	let moviePost = e.target.closest(".movie__item");
+	let isRTL = document.body.classList.contains("rtl");
+
 	removePopup(e);
-	setTimeout(() => {
-		moviePost.insertAdjacentHTML(
-			"beforeend",
-			`<div class="item-controls item-controls--movie">
-					<figure class="item-controls__figure">
-						<img
-							class="item-controls__thumbnail"
-							src="img/landing-page/resume/poster-1.png"
-							alt="icon"
-						/>
-						<video
-							class="item-controls__video"
-							src="video/banner-video.mp4"
-							loop
-							autoplay
-							muted
-						></video>
-					</figure>
-					<div class="item-controls__details">
-						<h3 class="mb-3 item-controls__title">Bye Bye London</h3>
-						<ul class="item-controls__list">
-							<li class="item-controls__action">
-								<a href="./player.html">
+
+	if (!isRTL) {
+		setTimeout(() => {
+			moviePost.insertAdjacentHTML(
+				"beforeend",
+				`<div class="item-controls item-controls--movie">
+						<figure class="item-controls__figure">
+							<img
+								class="item-controls__thumbnail"
+								src="img/landing-page/resume/poster-1.png"
+								alt="icon"
+							/>
+							<video
+								class="item-controls__video"
+								src="video/banner-video.mp4"
+								loop
+								autoplay
+								muted
+							></video>
+						</figure>
+						<div class="item-controls__details">
+							<h3 class="mb-3 item-controls__title">Bye Bye London</h3>
+							<ul class="item-controls__list">
+								<li class="item-controls__action">
+									<a href="./player.html">
+										<img
+											class="item-controls__icon"
+											src="img/popup/icons/icon-play.svg"
+											alt="icon"
+										/>
+									</a>
+								</li>
+								<li class="item-controls__action">
 									<img
 										class="item-controls__icon"
-										src="img/popup/icons/icon-play.svg"
+										src="img/popup/icons/icon-add.svg"
 										alt="icon"
 									/>
-								</a>
-							</li>
-							<li class="item-controls__action">
-								<img
-									class="item-controls__icon"
-									src="img/popup/icons/icon-add.svg"
-									alt="icon"
-								/>
-							</li>
-							<li class="item-controls__action">
-								<img
-									class="item-controls__icon"
-									src="img/popup/icons/icon-like.svg"
-									alt="icon"
-								/>
-							</li>
-							<li class="item-controls__action">
-								<img
-									class="item-controls__icon"
-									src="img/popup/icons/icon-dislike.svg"
-									alt="icon"
-								/>
-							</li>
-							<li class="item-controls__action">
-								<img
-									class="item-controls__icon"
-									src="img/popup/icons/icon-adult.svg"
-									alt="icon"
-								/>
-							</li>
-							<li class="item-controls__action ms-auto">
-								<img
-									class="item-controls__icon"
-									src="img/popup/icons/icon-remove-list.svg"
-									alt="icon"
-								/>
-							</li>
-							<li class="item-controls__action">
-								<img
-									class="item-controls__icon"
-									src="img/popup/icons/icon-favorite.svg"
-									alt="icon"
-								/>
-							</li>
-							<li
-								class="item-controls__action"
-								data-bs-toggle="modal"
-								data-bs-target="#movieModal"
-							>
-								<img
-									class="item-controls__icon"
-									src="img/popup/icons/icon-info.svg"
-									alt="icon"
-								/>
-							</li>
-						</ul>
+								</li>
+								<li class="item-controls__action">
+									<img
+										class="item-controls__icon"
+										src="img/popup/icons/icon-like.svg"
+										alt="icon"
+									/>
+								</li>
+								<li class="item-controls__action">
+									<img
+										class="item-controls__icon"
+										src="img/popup/icons/icon-dislike.svg"
+										alt="icon"
+									/>
+								</li>
+								<li class="item-controls__action">
+									<img
+										class="item-controls__icon"
+										src="img/popup/icons/icon-adult.svg"
+										alt="icon"
+									/>
+								</li>
+								<li class="item-controls__action ms-auto">
+									<img
+										class="item-controls__icon"
+										src="img/popup/icons/icon-remove-list.svg"
+										alt="icon"
+									/>
+								</li>
+								<li class="item-controls__action">
+									<img
+										class="item-controls__icon"
+										src="img/popup/icons/icon-favorite.svg"
+										alt="icon"
+									/>
+								</li>
+								<li
+									class="item-controls__action"
+									data-bs-toggle="modal"
+									data-bs-target="#movieModal"
+								>
+									<img
+										class="item-controls__icon"
+										src="img/popup/icons/icon-info.svg"
+										alt="icon"
+									/>
+								</li>
+							</ul>
+						</div>
 					</div>
-				</div>
-			`
-		);
-	}, 500);
+				`
+			);
+		}, 1000);
+	} else {
+		setTimeout(() => {
+			moviePost.insertAdjacentHTML(
+				"beforeend",
+				`<div class="item-controls item-controls--movie">
+						<figure class="item-controls__figure">
+							<img
+								class="item-controls__thumbnail"
+								src="../img/landing-page/resume/poster-1.png"
+								alt="icon"
+							/>
+							<video
+								class="item-controls__video"
+								src="../video/banner-video.mp4"
+								loop
+								autoplay
+								muted
+							></video>
+						</figure>
+						<div class="item-controls__details">
+							<h3 class="mb-3 item-controls__title">باي باي لندن</h3>
+							<ul class="item-controls__list">
+								<li class="item-controls__action">
+									<a href="./player.html">
+										<img
+											class="item-controls__icon"
+											src="../img/popup/icons/icon-play.svg"
+											alt="icon"
+										/>
+									</a>
+								</li>
+								<li class="item-controls__action">
+									<img
+										class="item-controls__icon"
+										src="../img/popup/icons/icon-add.svg"
+										alt="icon"
+									/>
+								</li>
+								<li class="item-controls__action">
+									<img
+										class="item-controls__icon"
+										src="../img/popup/icons/icon-like.svg"
+										alt="icon"
+									/>
+								</li>
+								<li class="item-controls__action">
+									<img
+										class="item-controls__icon"
+										src="../img/popup/icons/icon-dislike.svg"
+										alt="icon"
+									/>
+								</li>
+								<li class="item-controls__action">
+									<img
+										class="item-controls__icon"
+										src="../img/popup/icons/icon-adult.svg"
+										alt="icon"
+									/>
+								</li>
+								<li class="item-controls__action ms-auto">
+									<img
+										class="item-controls__icon"
+										src="../img/popup/icons/icon-remove-list.svg"
+										alt="icon"
+									/>
+								</li>
+								<li class="item-controls__action">
+									<img
+										class="item-controls__icon"
+										src="../img/popup/icons/icon-favorite.svg"
+										alt="icon"
+									/>
+								</li>
+								<li
+									class="item-controls__action"
+									data-bs-toggle="modal"
+									data-bs-target="#movieModal"
+								>
+									<img
+										class="item-controls__icon"
+										src="../img/popup/icons/icon-info.svg"
+										alt="icon"
+									/>
+								</li>
+							</ul>
+						</div>
+					</div>
+				`
+			);
+		}, 1000);
+	}
 }
 
 function removePopup(e) {
-	setTimeout(() => {
-		let moviePost = e.target.closest(".movie__item");
-		let popup = moviePost.lastElementChild;
+	let moviePost = e.target.closest(".movie__item");
+	let popup = moviePost.lastElementChild;
 
-		if (popup.classList.contains("item-controls--movie")) {
-			moviePost.removeChild(popup);
-		}
-	}, 500);
+	if (popup.classList.contains("item-controls--movie")) {
+		moviePost.removeChild(popup);
+	}
+}
+
+function removePopupWithDelay(e) {
+	setTimeout(() => {
+		removePopup(e);
+	}, 1005);
 }
 
 function handleMuteAndUnmute(btnType, element, index, btnStyle, elementStyle, isMuted) {
