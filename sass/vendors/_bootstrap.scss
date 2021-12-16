@@ -159,6 +159,12 @@
 	}
 }
 
+@include arabicRTL {
+	.hero__form .form-control {
+		direction: rtl;
+	}
+}
+
 .accordion-item:first-of-type {
 	border-top-left-radius: 0;
 	border-top-right-radius: 0;

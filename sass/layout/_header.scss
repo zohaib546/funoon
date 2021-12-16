@@ -234,6 +234,10 @@
 }
 
 @include arabicRTL {
+	.hero__content-icon {
+		transform: rotate(90deg);
+	}
+
 	.header-nav__item {
 		@include notLastChild {
 			margin-right: 0;

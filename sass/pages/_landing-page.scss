@@ -243,24 +243,24 @@
 	}
 
 	&__figure {
-		height: 20rem;
+		// height: 20rem;
 		border-radius: 3px;
 		overflow: hidden;
 
 		@include media-query(big-desktop) {
-			height: 24rem;
+			// height: 24rem;
 		}
 
 		@include media-query(desktop-xl) {
-			height: 33rem;
+			// height: 33rem;
 		}
 
 		@include media-query(tab) {
-			height: 18rem;
+			// height: 18rem;
 		}
 
 		@include media-query(phone) {
-			height: 15rem;
+			// height: 15rem;
 		}
 	}
 
@@ -288,6 +288,7 @@
 		border-radius: 5px;
 		box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
 		overflow: hidden;
+		cursor: pointer;
 
 		&::before {
 			content: "";
