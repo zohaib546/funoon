@@ -950,21 +950,11 @@ button:focus {
 @keyframes fadeIn {
   0% {
     opacity: 0;
-    transform: scale(1);
+    transform: scale(0.75);
   }
   100% {
     opacity: 1;
-    transform: scale(1.3);
-  }
-}
-@keyframes fadeInResume {
-  0% {
-    opacity: 0;
     transform: scale(1);
-  }
-  100% {
-    opacity: 1;
-    transform: scale(1.09);
   }
 }
 @keyframes fadeOut {
@@ -2176,7 +2166,7 @@ body.rtl .video__genre-name:not(:last-child) {
 }
 .movie__item:hover .item-controls {
   display: flex;
-  animation: fadeIn 0.3s ease-out forwards;
+  animation: fadeIn 0.3s ease 1 forwards;
 }
 @media only screen and (max-width: 48em) {
   .movie__item:hover .item-controls {
@@ -2187,6 +2177,11 @@ body.rtl .video__genre-name:not(:last-child) {
   border-radius: 3px;
   overflow: hidden;
 }
+@media only screen and (min-width: 125em) {
+  .movie__figure {
+    height: 30rem;
+  }
+}
 .movie__cover {
   height: 100%;
 }
@@ -2194,13 +2189,8 @@ body.rtl .video__genre-name:not(:last-child) {
 .exclusive__carousel {
   position: relative;
 }
-.exclusive__item:hover .exclusive__figure::before {
-  transform: scale(1.02);
-  filter: drop-shadow(0 0 0.5rem black);
-}
 .exclusive__figure {
   position: relative;
-  height: 30rem;
   border-radius: 5px;
   box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
   overflow: hidden;
@@ -2217,14 +2207,10 @@ body.rtl .video__genre-name:not(:last-child) {
   background-size: contain;
   transition: all 0.2s ease-out;
 }
-@media only screen and (min-width: 112.5em) {
-  .exclusive__figure {
-    height: 35rem;
-  }
-}
 @media only screen and (max-width: 37.5em) {
-  .exclusive__figure {
-    height: 25rem;
+  .exclusive__figure::before {
+    width: 3rem;
+    height: 5rem;
   }
 }
 .exclusive__cover {
@@ -2294,7 +2280,7 @@ body.rtl .top__number-figure--1 {
 }
 .resume__item:hover .item-controls {
   display: flex;
-  animation: fadeInResume 0.3s ease-out forwards;
+  animation: fadeIn 0.3s ease-out 1 forwards;
 }
 @media only screen and (max-width: 48em) {
   .resume__item:hover .item-controls {
@@ -2310,7 +2296,7 @@ body.rtl .top__number-figure--1 {
 }
 @media only screen and (max-width: 37.5em) {
   .resume__figure {
-    height: 25rem;
+    height: 20rem;
   }
 }
 .resume__cover {
@@ -2361,8 +2347,10 @@ body.rtl .top__number-figure--1 {
   transform-origin: center;
 }
 .item-controls--movie {
-  left: -1rem;
-  width: 23rem;
+  top: -1rem;
+  left: -7rem;
+  width: 35rem;
+  height: 110%;
 }
 @media only screen and (min-width: 125em) {
   .item-controls--movie {
@@ -2379,21 +2367,27 @@ body.rtl .top__number-figure--1 {
   border: 1px solid #000;
 }
 .item-controls--resume {
-  left: -40%;
-  width: 180%;
+  top: -2rem;
+  left: -50%;
+  width: 45rem;
+  height: 110%;
 }
 .item-controls--resume .item-controls__figure {
   flex: 1;
 }
 .item-controls--top {
-  top: 0;
-  left: 2rem;
-  width: 100%;
+  top: -3rem;
+  left: -4rem;
+  width: 33rem;
+  height: 135%;
 }
-@media only screen and (max-width: 112.5em) {
-  .item-controls--top {
-    width: 80%;
-  }
+.item-controls--top .item-controls__figure {
+  flex: 1;
+}
+.item-controls--top .item-controls__details {
+  display: block;
+  flex: 0;
+  border: 1px solid #000;
 }
 .item-controls__details {
   padding: 1.5rem;
@@ -2454,6 +2448,11 @@ body.rtl .top__number-figure--1 {
   width: 50%;
   height: 100%;
   background: #0f98d5;
+}
+
+body.rtl .item-controls__action:not(:last-child) {
+  margin-right: 0;
+  margin-left: 1rem;
 }
 
 .registration-new {
