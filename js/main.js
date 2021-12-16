@@ -69,6 +69,7 @@ const movieDetails = {
 	mouseDrag: false,
 	stagePadding: 50,
 	dots: false,
+	slideBy: 7,
 	navText: [
 		"<span class='carousel-nav-left'><i class='fa fa-chevron-left'></i></span>",
 		"<span class='carousel-nav-right'><i class='fa fa-chevron-right'></i></span>",
@@ -80,12 +81,15 @@ const movieDetails = {
 		},
 		600: {
 			items: 6,
+			slideBy: 6,
 		},
 		1000: {
 			items: 7,
+			slideBy: 7,
 		},
 		1920: {
 			items: 7,
+			slideBy: 7,
 		},
 	},
 };
@@ -98,6 +102,7 @@ const movieDetailsRTL = {
 	mouseDrag: false,
 	stagePadding: 50,
 	dots: false,
+	slideBy: 7,
 	navText: [
 		"<span class='carousel-nav-left'><i class='fa fa-chevron-left'></i></span>",
 		"<span class='carousel-nav-right'><i class='fa fa-chevron-right'></i></span>",
@@ -110,12 +115,15 @@ const movieDetailsRTL = {
 		},
 		600: {
 			items: 6,
+			slideBy: 6,
 		},
 		1000: {
 			items: 7,
+			slideBy: 7,
 		},
 		1920: {
 			items: 7,
+			slideBy: 7,
 		},
 	},
 };
@@ -127,6 +135,7 @@ const exclusiveDetails = {
 	nav: true,
 	mouseDrag: false,
 	dots: false,
+	slideBy: 6,
 	navText: [
 		"<span class='carousel-nav-left'><i class='fa fa-chevron-left'></i></span>",
 		"<span class='carousel-nav-right'><i class='fa fa-chevron-right'></i></span>",
@@ -139,12 +148,15 @@ const exclusiveDetails = {
 		},
 		600: {
 			items: 5,
+			slideBy: 5,
 		},
 		1000: {
 			items: 6,
+			slideBy: 6,
 		},
 		1920: {
 			items: 6,
+			slideBy: 6,
 		},
 	},
 };
@@ -156,6 +168,7 @@ const exclusiveDetailsRTL = {
 	nav: true,
 	mouseDrag: false,
 	dots: false,
+	slideBy: 6,
 	navText: [
 		"<span class='carousel-nav-left'><i class='fa fa-chevron-left'></i></span>",
 		"<span class='carousel-nav-right'><i class='fa fa-chevron-right'></i></span>",
@@ -169,12 +182,15 @@ const exclusiveDetailsRTL = {
 		},
 		600: {
 			items: 5,
+			slideBy: 5,
 		},
 		1000: {
 			items: 6,
+			slideBy: 6,
 		},
 		1920: {
 			items: 6,
+			slideBy: 6,
 		},
 	},
 };
@@ -187,6 +203,7 @@ const topDetails = {
 	mouseDrag: false,
 	stagePadding: 80,
 	dots: false,
+	slideBy: 6,
 	navText: [
 		"<span class='carousel-nav-left'><i class='fa fa-chevron-left'></i></span>",
 		"<span class='carousel-nav-right'><i class='fa fa-chevron-right'></i></span>",
@@ -199,16 +216,20 @@ const topDetails = {
 		},
 		600: {
 			items: 3,
+			slideBy: 3,
 		},
 		1000: {
 			items: 4,
 			stagePadding: 50,
+			slideBy: 4,
 		},
 		1920: {
 			items: 6,
+			slideBy: 6,
 		},
 		2000: {
 			items: 8,
+			slideBy: 8,
 		},
 	},
 };
@@ -221,6 +242,7 @@ const topDetailsRTL = {
 	mouseDrag: false,
 	stagePadding: 80,
 	dots: false,
+	slideBy: 6,
 	navText: [
 		"<span class='carousel-nav-left'><i class='fa fa-chevron-left'></i></span>",
 		"<span class='carousel-nav-right'><i class='fa fa-chevron-right'></i></span>",
@@ -234,16 +256,20 @@ const topDetailsRTL = {
 		},
 		600: {
 			items: 3,
+			slideBy: 3,
 		},
 		1000: {
 			items: 4,
 			stagePadding: 50,
+			slideBy: 4,
 		},
 		1920: {
 			items: 6,
+			slideBy: 6,
 		},
 		2000: {
 			items: 8,
+			slideBy: 8,
 		},
 	},
 };
@@ -256,6 +282,7 @@ const resumeDetails = {
 	mouseDrag: false,
 	stagePadding: 0,
 	dots: false,
+	slideBy: 7,
 	navText: [
 		"<span class='carousel-nav-left'><i class='fa fa-chevron-left'></i></span>",
 		"<span class='carousel-nav-right'><i class='fa fa-chevron-right'></i></span>",
@@ -268,20 +295,25 @@ const resumeDetails = {
 		},
 		600: {
 			items: 4,
+			slideBy: 4,
 		},
 		1000: {
 			items: 4,
 			stagePadding: 50,
+			slideBy: 4,
 		},
 		1300: {
 			items: 5,
 			stagePadding: 50,
+			slideBy: 5,
 		},
 		1920: {
 			items: 7,
+			slideBy: 7,
 		},
 		2000: {
 			items: 8,
+			slideBy: 8,
 		},
 	},
 };
@@ -294,6 +326,7 @@ const resumeDetailsRTL = {
 	mouseDrag: false,
 	stagePadding: 0,
 	dots: false,
+	slideBy: 7,
 	navText: [
 		"<span class='carousel-nav-left'><i class='fa fa-chevron-left'></i></span>",
 		"<span class='carousel-nav-right'><i class='fa fa-chevron-right'></i></span>",
@@ -307,17 +340,25 @@ const resumeDetailsRTL = {
 		},
 		600: {
 			items: 4,
+			slideBy: 4,
 		},
 		1000: {
 			items: 4,
 			stagePadding: 50,
+			slideBy: 4,
 		},
 		1300: {
 			items: 5,
 			stagePadding: 50,
+			slideBy: 5,
 		},
 		1920: {
 			items: 7,
+			slideBy: 7,
+		},
+		2000: {
+			items: 8,
+			slideBy: 8,
 		},
 	},
 };
@@ -542,6 +583,7 @@ function slider(details) {
 		animateOut: details.animateOut || false,
 		responsive: details.responsive,
 		rtl: details.rtl || false,
+		slideBy: details.slideBy || 1,
 	});
 }
 

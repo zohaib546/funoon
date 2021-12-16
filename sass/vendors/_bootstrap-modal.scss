@@ -32,3 +32,12 @@
 		padding: 0;
 	}
 }
+
+@include arabicRTL {
+	.movie-popup {
+		.btn-close {
+			right: unset;
+			left: 2rem;
+		}
+	}
+}

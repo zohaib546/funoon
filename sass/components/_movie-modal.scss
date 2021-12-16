@@ -126,6 +126,22 @@
 	}
 }
 
+@include arabicRTL {
+	.movie-popup {
+		&__items {
+			@include notLastChild {
+				margin-right: 0;
+				margin-left: 4rem;
+
+				@include media-query(phone) {
+					margin-right: 0;
+					margin-left: 1.5rem;
+				}
+			}
+		}
+	}
+}
+
 .movie-episodes {
 	padding: 1rem 3rem 1rem;
 	max-height: 40rem;
