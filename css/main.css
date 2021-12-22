@@ -942,6 +942,17 @@ button:focus {
   color: #717171;
 }
 
+.header .screens[data-bs-popper] {
+  width: 11rem;
+  left: 0rem;
+}
+.header .screens[data-bs-popper] li:not(:last-child) {
+  padding-bottom: 1rem;
+}
+.header .screens[data-bs-popper] .dropdown-item:hover {
+  color: white;
+}
+
 @keyframes check {
   100% {
     stroke-dashoffset: 4.5px;
@@ -1125,13 +1136,13 @@ button:focus {
   border-top: 1px solid #9a9999;
 }
 .header-nav__list {
+  text-align: center;
   display: flex;
   justify-content: flex-end;
 }
 .header-nav__item {
   border-top: 3px solid transparent;
   margin-top: -1px;
-  padding: 0.4rem 0.5rem 0;
 }
 .header-nav__item.active {
   border-top: 3px solid #0f98d5;
@@ -3656,11 +3667,17 @@ body.rtl .section-plan .section-plan_monthly {
     top: 1.5rem;
   }
   body.rtl .section-plan .section-plan_monthly .form-checkbox input + svg {
-    left: 1.3rem;
+    left: 0.3rem;
   }
 }
 body.rtl .section-plan .section-plan_details .form-check-inline {
-  align-items: end;
+  align-items: center;
+  gap: 1rem;
+}
+@media only screen and (max-width: 360px) {
+  body.rtl .section-plan .section-plan_details .form-check-inline {
+    margin-left: 0;
+  }
 }
 body.rtl .section-plan .section-plan_details .form-check {
   padding-right: 0;
@@ -3690,6 +3707,78 @@ body.rtl .auth .form .button--social span {
 body.rtl .activitiy__wrapper .video__nav-item:not(:first-child) {
   margin-left: 0rem;
   margin-right: 3rem;
+}
+
+body.rtl .header .screens[data-bs-popper] {
+  width: 8rem;
+  right: 0rem;
+}
+body.rtl .header .screens[data-bs-popper] li:not(:last-child) {
+  padding-bottom: 1rem;
+}
+body.rtl .header .screens[data-bs-popper] .dropdown-item:hover {
+  color: white;
+}
+body.rtl .header .fa-search {
+  margin-left: .5rem;
+}
+
+body.rtl footer .list-inline-item:not(:last-child) {
+  border-left: 1px solid #fff;
+  border-right: none;
+}
+@media only screen and (max-width: 37.5em) {
+  body.rtl footer .list-inline-item:not(:last-child) {
+    border-left: none;
+  }
+}
+body.rtl .footer--white .list-inline-item:not(:last-child) {
+  border-left: 1px solid black;
+  border-right: none;
+}
+@media only screen and (max-width: 37.5em) {
+  body.rtl .footer--white .list-inline-item:not(:last-child) {
+    border-left: none;
+  }
+}
+
+body.rtl .form-checkbox input + svg {
+  left: 2px;
+}
+
+body.rtl .section-episode .episode-1 .overlay i {
+  margin-left: .5rem;
+}
+body.rtl .episode-1 .card-text i {
+  margin-left: .3rem;
+}
+
+body.rtl .section_payment--select-box .button--primary-huge-2 {
+  text-align: right;
+}
+body.rtl .section_payment--select-box .dropdown .dropdown-toggle::after {
+  left: 1rem;
+  right: unset;
+}
+body.rtl .section-paypal-plan .button--primary-huge-2 {
+  text-align: right;
+}
+body.rtl .section-paypal-plan .dropdown-toggle::after {
+  left: 1rem;
+  right: unset;
+}
+
+body.rtl .form-arabic input::placeholder {
+  text-align: right;
+}
+body.rtl .section-subscribe .form-check {
+  padding-right: 0;
+}
+body.rtl .profile__wrapper .form-checkbox input + svg {
+  left: -7px;
+}
+body.rtl .auth .form__input::placeholder {
+  text-align: right;
 }
 
 /*
