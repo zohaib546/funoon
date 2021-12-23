@@ -691,6 +691,7 @@ function slider(details) {
 		responsive: details.responsive,
 		rtl: details.rtl || false,
 		slideBy: details.slideBy || 1,
+		autoWidth: details.autoWidth || false,
 	});
 }
 

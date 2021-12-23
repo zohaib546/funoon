@@ -263,13 +263,24 @@
 	}
 
 	&__item {
+		position: relative;
+		transition: all 0.5s ease;
 	}
 
-	&__item:hover {
-		// box-shadow: 0px 3px 10px -5px $white-color;
+	&__item:hover &__preview {
+		animation: exclusiveAnimate 0.25s ease-out forwards;
+		display: block;
 	}
 
-	&__item:hover &__figure::before {
+	&__preview {
+		display: none;
+		background: red;
+		width: 100%;
+		height: 100%;
+		position: absolute;
+		left: 0;
+		top: 0;
+		z-index: 2;
 	}
 
 	&__figure {
@@ -278,6 +289,8 @@
 		box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
 		overflow: hidden;
 		cursor: pointer;
+		height: 100%;
+		opacity: 1;
 
 		&::before {
 			content: "";
