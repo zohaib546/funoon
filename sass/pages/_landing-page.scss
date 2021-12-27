@@ -270,6 +270,10 @@
 	&__item:hover &__preview {
 		animation: exclusiveAnimate 0.25s ease-out forwards;
 		display: block;
+
+		@include media-query(phone) {
+			display: none;
+		}
 	}
 
 	&__preview {
@@ -281,6 +285,11 @@
 		left: 0;
 		top: 0;
 		z-index: 2;
+	}
+
+	&__preview--right {
+		left: unset;
+		right: 0;
 	}
 
 	&__figure {
@@ -312,6 +321,19 @@
 
 	&__cover {
 		height: 100%;
+	}
+}
+
+@include arabicRTL {
+	.exclusive {
+		&__preview {
+			right: 0;
+		}
+
+		&__preview--right {
+			left: 0;
+			right: unset;
+		}
 	}
 }
 

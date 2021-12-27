@@ -144,6 +144,9 @@ const exclusiveDetails = {
 	mouseDrag: false,
 	dots: false,
 	slideBy: 6,
+	stagePadding: 50,
+	onTranslated: handleTranslation,
+	onInitialized: handleTranslation,
 	navText: [
 		"<span class='carousel-nav-left'><i class='fa fa-chevron-left'></i></span>",
 		"<span class='carousel-nav-right'><i class='fa fa-chevron-right'></i></span>",
@@ -177,11 +180,14 @@ const exclusiveDetailsRTL = {
 	mouseDrag: false,
 	dots: false,
 	slideBy: 6,
+	rtl: true,
+	stagePadding: 50,
+	onTranslated: handleTranslation,
+	onInitialized: handleTranslation,
 	navText: [
 		"<span class='carousel-nav-left'><i class='fa fa-chevron-left'></i></span>",
 		"<span class='carousel-nav-right'><i class='fa fa-chevron-right'></i></span>",
 	],
-	rtl: true,
 	responsive: {
 		0: {
 			items: 2,
@@ -684,7 +690,7 @@ function slider(details) {
 		margin: details.margin,
 		nav: details.nav,
 		mouseDrag: details.mouseDrag,
-		stagePadding: details.stagePadding,
+		stagePadding: details.stagePadding || 0,
 		dots: details.dots,
 		navText: details.navText,
 		animateOut: details.animateOut || false,
@@ -692,6 +698,8 @@ function slider(details) {
 		rtl: details.rtl || false,
 		slideBy: details.slideBy || 1,
 		autoWidth: details.autoWidth || false,
+		onTranslated: details.onTranslated,
+		onInitialized: details.onInitialized,
 	});
 }
 
@@ -707,4 +715,50 @@ function handleCurrentSlide(curInd, isMuted, muteStye, unmuteStyle) {
 	videos[curInd].muted = isMuted;
 	mute[curInd].style.display = muteStye;
 	unmute[curInd].style.display = unmuteStyle;
+}
+
+function handleTranslation(event) {
+	const dir = document.documentElement.dir;
+
+	if (dir == "rtl") {
+		// Reset preview 'popup' first
+		resetExclusives();
+
+		// Manage popup for last and secondlast item
+		renderExclusivePopup(3, 2);
+	} else {
+		// Reset preview 'popup' first
+		resetExclusives();
+
+		// manage popup for last and secondlast item
+		renderExclusivePopup(2, 1);
+	}
+}
+
+function resetExclusives() {
+	const allExclusives = document.querySelectorAll(".exclusive-carousel .owl-item");
+	allExclusives.forEach((exclusive) => {
+		// Get single exclusive pop-up
+		const preview = exclusive.querySelector(".exclusive__preview");
+
+		if (preview.classList.contains("exclusive__preview--right")) {
+			preview.classList.remove("exclusive__preview--right");
+		}
+	});
+}
+
+function renderExclusivePopup(secondLastIndex, lastIndex) {
+	const activeExclusives = document.querySelectorAll(".exclusive-carousel .owl-item.active");
+
+	// Access last and secondlast item from 6 rendered items
+	const secondLastPreview =
+		activeExclusives[activeExclusives.length - secondLastIndex].querySelector(
+			".exclusive__preview"
+		);
+	const lastPreview =
+		activeExclusives[activeExclusives.length - lastIndex].querySelector(".exclusive__preview");
+
+	// Add specific classes to last and second-last item
+	secondLastPreview.classList.add("exclusive__preview--right");
+	lastPreview.classList.add("exclusive__preview--right");
 }

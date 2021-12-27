@@ -2218,6 +2218,11 @@ body.rtl .video__genre-name:not(:last-child) {
   animation: exclusiveAnimate 0.25s ease-out forwards;
   display: block;
 }
+@media only screen and (max-width: 37.5em) {
+  .exclusive__item:hover .exclusive__preview {
+    display: none;
+  }
+}
 .exclusive__preview {
   display: none;
   background: red;
@@ -2227,6 +2232,10 @@ body.rtl .video__genre-name:not(:last-child) {
   left: 0;
   top: 0;
   z-index: 2;
+}
+.exclusive__preview--right {
+  left: unset;
+  right: 0;
 }
 .exclusive__figure {
   position: relative;
@@ -2256,6 +2265,14 @@ body.rtl .video__genre-name:not(:last-child) {
 }
 .exclusive__cover {
   height: 100%;
+}
+
+body.rtl .exclusive__preview {
+  right: 0;
+}
+body.rtl .exclusive__preview--right {
+  left: 0;
+  right: unset;
 }
 
 .top__item {
