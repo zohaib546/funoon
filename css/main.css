@@ -3789,6 +3789,13 @@ body.rtl .header .screens[data-bs-popper] .dropdown-item:hover {
 body.rtl .header .fa-search {
   margin-left: .5rem;
 }
+body.rtl .header .header-nav__list {
+  justify-content: flex-start;
+  margin-right: 5rem;
+}
+body.rtl .header .header-nav__item {
+  padding-top: .6rem;
+}
 
 body.rtl footer .list-inline-item:not(:last-child) {
   border-left: 1px solid #fff;
