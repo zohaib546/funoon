@@ -176,6 +176,13 @@
         .fa-search {
             margin-left: .5rem;
         }
+        .header-nav__list {
+            justify-content: flex-start;
+            margin-right: 5rem;
+        }
+        .header-nav__item {
+            padding-top: .6rem;
+        }
     }
 }
 
