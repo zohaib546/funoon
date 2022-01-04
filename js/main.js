@@ -70,6 +70,8 @@ const movieDetails = {
 	stagePadding: 50,
 	dots: false,
 	slideBy: 7,
+	onTranslated: handleMovieTranslation,
+	onInitialized: handleMovieTranslation,
 	navText: [
 		"<span class='carousel-nav-left'><i class='fa fa-chevron-left'></i></span>",
 		"<span class='carousel-nav-right'><i class='fa fa-chevron-right'></i></span>",
@@ -91,10 +93,10 @@ const movieDetails = {
 			items: 7,
 			slideBy: 7,
 		},
-		1921: {
-			items: 9,
-			slideBy: 9,
-		},
+		// 1921: {
+		// 	items: 9,
+		// 	slideBy: 9,
+		// },
 	},
 };
 
@@ -107,6 +109,8 @@ const movieDetailsRTL = {
 	stagePadding: 50,
 	dots: false,
 	slideBy: 7,
+	onTranslated: handleMovieTranslation,
+	onInitialized: handleMovieTranslation,
 	navText: [
 		"<span class='carousel-nav-left'><i class='fa fa-chevron-left'></i></span>",
 		"<span class='carousel-nav-right'><i class='fa fa-chevron-right'></i></span>",
@@ -129,10 +133,10 @@ const movieDetailsRTL = {
 			items: 7,
 			slideBy: 7,
 		},
-		1921: {
-			items: 9,
-			slideBy: 9,
-		},
+		// 1921: {
+		// 	items: 9,
+		// 	slideBy: 9,
+		// },
 	},
 };
 
@@ -475,189 +479,201 @@ movieShowMore.forEach((shwMre) =>
 function addPopup(e) {
 	let moviePost = e.target.closest(".movie__item");
 	let isRTL = document.body.classList.contains("rtl");
+	let moviePostAttr = moviePost.getAttribute("data-movie");
 
+	// remove popup first
 	removePopup(e);
 
+	if (moviePostAttr == "left") {
+		addPopupWithDelay(isRTL, moviePost, "item-controls--movie-left", 1000);
+	} else if (moviePostAttr == "right") {
+		addPopupWithDelay(isRTL, moviePost, "item-controls--movie-right", 1000);
+	} else {
+		addPopupWithDelay(isRTL, moviePost, "", 1000);
+	}
+}
+
+function addPopupWithDelay(isRTL, post, classString, time) {
 	if (!isRTL) {
 		setTimeout(() => {
-			moviePost.insertAdjacentHTML(
+			post.insertAdjacentHTML(
 				"beforeend",
-				`<div class="item-controls item-controls--movie">
-						<figure class="item-controls__figure">
-							<img
-								class="item-controls__thumbnail"
-								src="img/landing-page/resume/poster-1.png"
-								alt="icon"
-							/>
-							<video
-								class="item-controls__video"
-								src="video/banner-video.mp4"
-								loop
-								autoplay
-								muted
-							></video>
-						</figure>
-						<div class="item-controls__details">
-							<h3 class="mb-3 item-controls__title">Bye Bye London</h3>
-							<ul class="item-controls__list">
-								<li class="item-controls__action">
-									<a href="./player.html">
-										<img
-											class="item-controls__icon"
-											src="img/popup/icons/icon-play.svg"
-											alt="icon"
-										/>
-									</a>
-								</li>
-								<li class="item-controls__action">
+				`<div class="item-controls item-controls--movie ${classString}">
+					<figure class="item-controls__figure">
+						<img
+							class="item-controls__thumbnail"
+							src="img/landing-page/resume/poster-1.png"
+							alt="icon"
+						/>
+						<video
+							class="item-controls__video"
+							src="video/banner-video.mp4"
+							loop
+							autoplay
+							muted
+						></video>
+					</figure>
+					<div class="item-controls__details">
+						<h3 class="mb-3 item-controls__title">Bye Bye London</h3>
+						<ul class="item-controls__list">
+							<li class="item-controls__action">
+								<a href="./player.html">
 									<img
 										class="item-controls__icon"
-										src="img/popup/icons/icon-add.svg"
+										src="img/popup/icons/icon-play.svg"
 										alt="icon"
 									/>
-								</li>
-								<li class="item-controls__action">
-									<img
-										class="item-controls__icon"
-										src="img/popup/icons/icon-like.svg"
-										alt="icon"
-									/>
-								</li>
-								<li class="item-controls__action">
-									<img
-										class="item-controls__icon"
-										src="img/popup/icons/icon-dislike.svg"
-										alt="icon"
-									/>
-								</li>
-								<li class="item-controls__action">
-									<img
-										class="item-controls__icon"
-										src="img/popup/icons/icon-adult.svg"
-										alt="icon"
-									/>
-								</li>
-								<li class="item-controls__action ms-auto">
-									<img
-										class="item-controls__icon"
-										src="img/popup/icons/icon-remove-list.svg"
-										alt="icon"
-									/>
-								</li>
-								<li class="item-controls__action">
-									<img
-										class="item-controls__icon"
-										src="img/popup/icons/icon-favorite.svg"
-										alt="icon"
-									/>
-								</li>
-								<li
-									class="item-controls__action"
-									data-bs-toggle="modal"
-									data-bs-target="#movieModal"
-								>
-									<img
-										class="item-controls__icon"
-										src="img/popup/icons/icon-info.svg"
-										alt="icon"
-									/>
-								</li>
-							</ul>
-						</div>
+								</a>
+							</li>
+							<li class="item-controls__action">
+								<img
+									class="item-controls__icon"
+									src="img/popup/icons/icon-add.svg"
+									alt="icon"
+								/>
+							</li>
+							<li class="item-controls__action">
+								<img
+									class="item-controls__icon"
+									src="img/popup/icons/icon-like.svg"
+									alt="icon"
+								/>
+							</li>
+							<li class="item-controls__action">
+								<img
+									class="item-controls__icon"
+									src="img/popup/icons/icon-dislike.svg"
+									alt="icon"
+								/>
+							</li>
+							<li class="item-controls__action">
+								<img
+									class="item-controls__icon"
+									src="img/popup/icons/icon-adult.svg"
+									alt="icon"
+								/>
+							</li>
+							<li class="item-controls__action ms-auto">
+								<img
+									class="item-controls__icon"
+									src="img/popup/icons/icon-remove-list.svg"
+									alt="icon"
+								/>
+							</li>
+							<li class="item-controls__action">
+								<img
+									class="item-controls__icon"
+									src="img/popup/icons/icon-favorite.svg"
+									alt="icon"
+								/>
+							</li>
+							<li
+								class="item-controls__action"
+								data-bs-toggle="modal"
+								data-bs-target="#movieModal"
+							>
+								<img
+									class="item-controls__icon"
+									src="img/popup/icons/icon-info.svg"
+									alt="icon"
+								/>
+							</li>
+						</ul>
 					</div>
-				`
+				</div>
+			`
 			);
-		}, 1000);
+		}, time);
 	} else {
 		setTimeout(() => {
-			moviePost.insertAdjacentHTML(
+			post.insertAdjacentHTML(
 				"beforeend",
-				`<div class="item-controls item-controls--movie">
-						<figure class="item-controls__figure">
-							<img
-								class="item-controls__thumbnail"
-								src="../img/landing-page/resume/poster-1.png"
-								alt="icon"
-							/>
-							<video
-								class="item-controls__video"
-								src="../video/banner-video.mp4"
-								loop
-								autoplay
-								muted
-							></video>
-						</figure>
-						<div class="item-controls__details">
-							<h3 class="mb-3 item-controls__title">باي باي لندن</h3>
-							<ul class="item-controls__list">
-								<li class="item-controls__action">
-									<a href="./player.html">
-										<img
-											class="item-controls__icon"
-											src="../img/popup/icons/icon-play.svg"
-											alt="icon"
-										/>
-									</a>
-								</li>
-								<li class="item-controls__action">
+				`<div class="item-controls item-controls--movie ${classString}">
+					<figure class="item-controls__figure">
+						<img
+							class="item-controls__thumbnail"
+							src="../img/landing-page/resume/poster-1.png"
+							alt="icon"
+						/>
+						<video
+							class="item-controls__video"
+							src="../video/banner-video.mp4"
+							loop
+							autoplay
+							muted
+						></video>
+					</figure>
+					<div class="item-controls__details">
+						<h3 class="mb-3 item-controls__title">باي باي لندن</h3>
+						<ul class="item-controls__list">
+							<li class="item-controls__action">
+								<a href="./player.html">
 									<img
 										class="item-controls__icon"
-										src="../img/popup/icons/icon-add.svg"
+										src="../img/popup/icons/icon-play.svg"
 										alt="icon"
 									/>
-								</li>
-								<li class="item-controls__action">
-									<img
-										class="item-controls__icon"
-										src="../img/popup/icons/icon-like.svg"
-										alt="icon"
-									/>
-								</li>
-								<li class="item-controls__action">
-									<img
-										class="item-controls__icon"
-										src="../img/popup/icons/icon-dislike.svg"
-										alt="icon"
-									/>
-								</li>
-								<li class="item-controls__action">
-									<img
-										class="item-controls__icon"
-										src="../img/popup/icons/icon-adult.svg"
-										alt="icon"
-									/>
-								</li>
-								<li class="item-controls__action ms-auto">
-									<img
-										class="item-controls__icon"
-										src="../img/popup/icons/icon-remove-list.svg"
-										alt="icon"
-									/>
-								</li>
-								<li class="item-controls__action">
-									<img
-										class="item-controls__icon"
-										src="../img/popup/icons/icon-favorite.svg"
-										alt="icon"
-									/>
-								</li>
-								<li
-									class="item-controls__action"
-									data-bs-toggle="modal"
-									data-bs-target="#movieModal"
-								>
-									<img
-										class="item-controls__icon"
-										src="../img/popup/icons/icon-info.svg"
-										alt="icon"
-									/>
-								</li>
-							</ul>
-						</div>
+								</a>
+							</li>
+							<li class="item-controls__action">
+								<img
+									class="item-controls__icon"
+									src="../img/popup/icons/icon-add.svg"
+									alt="icon"
+								/>
+							</li>
+							<li class="item-controls__action">
+								<img
+									class="item-controls__icon"
+									src="../img/popup/icons/icon-like.svg"
+									alt="icon"
+								/>
+							</li>
+							<li class="item-controls__action">
+								<img
+									class="item-controls__icon"
+									src="../img/popup/icons/icon-dislike.svg"
+									alt="icon"
+								/>
+							</li>
+							<li class="item-controls__action">
+								<img
+									class="item-controls__icon"
+									src="../img/popup/icons/icon-adult.svg"
+									alt="icon"
+								/>
+							</li>
+							<li class="item-controls__action ms-auto">
+								<img
+									class="item-controls__icon"
+									src="../img/popup/icons/icon-remove-list.svg"
+									alt="icon"
+								/>
+							</li>
+							<li class="item-controls__action">
+								<img
+									class="item-controls__icon"
+									src="../img/popup/icons/icon-favorite.svg"
+									alt="icon"
+								/>
+							</li>
+							<li
+								class="item-controls__action"
+								data-bs-toggle="modal"
+								data-bs-target="#movieModal"
+							>
+								<img
+									class="item-controls__icon"
+									src="../img/popup/icons/icon-info.svg"
+									alt="icon"
+								/>
+							</li>
+						</ul>
 					</div>
-				`
+				</div>
+			`
 			);
-		}, 1000);
+		}, time);
 	}
 }
 
@@ -761,4 +777,31 @@ function renderExclusivePopup(secondLastIndex, lastIndex) {
 	// Add specific classes to last and second-last item
 	secondLastPreview.classList.add("exclusive__preview--right");
 	lastPreview.classList.add("exclusive__preview--right");
+}
+
+function handleMovieTranslation() {
+	const dir = document.documentElement.dir;
+	const movieActiveItems = document.querySelectorAll(
+		".movie-carousel .owl-item.active .movie__item"
+	);
+
+	if (dir == "rtl") {
+		// manage leftmost and rightmost item
+		movieActiveItems.forEach((item, index) => {
+			if (index == 0 || index == 8) {
+				item.setAttribute("data-movie", "left");
+			} else if (index == 6 || index == 14) {
+				item.setAttribute("data-movie", "right");
+			}
+		});
+	} else {
+		// manage leftmost and rightmost item
+		movieActiveItems.forEach((item, index) => {
+			if (index == 0 || index == 7) {
+				item.setAttribute("data-movie", "left");
+			} else if (index == 6 || index == 13) {
+				item.setAttribute("data-movie", "right");
+			}
+		});
+	}
 }

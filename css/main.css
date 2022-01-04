@@ -2198,11 +2198,6 @@ body.rtl .video__genre-name:not(:last-child) {
   border-radius: 3px;
   overflow: hidden;
 }
-@media only screen and (min-width: 125em) {
-  .movie__figure {
-    height: 30rem;
-  }
-}
 .movie__cover {
   height: 100%;
 }
@@ -2422,9 +2417,15 @@ body.rtl .top__number-figure--1 {
 }
 @media only screen and (min-width: 125em) {
   .item-controls--movie {
-    left: -2rem;
-    width: 32rem;
+    width: 45rem;
   }
+}
+.item-controls--movie-left {
+  left: 0;
+}
+.item-controls--movie-right {
+  right: 0;
+  left: unset;
 }
 .item-controls--movie .item-controls__figure {
   flex: 1;
@@ -2531,6 +2532,14 @@ body.rtl .top__number-figure--1 {
 body.rtl .item-controls__action:not(:last-child) {
   margin-right: 0;
   margin-left: 1rem;
+}
+body.rtl .item-controls--movie-left {
+  right: 0;
+  left: unset;
+}
+body.rtl .item-controls--movie-right {
+  left: 0;
+  right: unset;
 }
 
 .registration-new {

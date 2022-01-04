@@ -247,9 +247,9 @@
 		border-radius: 3px;
 		overflow: hidden;
 
-		@include media-query(desktop-xl) {
-			height: 30rem;
-		}
+		// @include media-query(desktop-xl) {
+		// 	height: 30rem;
+		// }
 	}
 
 	&__cover {
@@ -496,13 +496,23 @@
 	&--movie {
 		top: -1rem;
 		left: -7rem;
+		// left: 0;
 		width: 35rem;
 		height: 110%;
 
 		@include media-query(desktop-xl) {
-			left: -2rem;
-			width: 32rem;
+			// left: -2rem;
+			width: 45rem;
 		}
+	}
+
+	&--movie-left {
+		left: 0;
+	}
+
+	&--movie-right {
+		right: 0;
+		left: unset;
 	}
 
 	&--movie &__figure {
@@ -635,6 +645,16 @@
 				margin-right: 0;
 				margin-left: 1rem;
 			}
+		}
+
+		&--movie-left {
+			right: 0;
+			left: unset;
+		}
+
+		&--movie-right {
+			left: 0;
+			right: unset;
 		}
 	}
 }
