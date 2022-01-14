@@ -8,6 +8,7 @@ const menuList = document.querySelector(".header-nav__sidelist");
 const movies = document.querySelectorAll(".movie__item");
 const movieContainer = document.querySelectorAll(".movie-popup__movies");
 const movieShowMore = document.querySelectorAll(".movie-popup__show");
+const headerSticky = document.querySelector(".header--sticky");
 
 // GLOBAL DATA
 let prevSlideIndex = 0;
@@ -468,6 +469,9 @@ movies.forEach((movie) =>
 	})
 );
 
+// SHOW AND HIDE STICKY NAVBAR
+window.addEventListener("scroll", scrollFunction);
+
 // SHOW MORE
 movieShowMore.forEach((shwMre) =>
 	shwMre.addEventListener("click", (e) => {
@@ -475,6 +479,14 @@ movieShowMore.forEach((shwMre) =>
 		movieContainer.forEach((cont) => cont.classList.toggle("show-less"));
 	})
 );
+
+function scrollFunction() {
+	if (document.body.scrollTop > 200 || document.documentElement.scrollTop > 200) {
+		headerSticky.classList.add("show");
+	} else {
+		headerSticky.classList.remove("show");
+	}
+}
 
 function addPopup(e) {
 	let moviePost = e.target.closest(".movie__item");
