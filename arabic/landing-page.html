@@ -82,12 +82,7 @@
 								</a>
 								<ul class="dropdown-menu header__dropdown" aria-labelledby="navbarDropdown">
 									<div
-										class="
-											header__dropdown-profile
-											d-flex
-											justify-content-between
-											align-items-center
-										"
+										class="header__dropdown-profile d-flex justify-content-between align-items-center"
 									>
 										<img
 											class="me-2 header__avatar"
@@ -143,6 +138,102 @@
 					</div>
 				</div>
 			</nav>
+			<!-- NAVBAR STICKY -->
+			<nav class="header--sticky navbar navbar-expand-sm navbar-dark d-none d-sm-flex">
+				<div class="container-fluid">
+					<a class="navbar-brand" href="landing-page.html">
+						<img src="../img/svg/logo.svg" alt="logo" />
+					</a>
+					<div class="navbar-nav ms-5 justify-content-between align-items-center w-100">
+						<ul class="navbar-nav">
+							<li class="nav-item">
+								<a class="nav-link" href="landing-page.html">الصفحة الرئيسية </a>
+							</li>
+							<li class="nav-item">
+								<a class="nav-link" href="plays.html">مسرحيات</a>
+							</li>
+							<li class="nav-item">
+								<a class="nav-link" href="operettas.html">أوبريتات</a>
+							</li>
+							<li class="nav-item">
+								<a class="nav-link" href="series.html">مسلسلات</a>
+							</li>
+							<li class="nav-item">
+								<a class="nav-link" href="programs.html">برامج</a>
+							</li>
+							<li class="nav-item">
+								<a class="nav-link" href="movies.html">أفلام</a>
+							</li>
+						</ul>
+
+						<ul class="navbar-nav align-items-center">
+							<li class="nav-item">
+								<a class="nav-link" href="#"><i class="fas fa-search"></i> بحث</a>
+							</li>
+							<li class="nav-item header__navbar-item d-flex align-items-center">
+								<a class="mx-3 navbar-link active" href="../landing-page.html">English</a>
+								<a class="mx-3 navbar-link main-heading-sm-2" href="arabic/landing-page.html"
+									>العربية</a
+								>
+							</li>
+							<li class="nav-item dropdown">
+								<a
+									class="nav-link dropdown-toggle"
+									href="#"
+									id="navbarDropdown"
+									role="button"
+									data-bs-toggle="dropdown"
+									aria-expanded="false"
+								>
+									<img
+										src="../img/profile.png"
+										class="me-2 rounded-circle"
+										width="30px"
+										height="30px"
+										alt="profile picture"
+									/>
+									علي حيدر
+								</a>
+								<ul class="dropdown-menu header__dropdown" aria-labelledby="navbarDropdown">
+									<div
+										class="header__dropdown-profile d-flex justify-content-between align-items-center"
+									>
+										<img
+											class="me-2 header__avatar"
+											src="../img/profile.png"
+											width="60px"
+											height="60px"
+											alt="profile picture"
+										/>
+										<a class="white-color" href="#">
+											<span class="main-heading-bold-2">علي حيدر</span> <br />
+											إدارة الملف الشخصي
+										</a>
+										<img
+											src="../img/svg/profile-arrow.svg"
+											width="20px"
+											height="20px"
+											alt="Arrow"
+										/>
+									</div>
+									<li>
+										<hr class="dropdown-divider white-color" />
+									</li>
+									<li>
+										<a class="dropdown-item header__item white-color" href="profile-1.html">ملفي</a>
+										<a class="dropdown-item header__item white-color" href="my-collections.html"
+											>مجموعاتي</a
+										>
+										<a class="dropdown-item header__item white-color" href="logout.html"
+											>تسجيل خروج</a
+										>
+									</li>
+								</ul>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</nav>
 			<!-- NAVBAR DESKTOP -->
 			<nav class="header-nav header-nav--desktop">
 				<ul class="header-nav__list">
@@ -166,7 +257,6 @@
 					</li>
 				</ul>
 			</nav>
-
 			<!-- SIDENAV -->
 			<nav class="header-sidenav">
 				<ul class="header-sidenav__sidelist">
