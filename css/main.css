@@ -156,7 +156,7 @@ media-query-px / root-size-browser => 600px/16px = 37.5em
   overflow: hidden;
 }
 .header .dropdown-menu[data-bs-popper] {
-  top: 100%;
+  top: 5.3rem;
   left: -11rem;
   margin-top: 0.125rem;
   width: 22rem;
@@ -167,6 +167,61 @@ media-query-px / root-size-browser => 600px/16px = 37.5em
 }
 .header .dropdown-item:hover {
   background-color: #0f98d5;
+}
+.header .notification {
+  /* width */
+  /* Track */
+  /* Handle */
+  /* Handle on hover */
+}
+.header .notification .dropdown-menu[data-bs-popper] {
+  left: -25rem !important;
+  max-width: 45rem;
+  min-width: 28rem;
+  max-height: 30rem;
+  overflow-y: scroll;
+}
+.header .notification .header__item {
+  padding: 1rem;
+}
+.header .notification .card {
+  border: none !important;
+  z-index: -1;
+}
+.header .notification .dropdown-item:hover {
+  background-color: unset;
+}
+.header .notification .series:hover {
+  background-color: #0f10119f;
+}
+.header .notification .online-toster {
+  position: absolute;
+  width: 1rem;
+  height: 1rem;
+  border-radius: 50%;
+  background-color: #0f98d5;
+  right: 2px;
+  top: 5px;
+}
+.header .notification i {
+  font-size: 2rem;
+  position: relative;
+}
+.header .notification .dropdown-toggle::after {
+  display: none;
+}
+.header .notification ::-webkit-scrollbar {
+  width: 1rem;
+}
+.header .notification ::-webkit-scrollbar-track {
+  background-color: #1c1c1c;
+}
+.header .notification ::-webkit-scrollbar-thumb {
+  background-color: #494646;
+  border-radius: 1rem;
+}
+.header .notification ::-webkit-scrollbar-thumb:hover {
+  background-color: #808080;
 }
 
 body.rtl .header .dropdown-menu[data-bs-popper] {
@@ -207,8 +262,7 @@ body.rtl .header .dropdown-menu[data-bs-popper] {
   }
 }
 @media only screen and (max-width: 37.5em) {
-  .hero__form .input-group
-  > :not(:first-child):not(.dropdown-menu):not(.valid-tooltip):not(.valid-feedback):not(.invalid-tooltip):not(.invalid-feedback) {
+  .hero__form .input-group > :not(:first-child):not(.dropdown-menu):not(.valid-tooltip):not(.valid-feedback):not(.invalid-tooltip):not(.invalid-feedback) {
     border-top-left-radius: 0.5rem;
     border-bottom-left-radius: 0.5rem;
     margin-left: 0;
@@ -3810,14 +3864,14 @@ body.rtl .header .screens[data-bs-popper] .dropdown-item:hover {
   color: white;
 }
 body.rtl .header .fa-search {
-  margin-left: 0.5rem;
+  margin-left: .5rem;
 }
 body.rtl .header .header-nav__list {
   justify-content: flex-start;
-  margin-right: 2rem;
+  margin-right: 5rem;
 }
 body.rtl .header .header-nav__item {
-  padding-top: 0.6rem;
+  padding-top: .6rem;
 }
 
 body.rtl footer .list-inline-item:not(:last-child) {
@@ -3844,10 +3898,10 @@ body.rtl .form-checkbox input + svg {
 }
 
 body.rtl .section-episode .episode-1 .overlay i {
-  margin-left: 0.5rem;
+  margin-left: .5rem;
 }
 body.rtl .episode-1 .card-text i {
-  margin-left: 0.3rem;
+  margin-left: .3rem;
 }
 
 body.rtl .section_payment--select-box .button--primary-huge-2 {
@@ -3876,6 +3930,10 @@ body.rtl .profile__wrapper .form-checkbox input + svg {
 }
 body.rtl .auth .form__input::placeholder {
   text-align: right;
+}
+
+body.rtl .notification-arabic .dropdown-menu[data-bs-popper] {
+  right: -25rem !important;
 }
 
 /*
