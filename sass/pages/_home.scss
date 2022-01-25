@@ -1,175 +1,177 @@
 .get-started {
-    padding: 2rem 0;
-    background-color: $primary-color;
-    position: relative;
-    &__row {
-        display: flex;
-        align-items: center;
-        padding: 0 2rem;
-        @include media-query(phone) {
-            flex-direction: column;
-            position: relative;
-            @include selectAllExceptLast {
-                margin-bottom: 2rem;
-            }
-        }
-    }
-    &__desc {
-        margin: 0 2rem;
-        @include media-query(phone) {
-            margin-right: 0;
-            margin-left: 0;
-        }
-    }
-    &__graphic {
-        display: none;
-        width: 100%;
-        position: absolute;
-        top: 50%;
-        left: -50%;
-        transform: translateY(-50%);
-        @include media-query(phone) {
-            display: block;
-        }
-    }
+	padding: 2rem 0;
+	background-color: $primary-color;
+	position: relative;
+	&__row {
+		display: flex;
+		align-items: center;
+		padding: 0 2rem;
+		@include media-query(phone) {
+			flex-direction: column;
+			position: relative;
+			@include selectAllExceptLast {
+				margin-bottom: 2rem;
+			}
+		}
+	}
+	&__desc {
+		margin: 0 2rem;
+		@include media-query(phone) {
+			margin-right: 0;
+			margin-left: 0;
+		}
+	}
+	&__graphic {
+		display: none;
+		width: 100%;
+		position: absolute;
+		top: 50%;
+		left: -50%;
+		transform: translateY(-50%);
+		@include media-query(phone) {
+			display: block;
+		}
+	}
 }
 
 .main {
-    // background: url(../img/graphic-circle-2.png), url(../img/graphic-circle-3.png),
-    // 	url(../img/graphic-circle-3.png);
-    background: url(../img/graphic-circle-2.png), url(../img/graphic-circle-3.png);
-    background-size: 100%, 110%;
-    background-position: 0 5%, -5rem 80%;
-    background-repeat: no-repeat;
-    @include media-query(tab-land) {
-        background-image: url(../img/graphic-circle-2.png), url(../img/graphic-circle-3.png), url(../img/graphic-circle-3.png);
-        // background-position: -10rem 0, -10rem 100%;
-        background-position: 0 -5%, 0 50%, 0 100%;
-    }
-    @include media-query(phone) {
-        background-image: url(../img/graphic-circle-2.png), url(../img/graphic-circle-3.png), url(../img/graphic-circle-3.png);
-        background-size: 200%, 200%, 150%;
-        background-position: 140% 0, -20rem 60%, -20rem 100%;
-    }
+	background: url(../img/graphic-circle-2.png), url(../img/graphic-circle-3.png);
+	background-size: 100%, 110%;
+	background-position: 0 5%, -5rem 80%;
+	background-repeat: no-repeat;
+	@include media-query(tab-land) {
+		background-image: url(../img/graphic-circle-2.png), url(../img/graphic-circle-3.png),
+			url(../img/graphic-circle-3.png);
+		// background-position: -10rem 0, -10rem 100%;
+		background-position: 0 -5%, 0 50%, 0 100%;
+	}
+	@include media-query(phone) {
+		background-image: url(../img/graphic-circle-2.png), url(../img/graphic-circle-3.png),
+			url(../img/graphic-circle-3.png);
+		background-size: 200%, 200%, 150%;
+		background-position: 140% 0, -20rem 60%, -20rem 100%;
+	}
 }
 
 .feature {
-    min-height: 75vh;
-    display: flex;
-    align-items: center;
-    position: relative;
-    padding: 5rem 0;
-    // &::before {
-    // 	content: "";
-    // 	position: absolute;
-    // 	inset: 0;
-    // 	background: $radial-gradient;
-    // 	z-index: -5;
-    // }
-    @include media-query(tab-land) {
-        min-height: 40vh;
-    }
-    .main-logo {
-        img {
-            width: 100%;
-        }
-    }
-    .emoji {
-        width: 10rem;
-    }
-    .download-detail {
-        @media only screen and(max-width: 768px) {
-            margin-bottom: 5rem;
-        }
-    }
-    .download-app {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        margin-top: 2rem;
-        .download {
-            width: 100%;
-            @include media-query(tab-land) {
-                width: 50%;
-            }
-        }
-    }
-    .multiple-screen {
-        @media only screen and(max-width: 768px) {
-            margin-left: -7rem;
-        }
-    }
-    .smartphone {
-        width: 100%;
-    }
-    .download-gif {
-        @include media-query(tab-port) {
-            text-align: center;
-        }
-    }
-    .yearly {
-        text-align: center;
-    }
-    .monthly {
-        text-align: center;
-    }
-    .package {
-        height: 21rem;
-        padding: 2rem 0;
-        border-radius: 2rem;
-        background-color: #2BC4F3;
-    }
-    .chit {
-        position: relative;
-        overflow: hidden;
-        &::after {
-            content: "save 35%";
-            position: absolute;
-            background-color: red;
-            font-size: 2.7rem;
-            padding: 0rem 18rem 0 5rem;
-            transform: rotate( 337deg);
-            left: -48px;
-            top: 1px;
-        }
-    }
+	min-height: 75vh;
+	display: flex;
+	align-items: center;
+	position: relative;
+	padding: 5rem 0;
+
+	// &::before {
+	// 	content: "";
+	// 	position: absolute;
+	// 	inset: 0;
+	// 	background: $radial-gradient;
+	// 	z-index: -5;
+	// }
+
+	@include media-query(tab-land) {
+		min-height: 40vh;
+	}
+	.main-logo {
+		img {
+			width: 100%;
+		}
+	}
+	.emoji {
+		width: 10rem;
+	}
+	.download-detail {
+		@media only screen and(max-width: 768px) {
+			margin-bottom: 5rem;
+		}
+	}
+	.download-app {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		margin-top: 2rem;
+		.download {
+			width: 100%;
+			@include media-query(tab-land) {
+				width: 50%;
+			}
+		}
+	}
+	.multiple-screen {
+		@media only screen and(max-width: 768px) {
+			margin-left: -7rem;
+		}
+	}
+	.smartphone {
+		width: 100%;
+	}
+	.download-gif {
+		@include media-query(tab-port) {
+			text-align: center;
+		}
+	}
+	.yearly {
+		text-align: center;
+	}
+	.monthly {
+		text-align: center;
+	}
+	.package {
+		height: 21rem;
+		padding: 2rem 0;
+		border-radius: 2rem;
+		background-color: #2bc4f3;
+	}
+	.chit {
+		position: relative;
+		overflow: hidden;
+		&::after {
+			content: "save 35%";
+			position: absolute;
+			background-color: red;
+			font-size: 2.7rem;
+			padding: 0rem 18rem 0 5rem;
+			transform: rotate(337deg);
+			left: -48px;
+			top: 1px;
+		}
+	}
 }
 
 .description {
-    padding: 8rem 0;
-    &__content {
-        display: flex;
-        margin: 1.5rem 0;
-    }
-    &__icon {
-        flex-shrink: 0;
-        width: 4rem;
-        height: 4rem;
-        background: linear-gradient(90deg, #090909 0%, rgba(53, 53, 53, 0.554374) 50%, #1c1c1c 100%);
-        border-radius: 50%;
-        border: solid 1px $primary-color;
-        font-size: 2rem;
-        color: $white-color;
-        margin-right: 1.5rem;
-        @include flex(center, center);
-    }
-    &__details {
-        h3 {
-            font-weight: bold;
-            margin-bottom: 1rem;
-        }
-        p {
-            margin: 0;
-        }
-    }
+	padding: 8rem 0;
+	&__content {
+		display: flex;
+		margin: 1.5rem 0;
+	}
+	&__icon {
+		flex-shrink: 0;
+		width: 4rem;
+		height: 4rem;
+		background: linear-gradient(90deg, #090909 0%, rgba(53, 53, 53, 0.554374) 50%, #1c1c1c 100%);
+		border-radius: 50%;
+		border: solid 1px $primary-color;
+		font-size: 2rem;
+		color: $white-color;
+		margin-right: 1.5rem;
+		@include flex(center, center);
+	}
+	&__details {
+		h3 {
+			font-weight: bold;
+			margin-bottom: 1rem;
+		}
+		p {
+			margin: 0;
+		}
+	}
 }
 
 .circle {
-    background: url(../img/graphic-footer-circle.png);
-    background-size: 100%;
-    background-position: center;
-    background-repeat: no-repeat;
-    @include media-query(phone) {
-        background: none;
-    }
+	background: url(../img/graphic-footer-circle.png);
+	background-size: 100%;
+	background-position: center;
+	background-repeat: no-repeat;
+	@include media-query(phone) {
+		background: none;
+	}
 }
