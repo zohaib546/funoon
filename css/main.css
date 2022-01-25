@@ -692,6 +692,12 @@ button:focus {
   color: #fff;
 }
 
+.secondary-heading-bold-xxl {
+  font-size: 8rem;
+  font-weight: bold;
+  color: #fff;
+}
+
 .secondary-heading-bold-lg {
   font-size: 3.5rem;
   font-weight: bold;
@@ -1601,6 +1607,12 @@ body.rtl .header-sidenav__sidelist {
   margin-bottom: 1rem;
 }
 
+.subscribe-btn {
+  background-color: #3333;
+  padding: 1rem;
+  display: inline-block;
+}
+
 .movie-popup__modal {
   background: radial-gradient(circle, #1a1a1a 0%, black 100%);
 }
@@ -1878,6 +1890,70 @@ body.rtl .movie-popup__items:not(:last-child) {
   .feature {
     min-height: 40vh;
   }
+}
+.feature .main-logo img {
+  width: 100%;
+}
+.feature .emoji {
+  width: 10rem;
+}
+@media only screen and (max-width: 768px) {
+  .feature .download-detail {
+    margin-bottom: 5rem;
+  }
+}
+.feature .download-app {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 2rem;
+}
+.feature .download-app .download {
+  width: 100%;
+}
+@media only screen and (max-width: 75em) {
+  .feature .download-app .download {
+    width: 50%;
+  }
+}
+@media only screen and (max-width: 768px) {
+  .feature .multiple-screen {
+    margin-left: -7rem;
+  }
+}
+.feature .smartphone {
+  width: 100%;
+}
+@media only screen and (max-width: 62em) {
+  .feature .download-gif {
+    text-align: center;
+  }
+}
+.feature .yearly {
+  text-align: center;
+}
+.feature .monthly {
+  text-align: center;
+}
+.feature .package {
+  height: 21rem;
+  padding: 2rem 0;
+  border-radius: 2rem;
+  background-color: #2BC4F3;
+}
+.feature .chit {
+  position: relative;
+  overflow: hidden;
+}
+.feature .chit::after {
+  content: "save 35%";
+  position: absolute;
+  background-color: red;
+  font-size: 2.7rem;
+  padding: 0rem 18rem 0 5rem;
+  transform: rotate(337deg);
+  left: -48px;
+  top: 1px;
 }
 
 .description {
