@@ -15,6 +15,59 @@ let prevSlideIndex = 0;
 const mainCarousel = ".video-carousel";
 const activeSlideClasses = ".video .owl-item.active .video__figure";
 
+const landingDetails = {
+	element: ".landing-carousel-en",
+	loop: true,
+	margin: 20,
+	nav: false,
+	mouseDrag: true,
+	stagePadding: 0,
+	dots: false,
+	autoplay: true,
+	slideTransition: "linear",
+	autoplayTimeout: 5000,
+	autoplaySpeed: 5000,
+	autoplayHoverPause: true,
+	responsive: {
+		0: {
+			items: 1,
+		},
+		600: {
+			items: 1,
+		},
+		1000: {
+			items: 6,
+		},
+	},
+};
+
+const listDetails = {
+	element: ".list-carousel-en",
+	loop: true,
+	margin: 0,
+	nav: false,
+	mouseDrag: true,
+	stagePadding: 0,
+	dots: false,
+	autoplay: true,
+	slideTransition: "linear",
+	autoplayTimeout: 5000,
+	autoplaySpeed: 5000,
+	autoplayHoverPause: true,
+	rtl: true,
+	responsive: {
+		0: {
+			items: 1,
+		},
+		600: {
+			items: 1,
+		},
+		1000: {
+			items: 6,
+		},
+	},
+};
+
 const videoDetails = {
 	element: ".video-carousel-en",
 	loop: false,
@@ -409,6 +462,8 @@ slider({ ...topDetails });
 slider({ ...topDetailsRTL });
 slider({ ...resumeDetails });
 slider({ ...resumeDetailsRTL });
+slider({ ...landingDetails });
+slider({ ...listDetails });
 
 // CALLS WHEN SLIDE CHANGES
 $(mainCarousel).on("changed.owl.carousel", function (event) {
@@ -728,6 +783,11 @@ function slider(details) {
 		autoWidth: details.autoWidth || false,
 		onTranslated: details.onTranslated,
 		onInitialized: details.onInitialized,
+		autoplay: details.autoplay || false,
+		autoplayTimeout: details.autoplayTimeout || 5000,
+		autoplaySpeed: details.autoplaySpeed || false,
+		autoplayHoverPause: details.autoplayHoverPause || false,
+		slideTransition: details.slideTransition || "",
 	});
 }
 

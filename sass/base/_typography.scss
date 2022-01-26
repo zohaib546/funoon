@@ -15,6 +15,13 @@
 	color: $primary-color;
 }
 
+.secondary-heading-shadow-xl {
+	font-size: 5rem;
+	font-weight: bold;
+	color: $white-color;
+	text-shadow: 0 4px 1px #333;
+}
+
 .secondary-heading-bold-xl {
 	font-size: 5rem;
 	font-weight: bold;

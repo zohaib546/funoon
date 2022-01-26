@@ -60,14 +60,6 @@
 	position: relative;
 	padding: 5rem 0;
 
-	// &::before {
-	// 	content: "";
-	// 	position: absolute;
-	// 	inset: 0;
-	// 	background: $radial-gradient;
-	// 	z-index: -5;
-	// }
-
 	@include media-query(tab-land) {
 		min-height: 40vh;
 	}
@@ -135,6 +127,38 @@
 			top: 1px;
 		}
 	}
+
+	&__text {
+		font-size: 2rem;
+		max-width: 50%;
+		margin: auto;
+		line-height: 1.2;
+		text-align: center;
+	}
+
+	&__list {
+		padding: 2rem;
+		background: $radial-gradient-primary;
+
+		li {
+			position: relative;
+			font-size: 2rem;
+			padding: 0 3rem;
+			text-align: center;
+
+			&::before {
+				content: "";
+				width: 5px;
+				height: 5px;
+				background: $white-color;
+				border-radius: 50%;
+				display: block;
+				position: absolute;
+				top: 50%;
+				right: 0%;
+			}
+		}
+	}
 }
 
 .description {
@@ -173,5 +197,51 @@
 	background-repeat: no-repeat;
 	@include media-query(phone) {
 		background: none;
+	}
+}
+
+.stars {
+	position: relative;
+
+	&::before {
+		content: "";
+		display: block;
+		position: absolute;
+		inset: 0;
+		background: url("../img/stars-bg.png");
+		background-position: top;
+		background-size: cover;
+	}
+
+	img {
+		position: relative;
+		z-index: 1;
+	}
+
+	&__content {
+		padding: 3rem 0;
+		text-align: center;
+	}
+}
+
+.bg-circles {
+	position: relative;
+	overflow: hidden;
+	background: $radial-gradient-primary;
+
+	&::before {
+		content: "";
+		position: absolute;
+		z-index: 5;
+		inset: 0;
+		background-image: url(../img/graphic-circle-2.png);
+		background-position: 0 -20%;
+		background-size: 115%;
+		background-repeat: no-repeat;
+	}
+
+	@include selectDirectChilds {
+		position: relative;
+		z-index: 6;
 	}
 }
