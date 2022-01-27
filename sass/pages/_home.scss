@@ -134,6 +134,13 @@
 		margin: auto;
 		line-height: 1.2;
 		text-align: center;
+
+		@include media-query(phone) {
+			max-width: 90%;
+		}
+	}
+
+	&__item {
 	}
 
 	&__list {

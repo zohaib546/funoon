@@ -1214,6 +1214,26 @@ button:focus {
   }
 }
 
+body.rtl .hero-features__list:nth-child(1) {
+  border-left: 0.5px solid #0f98d5;
+  border-right: none;
+}
+body.rtl .hero-features__list:nth-child(2) {
+  margin-bottom: 2rem;
+}
+body.rtl .hero-features__list:nth-child(3) {
+  border-right: 0.5px solid #0f98d5;
+  border-left: 0.5px solid #0f98d5;
+  margin-bottom: 4rem;
+}
+body.rtl .hero-features__list:nth-child(4) {
+  margin-bottom: 2rem;
+}
+body.rtl .hero-features__list:nth-child(5) {
+  border-right: 0.5px solid #0f98d5;
+  border-left: none;
+}
+
 .header__mobile-nav {
   display: none;
 }
@@ -2048,6 +2068,11 @@ body.rtl .movie-popup__items:not(:last-child) {
   margin: auto;
   line-height: 1.2;
   text-align: center;
+}
+@media only screen and (max-width: 37.5em) {
+  .feature__text {
+    max-width: 90%;
+  }
 }
 .feature__list {
   padding: 2rem;

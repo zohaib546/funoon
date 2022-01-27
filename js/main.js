@@ -18,7 +18,7 @@ const activeSlideClasses = ".video .owl-item.active .video__figure";
 const landingDetails = {
 	element: ".landing-carousel-en",
 	loop: true,
-	margin: 20,
+	margin: 10,
 	nav: false,
 	mouseDrag: true,
 	stagePadding: 0,
@@ -30,10 +30,37 @@ const landingDetails = {
 	autoplayHoverPause: true,
 	responsive: {
 		0: {
-			items: 1,
+			items: 3,
 		},
 		600: {
-			items: 1,
+			items: 3,
+		},
+		1000: {
+			items: 6,
+		},
+	},
+};
+
+const landingDetailsRTL = {
+	element: ".landing-carousel-ar",
+	loop: true,
+	margin: 10,
+	nav: false,
+	mouseDrag: true,
+	stagePadding: 0,
+	dots: false,
+	autoplay: true,
+	slideTransition: "linear",
+	autoplayTimeout: 5000,
+	autoplaySpeed: 5000,
+	autoplayHoverPause: true,
+	rtl: true,
+	responsive: {
+		0: {
+			items: 3,
+		},
+		600: {
+			items: 3,
 		},
 		1000: {
 			items: 6,
@@ -57,10 +84,10 @@ const listDetails = {
 	rtl: true,
 	responsive: {
 		0: {
-			items: 1,
+			items: 2,
 		},
 		600: {
-			items: 1,
+			items: 2,
 		},
 		1000: {
 			items: 6,
@@ -463,6 +490,7 @@ slider({ ...topDetailsRTL });
 slider({ ...resumeDetails });
 slider({ ...resumeDetailsRTL });
 slider({ ...landingDetails });
+slider({ ...landingDetailsRTL });
 slider({ ...listDetails });
 
 // CALLS WHEN SLIDE CHANGES

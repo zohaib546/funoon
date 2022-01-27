@@ -116,6 +116,7 @@
 			margin-top: auto;
 		}
 	}
+
 	&__heading--md {
 		font-weight: bold;
 		font-size: 3.5rem;
@@ -132,6 +133,35 @@
 		font-weight: bold;
 		@include media-query(tab) {
 			font-size: 1.5rem;
+		}
+	}
+}
+
+@include arabicRTL {
+	.hero {
+		&-features {
+			&__list {
+				&:nth-child(1) {
+					border-left: 0.5px solid $primary-color;
+					border-right: none;
+				}
+
+				&:nth-child(2) {
+					margin-bottom: 2rem;
+				}
+				&:nth-child(3) {
+					border-right: 0.5px solid $primary-color;
+					border-left: 0.5px solid $primary-color;
+					margin-bottom: 4rem;
+				}
+				&:nth-child(4) {
+					margin-bottom: 2rem;
+				}
+				&:nth-child(5) {
+					border-right: 0.5px solid $primary-color;
+					border-left: none;
+				}
+			}
 		}
 	}
 }
