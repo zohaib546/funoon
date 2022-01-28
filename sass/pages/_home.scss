@@ -63,9 +63,20 @@
 	@include media-query(tab-land) {
 		min-height: 40vh;
 	}
+
+	.secondary-heading-bold-lg {
+		@include media-query(tab-land) {
+			font-size: 2rem;
+		}
+	}
+
 	.main-logo {
 		img {
 			width: 100%;
+
+			@include media-query(tab-land) {
+				width: 50%;
+			}
 		}
 	}
 	.emoji {
@@ -112,12 +123,33 @@
 		padding: 2rem 0;
 		border-radius: 2rem;
 		background-color: #2bc4f3;
+
+		.secondary-heading-bold-lg {
+			padding-left: 18rem;
+
+			@include media-query(phone) {
+				padding-left: 0;
+				padding-top: 5rem;
+				font-size: 3rem;
+			}
+		}
+
+		.secondary-heading-bold-xxl {
+			@include media-query(phone) {
+				font-size: 3.5rem;
+			}
+		}
+
+		@include media-query(phone) {
+			height: auto;
+		}
 	}
 	.chit {
 		position: relative;
 		overflow: hidden;
+
 		&::after {
-			content: "save 35%";
+			content: "1 Month Free";
 			position: absolute;
 			background-color: red;
 			font-size: 2.7rem;
@@ -125,6 +157,13 @@
 			transform: rotate(337deg);
 			left: -48px;
 			top: 1px;
+
+			@include media-query(phone) {
+				padding: 0rem 10rem 0 5rem;
+				font-size: 1.6rem;
+				left: -40px;
+				top: 1rem;
+			}
 		}
 	}
 
@@ -138,9 +177,6 @@
 		@include media-query(phone) {
 			max-width: 90%;
 		}
-	}
-
-	&__item {
 	}
 
 	&__list {
@@ -163,6 +199,16 @@
 				position: absolute;
 				top: 50%;
 				right: 0%;
+			}
+		}
+	}
+}
+
+@include arabicRTL {
+	.feature {
+		.chit {
+			&::after {
+				content: "شهر مجاني";
 			}
 		}
 	}

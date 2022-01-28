@@ -90,7 +90,7 @@ const listDetails = {
 			items: 2,
 		},
 		1000: {
-			items: 6,
+			items: 10,
 		},
 	},
 };
