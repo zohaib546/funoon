@@ -249,25 +249,6 @@ body.rtl .header .dropdown-menu[data-bs-popper] {
 .hero__form .form-control:focus {
   border-color: #0f98d5;
 }
-@media only screen and (max-width: 37.5em) {
-  .hero__form .input-group {
-    flex-direction: column;
-  }
-}
-@media only screen and (max-width: 37.5em) {
-  .hero__form .input-group > .form-control {
-    width: 100%;
-    border-radius: 0.5rem !important;
-    margin-bottom: 2rem;
-  }
-}
-@media only screen and (max-width: 37.5em) {
-  .hero__form .input-group > :not(:first-child):not(.dropdown-menu):not(.valid-tooltip):not(.valid-feedback):not(.invalid-tooltip):not(.invalid-feedback) {
-    border-top-left-radius: 0.5rem;
-    border-bottom-left-radius: 0.5rem;
-    margin-left: 0;
-  }
-}
 
 body.rtl .hero__form .form-control {
   direction: rtl;
@@ -1035,6 +1016,11 @@ button:focus {
   color: white;
 }
 
+.invert-img {
+  -webkit-transform: scaleX(-1);
+  transform: scaleX(-1);
+}
+
 @keyframes check {
   100% {
     stroke-dashoffset: 4.5px;
@@ -1102,13 +1088,13 @@ button:focus {
   justify-content: center;
   align-items: center;
 }
-@media only screen and (max-width: 48em) {
-  .hero-features {
-    display: none;
-  }
-}
 .hero-features__list {
   padding: 2rem;
+}
+@media only screen and (max-width: 37.5em) {
+  .hero-features__list {
+    padding: 1rem;
+  }
 }
 .hero-features__list:nth-child(1) {
   border-right: 0.5px solid #0f98d5;
@@ -1131,12 +1117,23 @@ button:focus {
   margin-bottom: 1.2rem;
   width: 5rem;
 }
+@media only screen and (max-width: 37.5em) {
+  .hero-features__list img {
+    width: 4rem;
+  }
+}
 .hero-features__list p {
   font-size: 2rem;
   font-weight: 300;
   width: 50%;
   margin: auto;
   line-height: 1.2;
+}
+@media only screen and (max-width: 37.5em) {
+  .hero-features__list p {
+    width: 100%;
+    font-size: 1.5rem;
+  }
 }
 .hero__content {
   text-align: center;
@@ -1170,6 +1167,11 @@ button:focus {
   .hero__form {
     max-width: 100%;
     margin: 0 5rem;
+  }
+}
+@media only screen and (max-width: 37.5em) {
+  .hero__form {
+    margin: 0 1rem;
   }
 }
 .hero__content-icon {
@@ -1232,6 +1234,9 @@ body.rtl .hero-features__list:nth-child(4) {
 body.rtl .hero-features__list:nth-child(5) {
   border-right: 0.5px solid #0f98d5;
   border-left: none;
+}
+body.rtl .hero__form {
+  max-width: 60%;
 }
 
 .header__mobile-nav {
@@ -1719,6 +1724,11 @@ body.rtl .header-sidenav__sidelist {
   padding: 1rem;
   display: inline-block;
 }
+@media only screen and (max-width: 37.5em) {
+  .subscribe-btn {
+    width: 100%;
+  }
+}
 
 .movie-popup__modal {
   background: radial-gradient(circle, #1a1a1a 0%, black 100%);
@@ -1998,8 +2008,18 @@ body.rtl .movie-popup__items:not(:last-child) {
     min-height: 40vh;
   }
 }
+@media only screen and (max-width: 75em) {
+  .feature .secondary-heading-bold-lg {
+    font-size: 2rem;
+  }
+}
 .feature .main-logo img {
   width: 100%;
+}
+@media only screen and (max-width: 75em) {
+  .feature .main-logo img {
+    width: 50%;
+  }
 }
 .feature .emoji {
   width: 10rem;
@@ -2048,12 +2068,32 @@ body.rtl .movie-popup__items:not(:last-child) {
   border-radius: 2rem;
   background-color: #2bc4f3;
 }
+.feature .package .secondary-heading-bold-lg {
+  padding-left: 18rem;
+}
+@media only screen and (max-width: 37.5em) {
+  .feature .package .secondary-heading-bold-lg {
+    padding-left: 0;
+    padding-top: 5rem;
+    font-size: 3rem;
+  }
+}
+@media only screen and (max-width: 37.5em) {
+  .feature .package .secondary-heading-bold-xxl {
+    font-size: 3.5rem;
+  }
+}
+@media only screen and (max-width: 37.5em) {
+  .feature .package {
+    height: auto;
+  }
+}
 .feature .chit {
   position: relative;
   overflow: hidden;
 }
 .feature .chit::after {
-  content: "save 35%";
+  content: "1 Month Free";
   position: absolute;
   background-color: red;
   font-size: 2.7rem;
@@ -2061,6 +2101,14 @@ body.rtl .movie-popup__items:not(:last-child) {
   transform: rotate(337deg);
   left: -48px;
   top: 1px;
+}
+@media only screen and (max-width: 37.5em) {
+  .feature .chit::after {
+    padding: 0rem 10rem 0 5rem;
+    font-size: 1.6rem;
+    left: -40px;
+    top: 1rem;
+  }
 }
 .feature__text {
   font-size: 2rem;
@@ -2094,6 +2142,10 @@ body.rtl .movie-popup__items:not(:last-child) {
   position: absolute;
   top: 50%;
   right: 0%;
+}
+
+body.rtl .feature .chit::after {
+  content: "شهر مجاني";
 }
 
 .description {

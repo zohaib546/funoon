@@ -27,12 +27,12 @@
 	&-features {
 		@include flex(center, center);
 
-		@include media-query(tab) {
-			display: none;
-		}
-
 		&__list {
 			padding: 2rem;
+
+			@include media-query(phone) {
+				padding: 1rem;
+			}
 
 			&:nth-child(1) {
 				border-right: 0.5px solid $primary-color;
@@ -56,6 +56,10 @@
 			img {
 				margin-bottom: 1.2rem;
 				width: 5rem;
+
+				@include media-query(phone) {
+					width: 4rem;
+				}
 			}
 
 			p {
@@ -64,6 +68,11 @@
 				width: 50%;
 				margin: auto;
 				line-height: 1.2;
+
+				@include media-query(phone) {
+					width: 100%;
+					font-size: 1.5rem;
+				}
 			}
 		}
 	}
@@ -99,6 +108,10 @@
 		@include media-query(tab) {
 			max-width: 100%;
 			margin: 0 5rem;
+		}
+
+		@include media-query(phone) {
+			margin: 0 1rem;
 		}
 	}
 
@@ -162,6 +175,10 @@
 					border-left: none;
 				}
 			}
+		}
+
+		&__form {
+			max-width: 60%;
 		}
 	}
 }
