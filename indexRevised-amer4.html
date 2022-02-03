@@ -25,6 +25,7 @@
 
 
         <style>
+			/* --------------------------( animated slider CSS )----------------- */
             .slider{
                 height: 530px;
                 margin: auto;
@@ -100,7 +101,7 @@
 
 
 
-            /* ---------------- ( 3D effect for pop-corn)-------------------*/
+            /* -------------------------- ( 3D effect for pop-corn)---------------------------*/
              
                 .cards{
                     max-width:100%;
@@ -126,6 +127,23 @@
                 right: 0;
                 } 
              
+
+
+
+				/* --------------------------(gradient border for top images)----------------- */
+				.hero-features__list{
+					border-width: 3px;
+					border-style: solid;
+					border-image: 
+						linear-gradient(
+						to bottom, 
+						rgba(0, 0, 0, 0) 0%,
+						rgba(16,84,132,1) 50%, 
+						rgba(0, 0, 0, 0)
+						) 2 100%;
+				}
+				.hero-features__list:first-child{border-left:none;}
+				.hero-features__list:last-child{border-right:none;}
         </style>
 	</head>
 
