@@ -1101,7 +1101,7 @@ button:focus {
 }
 @media only screen and (max-width: 37.5em) {
   .hero-features__list {
-    padding: 1rem;
+    padding: 0rem;
   }
 }
 .hero-features__list:nth-child(1) {
@@ -2021,9 +2021,6 @@ body.rtl .movie-popup__items:not(:last-child) {
     font-size: 2rem;
   }
 }
-.feature .main-logo img {
-  width: 100%;
-}
 @media only screen and (max-width: 75em) {
   .feature .main-logo img {
     width: 50%;
@@ -2044,7 +2041,7 @@ body.rtl .movie-popup__items:not(:last-child) {
   margin-top: 2rem;
 }
 .feature .download-app .download {
-  width: 100%;
+  width: 50%;
 }
 @media only screen and (max-width: 75em) {
   .feature .download-app .download {
@@ -2083,7 +2080,7 @@ body.rtl .movie-popup__items:not(:last-child) {
   .feature .package .secondary-heading-bold-lg {
     padding-left: 0;
     padding-top: 5rem;
-    font-size: 3rem;
+    font-size: 2rem;
   }
 }
 @media only screen and (max-width: 37.5em) {

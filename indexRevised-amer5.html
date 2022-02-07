@@ -139,6 +139,21 @@
             border-width: 3px;
             border-style: solid;
             border-image: linear-gradient( to bottom, rgba(0, 0, 0, 0) 0%, rgba(16, 84, 132, 1) 50%, rgba(0, 0, 0, 0)) 2 100%;
+            transition: all .3s ease-in-out;
+        }
+        
+        .hero-features__list p {
+            color: #0F98D5;
+            transition: all .3s ease-in-out;
+        }
+        
+        .hero-features__list:hover {
+            background-color: #105484;
+            border-radius: 2px;
+        }
+        
+        .hero-features__list:hover p {
+            color: #fff;
         }
         
         .hero-features__list:first-child {
@@ -214,11 +229,11 @@
                     <ul class="hero-features">
                         <li class="hero-features__list">
                             <img src="./img/svg/logo-md.svg" alt="logo" />
-                            <p class="primary-color font-bold">Share Your Experience</p>
+                            <p class="font-bold">Share Your Experience</p>
                         </li>
                         <li class="hero-features__list">
                             <img src="./img/svg/logo-md.svg" alt="logo" />
-                            <p class="primary-color font-bold">Unlimited Devices</p>
+                            <p class="font-bold">Unlimited Devices</p>
                         </li>
                         <li class="hero-features__list">
                             <h1 class="primary-color single-digit mb-3">1</h1>
@@ -226,11 +241,11 @@
                         </li>
                         <li class="hero-features__list">
                             <img src="./img/svg/logo-md.svg" alt="logo" />
-                            <p class="primary-color font-bold">Watch Offline</p>
+                            <p class="font-bold">Watch Offline</p>
                         </li>
                         <li class="hero-features__list">
                             <img src="./img/svg/logo-md.svg" alt="logo" />
-                            <p class="primary-color font-bold">NonStop Shows</p>
+                            <p class="font-bold">NonStop Shows</p>
                         </li>
                     </ul>
                 </div>
@@ -259,10 +274,11 @@
         <div class="bg-circles">
             <!-- KEEP WATCHING -->
 
-            <section class="feature" style="
+            <section class="feature " style="
 						background: url(./img/landing-page/exclusive/keep-watching-bg-en.png) top center
 							no-repeat;
 						padding-top: 0;
+            background-size: cover;
 					">
                 <div class="row justify-content-between align-items-center">
                     <div class="col-6 col-md-4 col-lg-5">
@@ -406,9 +422,9 @@
         <div class="bg-circles">
             <!-- MULTIPLE SCREENS -->
             <section class="feature">
-                <div class="container">
+                <div class="container-fluid" style="padding: 0rem 5rem;">
                     <div class="row justify-content-between align-items-center">
-                        <div class="col-md-5 download-detail text-center">
+                        <div class="col-md-6 download-detail text-center">
                             <p class="text-center mb-0">Enjoy on your TV</p>
                             <p class="text-center mb-0">One account for the whole family we have content</p>
                             <p>customized for each family member.</p>
@@ -435,7 +451,7 @@
 
             <!-- DOWNLOADS -->
             <section class="feature">
-                <div class="container">
+                <div class="container-fluid" style="padding: 0 5rem;">
                     <div class="row justify-content-between align-items-center">
                         <div class="col-lg-5 download-gif">
                             <div class="text-left">
@@ -458,15 +474,15 @@
         <div class="bg-circles">
             <!-- PRICE PLAN-->
             <section class="feature">
-                <div class="container">
+                <div class="container px-0">
                     <h1 class="secondary-heading-bold-xl text-center">Choose the plan you like</h1>
                     <p class="main-heading-md text-center py-5">
                         You can cancel anytime with no commitments
                     </p>
                     <div class="row justify-content-md-center">
-                        <div class="col-6 col-md-5 yearly">
+                        <div class="col-6 col-md-6 yearly">
                             <div class="package chit">
-                                <h1 class="secondary-heading-bold-lg">Yearly Plan</h1>
+                                <h1 class="secondary-heading-bold-lg pkg-heading">Yearly Plan</h1>
                                 <div class="d-flex justify-content-center align-items-center p-3 p-sm-0">
                                     <h1 class="secondary-heading-bold-xxl">5</h1>
                                     <p class="main-heading-bold mb-0 text-start px-3" style="color: #333333">
@@ -476,9 +492,9 @@
                             </div>
                             <a href="#" class="subscribe-btn my-5">Choose your Plan</a>
                         </div>
-                        <div class="col-6 col-md-5 monthly">
+                        <div class="col-6 col-md-6 monthly">
                             <div class="package">
-                                <h1 class="secondary-heading-bold-lg">Monthly Plan</h1>
+                                <h1 class="secondary-heading-bold-lg pkg-heading">Monthly Plan</h1>
                                 <div class="d-flex justify-content-center align-items-center p-3 p-sm-0">
                                     <h1 class="secondary-heading-bold-xxl">7. <small>77</small></h1>
                                     <p class="main-heading-bold mb-0 text-start px-3" style="color: #333333">
