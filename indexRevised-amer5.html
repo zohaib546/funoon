@@ -23,147 +23,6 @@
     <!-- Custom CSS -->
     <link rel="stylesheet" href="css/main.css" />
     <title>Main Page</title>
-
-    <style>
-        /* --------------------------( animated slider CSS )----------------- */
-        
-        .slider {
-            height: 530px;
-            margin: auto;
-            position: relative;
-            width: calc(100%);
-            display: grid;
-            place-items: center;
-            overflow: hidden;
-            margin-bottom: 6rem;
-            margin-top: 8rem;
-        }
-        
-        .slide-track {
-            display: flex;
-            width: calc(318px * 18 * 3);
-            animation: scroll 450s linear 1s infinite;
-        }
-        
-        .slide-track:hover {
-            animation-play-state: paused;
-        }
-        
-        @keyframes scroll {
-            0% {
-                transform: translateX(0);
-            }
-            100% {
-                transform: translateX(calc(-288px * 18 * 3));
-            }
-        }
-        
-        .slide {
-            height: 477px;
-            width: 318px;
-            display: flex;
-            align-items: center;
-            padding: 15px;
-            perspective: 200px;
-        }
-        
-        .slider::before,
-        .slider::after {
-            background: linear-gradient(to right, rgba(16, 84, 132, 1) 0%, rgba(16, 84, 132, 0) 100%);
-            content: "";
-            height: 485px;
-            position: absolute;
-            width: 200px;
-            max-width: 10%;
-            z-index: 2;
-            margin-top: 20px;
-        }
-        
-        .slider::before {
-            left: 0;
-            top: 0;
-        }
-        
-        .slider::after {
-            right: 0;
-            top: 0;
-            transform: rotateZ(180deg);
-        }
-        
-        .slide-track img {
-            width: 100%;
-            transition: transform 1%;
-            border-radius: 12px;
-            box-shadow: rgba(0, 0, 0, 0.2) 0px 5px 5px;
-            transition-duration: 0.5s;
-        }
-        
-        .slide-track img:hover {
-            transform: translateZ(20px);
-            z-index: 900;
-            transition-duration: 0.5s;
-            box-shadow: rgba(0, 0, 0, 0.4) 0px 10px 10px;
-        }
-        /* -------------------------- ( 3D effect for pop-corn)---------------------------*/
-        
-        .cards {
-            max-width: 100%;
-        }
-        
-        .image,
-        .image2,
-        .image3,
-        .image4,
-        .image5 {
-            width: 100%;
-            height: 100%;
-            transform-style: preserve-3d;
-            transform: rotateX(10deg) rotateY(10deg);
-        }
-        
-        .containerdiv {
-            border: 0;
-            float: left;
-            position: relative;
-        }
-        
-        .cornerimage {
-            border: 0;
-            position: absolute;
-            top: 0;
-            right: 0;
-        }
-        /* --------------------------(gradient border for top images)----------------- */
-        
-        .hero-features__list {
-            border-width: 3px;
-            border-style: solid;
-            border-image: linear-gradient( to bottom, rgba(0, 0, 0, 0) 0%, rgba(16, 84, 132, 1) 50%, rgba(0, 0, 0, 0)) 2 100%;
-            transition: all .3s ease-in-out;
-        }
-        
-        .hero-features__list p {
-            color: #0F98D5;
-            transition: all .3s ease-in-out;
-        }
-        
-        .hero-features__list:hover {
-            background-color: #105484;
-            border-radius: 2px;
-        }
-        
-        .hero-features__list:hover p {
-            color: #fff;
-        }
-        
-        .hero-features__list:first-child {
-            border-left: none;
-        }
-        
-        .hero-features__list:last-child {
-            border-right: none;
-        }
-    </style>
 </head>
 
 <body>
@@ -199,7 +58,7 @@
 				<div class="mt-auto mt-sm-0">
 					<h1 class="hero__heading hero__heading--lg">Whatever mood you are in</h1>
 					<h1 class="hero__heading hero__heading--lg">we have something for you</h1>
-					<h1 class="hero__heading hero__heading--lg mb-12">Anywhere. Anytime.</h1>
+					<h1 class="hero__heading hero__heading--lg mb-3">Anywhere. Anytime.</h1>
 				</div>
 				<h2 class="mb-5 hero__heading hero__heading--sm font-arabic">
 					Enter your email to create or restart your membership.
@@ -237,7 +96,7 @@
                         </li>
                         <li class="hero-features__list">
                             <h1 class="primary-color single-digit mb-3">1</h1>
-                            <h2 class="secondary-heading-bold">Month Free</h2>
+                            <h2 class="secondary-heading-bold">Month <br> Free</h2>
                         </li>
                         <li class="hero-features__list">
                             <img src="./img/svg/logo-md.svg" alt="logo" />
@@ -274,14 +133,14 @@
         <div class="bg-circles">
             <!-- KEEP WATCHING -->
 
-            <section class="feature " style="
+            <section class="feature p-5" style="
 						background: url(./img/landing-page/exclusive/keep-watching-bg-en.png) top center
 							no-repeat;
 						padding-top: 0;
             background-size: cover;
 					">
                 <div class="row justify-content-between align-items-center">
-                    <div class="col-6 col-md-4 col-lg-5">
+                    <div class="col-md-6">
                         <div class="main-logo text-center">
                             <img src="./img/landing-page/Group 5664.png" class="img-fluid" alt="funoon" />
                         </div>
@@ -292,7 +151,7 @@
                             <a href="#" class="subscribe-btn mt-5">Subsribe Now</a>
                         </div>
                     </div>
-                    <div class="col-6 col-md-8 col-lg-7">
+                    <div class="col-md-6">
                         <div class="my-5 text-center">
                             <figure class="mb-5 cards containerdiv">
                                 <img src="img/landing-page/exclusive/KW-l1-en.png" class="image5" />
@@ -373,48 +232,48 @@
                     </div>
                 </div>
 
-                <!--<div class="landing-carousel landing-carousel-en owl-carousel owl-theme mb-5">
-						<figure class="feature__item">
-							<img class="img-fluid" src="img/movies/poster-1.png" alt="poster" />
-						</figure>
-						<figure class="feature__item">
-							<img class="img-fluid" src="img/movies/poster-2.png" alt="poster" />
-						</figure>
-						<figure class="feature__item">
-							<img class="img-fluid" src="img/movies/poster-3.png" alt="poster" />
-						</figure>
-						<figure class="feature__item">
-							<img class="img-fluid" src="img/movies/poster-4.png" alt="poster" />
-						</figure>
-						<figure class="feature__item">
-							<img class="img-fluid" src="img/movies/poster-5.png" alt="poster" />
-						</figure>
-						<figure class="feature__item">
-							<img class="img-fluid" src="img/movies/poster-6.png" alt="poster" />
-						</figure>
-						<figure class="feature__item">
-							<img class="img-fluid" src="img/movies/poster-7.png" alt="poster" />
-						</figure>
-						<figure class="feature__item">
-							<img class="img-fluid" src="img/movies/poster-8.png" alt="poster" />
-						</figure>
-						<figure class="feature__item">
-							<img class="img-fluid" src="img/movies/poster-9.png" alt="poster" />
-						</figure>
-					</div> -->
+                <div class="landing-carousel landing-carousel-en owl-carousel owl-theme mb-5">
+                    <figure class="feature__item">
+                        <img class="img-fluid" src="img/movies/poster-1.png" alt="poster" />
+                    </figure>
+                    <figure class="feature__item">
+                        <img class="img-fluid" src="img/movies/poster-2.png" alt="poster" />
+                    </figure>
+                    <figure class="feature__item">
+                        <img class="img-fluid" src="img/movies/poster-3.png" alt="poster" />
+                    </figure>
+                    <figure class="feature__item">
+                        <img class="img-fluid" src="img/movies/poster-4.png" alt="poster" />
+                    </figure>
+                    <figure class="feature__item">
+                        <img class="img-fluid" src="img/movies/poster-5.png" alt="poster" />
+                    </figure>
+                    <figure class="feature__item">
+                        <img class="img-fluid" src="img/movies/poster-6.png" alt="poster" />
+                    </figure>
+                    <figure class="feature__item">
+                        <img class="img-fluid" src="img/movies/poster-7.png" alt="poster" />
+                    </figure>
+                    <figure class="feature__item">
+                        <img class="img-fluid" src="img/movies/poster-8.png" alt="poster" />
+                    </figure>
+                    <figure class="feature__item">
+                        <img class="img-fluid" src="img/movies/poster-9.png" alt="poster" />
+                    </figure>
+                </div>
 
                 <ul class="feature__list landing-carousel list-carousel-en owl-carousel owl-theme">
-                    <li>Movies</li>
-                    <li>Programs</li>
-                    <li>Operettas</li>
-                    <li>Series</li>
-                    <li>Plays</li>
-                    <li>More</li>
-                    <li>Movies</li>
-                    <li>Programs</li>
-                    <li>Operettas</li>
-                    <li>Movies</li>
-                    <li>Programs</li>
+                    <li class="link">Movies</li>
+                    <li class="link">Programs</li>
+                    <li class="link">Operettas</li>
+                    <li class="link">Series</li>
+                    <li class="link">Plays</li>
+                    <li class="link">More</li>
+                    <li class="link">Movies</li>
+                    <li class="link">Programs</li>
+                    <li class="link">Operettas</li>
+                    <li class="link">Movies</li>
+                    <li class="link">Programs</li>
                 </ul>
             </section>
         </div>
@@ -434,8 +293,8 @@
                                 <img src="./img/landing-page/exclusive/funoon.png" alt="funoon" />
                             </div>
                             <div class="download-app">
-                                <img src="./img/landing-page/exclusive/app-store.png" class="img-fluid download" alt="download from app store" />
-                                <img src="./img/landing-page/exclusive/play-store.png" class="img-fluid download" alt="download from play store" />
+                                <img src="./img/app-store.png" class="img-fluid download" alt="download from app store" />
+                                <img src="./img/Google.png" class="img-fluid download" alt="download from play store" />
                             </div>
                         </div>
                         <div class="col-md-6">
@@ -716,6 +575,7 @@
     <!-- <script src="js/jquery.js"></script>
 		<script src="js/bootstrap-4.6x/bootstrap.bundle.min.js"></script> -->
     <script src="js/jquery.js"></script>
+    <script src="js/main.js"></script>
     <script src="js/owl-carousel/owl.carousel.min.js"></script>
 
     <!-- Bootstrap 5.0 beta 2 -->
@@ -881,4 +741,31 @@
 
     const observer = new IntersectionObserver(observerFn, observerConfig);
     observer.observe(starsFigure);
+
+    // 
+    $('.list-carousel-en').owlCarousel({
+        loop: true,
+        margin: 0,
+        nav: false,
+        mouseDrag: true,
+        stagePadding: 0,
+        dots: false,
+        autoplay: true,
+        slideTransition: "linear",
+        autoplayTimeout: 5000,
+        autoplaySpeed: 5000,
+        autoplayHoverPause: true,
+        rtl: true,
+        responsive: {
+            0: {
+                items: 1
+            },
+            600: {
+                items: 3
+            },
+            1000: {
+                items: 10
+            }
+        }
+    })
 </script>

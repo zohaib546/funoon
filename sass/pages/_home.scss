@@ -86,11 +86,12 @@
         align-items: center;
         justify-content: center;
         margin-top: 2rem;
+        gap: 2rem;
+        @include media-query(phone) {
+            flex-direction: column;
+        }
         .download {
-            width: 50%;
-            @include media-query(tab-land) {
-                width: 50%;
-            }
+            width: 20rem;
         }
     }
     .multiple-screen {

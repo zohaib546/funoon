@@ -16,540 +16,543 @@ const mainCarousel = ".video-carousel";
 const activeSlideClasses = ".video .owl-item.active .video__figure";
 
 const landingDetails = {
-	element: ".landing-carousel-en",
-	loop: true,
-	margin: 10,
-	nav: false,
-	mouseDrag: true,
-	stagePadding: 0,
-	dots: false,
-	autoplay: true,
-	slideTransition: "linear",
-	autoplayTimeout: 5000,
-	autoplaySpeed: 5000,
-	autoplayHoverPause: true,
-	responsive: {
-		0: {
-			items: 3,
-		},
-		600: {
-			items: 3,
-		},
-		1000: {
-			items: 6,
-		},
-	},
+    element: ".landing-carousel-en",
+    loop: true,
+    margin: 10,
+    nav: false,
+    mouseDrag: true,
+    stagePadding: 0,
+    dots: false,
+    autoplay: true,
+    slideTransition: "linear",
+    autoplayTimeout: 5000,
+    autoplaySpeed: 5000,
+    autoplayHoverPause: true,
+    responsive: {
+        0: {
+            items: 3,
+        },
+        600: {
+            items: 3,
+        },
+        1000: {
+            items: 6,
+        },
+    },
 };
 
 const landingDetailsRTL = {
-	element: ".landing-carousel-ar",
-	loop: true,
-	margin: 10,
-	nav: false,
-	mouseDrag: true,
-	stagePadding: 0,
-	dots: false,
-	autoplay: true,
-	slideTransition: "linear",
-	autoplayTimeout: 5000,
-	autoplaySpeed: 5000,
-	autoplayHoverPause: true,
-	rtl: true,
-	responsive: {
-		0: {
-			items: 3,
-		},
-		600: {
-			items: 3,
-		},
-		1000: {
-			items: 6,
-		},
-	},
+    element: ".landing-carousel-ar",
+    loop: true,
+    margin: 10,
+    nav: false,
+    mouseDrag: true,
+    stagePadding: 0,
+    dots: false,
+    autoplay: true,
+    slideTransition: "linear",
+    autoplayTimeout: 5000,
+    autoplaySpeed: 5000,
+    autoplayHoverPause: true,
+    rtl: true,
+    responsive: {
+        0: {
+            items: 3,
+        },
+        600: {
+            items: 3,
+        },
+        1000: {
+            items: 6,
+        },
+    },
 };
 
+
+
+
 const listDetails = {
-	element: ".list-carousel-en",
-	loop: true,
-	margin: 0,
-	nav: false,
-	mouseDrag: true,
-	stagePadding: 0,
-	dots: false,
-	autoplay: true,
-	slideTransition: "linear",
-	autoplayTimeout: 5000,
-	autoplaySpeed: 5000,
-	autoplayHoverPause: true,
-	rtl: true,
-	responsive: {
-		0: {
-			items: 2,
-		},
-		600: {
-			items: 2,
-		},
-		1000: {
-			items: 10,
-		},
-	},
+    element: ".list-carousel-en",
+    loop: true,
+    margin: 0,
+    nav: false,
+    mouseDrag: true,
+    stagePadding: 0,
+    dots: false,
+    autoplay: true,
+    slideTransition: "linear",
+    autoplayTimeout: 5000,
+    autoplaySpeed: 5000,
+    autoplayHoverPause: true,
+    rtl: true,
+    responsive: {
+        0: {
+            items: 2,
+        },
+        600: {
+            items: 2,
+        },
+        1000: {
+            items: 10,
+        },
+    },
 };
 
 const videoDetails = {
-	element: ".video-carousel-en",
-	loop: false,
-	margin: 0,
-	nav: false,
-	mouseDrag: false,
-	stagePadding: 0,
-	dots: true,
-	navText: [`&#x27;next&#x27;,&#x27;prev&#x27;`], // default navText
-	animateOut: "fadeOut",
-	responsive: {
-		0: {
-			items: 1,
-		},
-		600: {
-			items: 1,
-		},
-		1000: {
-			items: 1,
-		},
-	},
+    element: ".video-carousel-en",
+    loop: false,
+    margin: 0,
+    nav: false,
+    mouseDrag: false,
+    stagePadding: 0,
+    dots: true,
+    navText: [`&#x27;next&#x27;,&#x27;prev&#x27;`], // default navText
+    animateOut: "fadeOut",
+    responsive: {
+        0: {
+            items: 1,
+        },
+        600: {
+            items: 1,
+        },
+        1000: {
+            items: 1,
+        },
+    },
 };
 
 const videoDetailsRTL = {
-	element: ".video-carousel-ar",
-	loop: false,
-	margin: 0,
-	nav: false,
-	mouseDrag: false,
-	stagePadding: 0,
-	dots: true,
-	navText: [`&#x27;next&#x27;,&#x27;prev&#x27;`], // default navText
-	animateOut: "fadeOut",
-	rtl: true,
-	responsive: {
-		0: {
-			items: 1,
-		},
-		600: {
-			items: 1,
-		},
-		1000: {
-			items: 1,
-		},
-	},
+    element: ".video-carousel-ar",
+    loop: false,
+    margin: 0,
+    nav: false,
+    mouseDrag: false,
+    stagePadding: 0,
+    dots: true,
+    navText: [`&#x27;next&#x27;,&#x27;prev&#x27;`], // default navText
+    animateOut: "fadeOut",
+    rtl: true,
+    responsive: {
+        0: {
+            items: 1,
+        },
+        600: {
+            items: 1,
+        },
+        1000: {
+            items: 1,
+        },
+    },
 };
 
 const movieDetails = {
-	element: ".movie-carousel-en",
-	loop: true,
-	margin: 5,
-	nav: true,
-	mouseDrag: false,
-	stagePadding: 50,
-	dots: false,
-	slideBy: 7,
-	onTranslated: handleMovieTranslation,
-	onInitialized: handleMovieTranslation,
-	navText: [
-		"<span class='carousel-nav-left'><i class='fa fa-chevron-left'></i></span>",
-		"<span class='carousel-nav-right'><i class='fa fa-chevron-right'></i></span>",
-	],
-	responsive: {
-		0: {
-			items: 3,
-			nav: false,
-		},
-		600: {
-			items: 6,
-			slideBy: 6,
-		},
-		1000: {
-			items: 7,
-			slideBy: 7,
-		},
-		1920: {
-			items: 7,
-			slideBy: 7,
-		},
-		// 1921: {
-		// 	items: 9,
-		// 	slideBy: 9,
-		// },
-	},
+    element: ".movie-carousel-en",
+    loop: true,
+    margin: 5,
+    nav: true,
+    mouseDrag: false,
+    stagePadding: 50,
+    dots: false,
+    slideBy: 7,
+    onTranslated: handleMovieTranslation,
+    onInitialized: handleMovieTranslation,
+    navText: [
+        "<span class='carousel-nav-left'><i class='fa fa-chevron-left'></i></span>",
+        "<span class='carousel-nav-right'><i class='fa fa-chevron-right'></i></span>",
+    ],
+    responsive: {
+        0: {
+            items: 3,
+            nav: false,
+        },
+        600: {
+            items: 6,
+            slideBy: 6,
+        },
+        1000: {
+            items: 7,
+            slideBy: 7,
+        },
+        1920: {
+            items: 7,
+            slideBy: 7,
+        },
+        // 1921: {
+        // 	items: 9,
+        // 	slideBy: 9,
+        // },
+    },
 };
 
 const movieDetailsRTL = {
-	element: ".movie-carousel-ar",
-	loop: true,
-	margin: 5,
-	nav: true,
-	mouseDrag: false,
-	stagePadding: 50,
-	dots: false,
-	slideBy: 7,
-	onTranslated: handleMovieTranslation,
-	onInitialized: handleMovieTranslation,
-	navText: [
-		"<span class='carousel-nav-left'><i class='fa fa-chevron-left'></i></span>",
-		"<span class='carousel-nav-right'><i class='fa fa-chevron-right'></i></span>",
-	],
-	rtl: true,
-	responsive: {
-		0: {
-			items: 3,
-			nav: false,
-		},
-		600: {
-			items: 6,
-			slideBy: 6,
-		},
-		1000: {
-			items: 7,
-			slideBy: 7,
-		},
-		1920: {
-			items: 7,
-			slideBy: 7,
-		},
-		// 1921: {
-		// 	items: 9,
-		// 	slideBy: 9,
-		// },
-	},
+    element: ".movie-carousel-ar",
+    loop: true,
+    margin: 5,
+    nav: true,
+    mouseDrag: false,
+    stagePadding: 50,
+    dots: false,
+    slideBy: 7,
+    onTranslated: handleMovieTranslation,
+    onInitialized: handleMovieTranslation,
+    navText: [
+        "<span class='carousel-nav-left'><i class='fa fa-chevron-left'></i></span>",
+        "<span class='carousel-nav-right'><i class='fa fa-chevron-right'></i></span>",
+    ],
+    rtl: true,
+    responsive: {
+        0: {
+            items: 3,
+            nav: false,
+        },
+        600: {
+            items: 6,
+            slideBy: 6,
+        },
+        1000: {
+            items: 7,
+            slideBy: 7,
+        },
+        1920: {
+            items: 7,
+            slideBy: 7,
+        },
+        // 1921: {
+        // 	items: 9,
+        // 	slideBy: 9,
+        // },
+    },
 };
 
 const exclusiveDetails = {
-	element: ".exclusive-carousel-en",
-	loop: true,
-	margin: 5,
-	nav: true,
-	mouseDrag: false,
-	dots: false,
-	slideBy: 6,
-	stagePadding: 50,
-	onTranslated: handleTranslation,
-	onInitialized: handleTranslation,
-	navText: [
-		"<span class='carousel-nav-left'><i class='fa fa-chevron-left'></i></span>",
-		"<span class='carousel-nav-right'><i class='fa fa-chevron-right'></i></span>",
-	],
-	responsive: {
-		0: {
-			items: 2,
-			nav: false,
-			stagePadding: 50,
-		},
-		600: {
-			items: 5,
-			slideBy: 5,
-		},
-		1000: {
-			items: 6,
-			slideBy: 6,
-		},
-		1920: {
-			items: 6,
-			slideBy: 6,
-		},
-	},
+    element: ".exclusive-carousel-en",
+    loop: true,
+    margin: 5,
+    nav: true,
+    mouseDrag: false,
+    dots: false,
+    slideBy: 6,
+    stagePadding: 50,
+    onTranslated: handleTranslation,
+    onInitialized: handleTranslation,
+    navText: [
+        "<span class='carousel-nav-left'><i class='fa fa-chevron-left'></i></span>",
+        "<span class='carousel-nav-right'><i class='fa fa-chevron-right'></i></span>",
+    ],
+    responsive: {
+        0: {
+            items: 2,
+            nav: false,
+            stagePadding: 50,
+        },
+        600: {
+            items: 5,
+            slideBy: 5,
+        },
+        1000: {
+            items: 6,
+            slideBy: 6,
+        },
+        1920: {
+            items: 6,
+            slideBy: 6,
+        },
+    },
 };
 
 const exclusiveDetailsRTL = {
-	element: ".exclusive-carousel-ar",
-	loop: true,
-	margin: 5,
-	nav: true,
-	mouseDrag: false,
-	dots: false,
-	slideBy: 6,
-	rtl: true,
-	stagePadding: 50,
-	onTranslated: handleTranslation,
-	onInitialized: handleTranslation,
-	navText: [
-		"<span class='carousel-nav-left'><i class='fa fa-chevron-left'></i></span>",
-		"<span class='carousel-nav-right'><i class='fa fa-chevron-right'></i></span>",
-	],
-	responsive: {
-		0: {
-			items: 2,
-			nav: false,
-			stagePadding: 50,
-		},
-		600: {
-			items: 5,
-			slideBy: 5,
-		},
-		1000: {
-			items: 6,
-			slideBy: 6,
-		},
-		1920: {
-			items: 6,
-			slideBy: 6,
-		},
-	},
+    element: ".exclusive-carousel-ar",
+    loop: true,
+    margin: 5,
+    nav: true,
+    mouseDrag: false,
+    dots: false,
+    slideBy: 6,
+    rtl: true,
+    stagePadding: 50,
+    onTranslated: handleTranslation,
+    onInitialized: handleTranslation,
+    navText: [
+        "<span class='carousel-nav-left'><i class='fa fa-chevron-left'></i></span>",
+        "<span class='carousel-nav-right'><i class='fa fa-chevron-right'></i></span>",
+    ],
+    responsive: {
+        0: {
+            items: 2,
+            nav: false,
+            stagePadding: 50,
+        },
+        600: {
+            items: 5,
+            slideBy: 5,
+        },
+        1000: {
+            items: 6,
+            slideBy: 6,
+        },
+        1920: {
+            items: 6,
+            slideBy: 6,
+        },
+    },
 };
 
 const topDetails = {
-	element: ".top-carousel-en",
-	loop: true,
-	margin: 10,
-	nav: true,
-	mouseDrag: false,
-	stagePadding: 80,
-	dots: false,
-	slideBy: 6,
-	navText: [
-		"<span class='carousel-nav-left'><i class='fa fa-chevron-left'></i></span>",
-		"<span class='carousel-nav-right'><i class='fa fa-chevron-right'></i></span>",
-	],
-	responsive: {
-		0: {
-			items: 2,
-			nav: false,
-			stagePadding: 30,
-		},
-		600: {
-			items: 3,
-			slideBy: 3,
-		},
-		1000: {
-			items: 4,
-			stagePadding: 50,
-			slideBy: 4,
-		},
-		1920: {
-			items: 6,
-			slideBy: 6,
-		},
-		2000: {
-			items: 8,
-			slideBy: 8,
-		},
-	},
+    element: ".top-carousel-en",
+    loop: true,
+    margin: 10,
+    nav: true,
+    mouseDrag: false,
+    stagePadding: 80,
+    dots: false,
+    slideBy: 6,
+    navText: [
+        "<span class='carousel-nav-left'><i class='fa fa-chevron-left'></i></span>",
+        "<span class='carousel-nav-right'><i class='fa fa-chevron-right'></i></span>",
+    ],
+    responsive: {
+        0: {
+            items: 2,
+            nav: false,
+            stagePadding: 30,
+        },
+        600: {
+            items: 3,
+            slideBy: 3,
+        },
+        1000: {
+            items: 4,
+            stagePadding: 50,
+            slideBy: 4,
+        },
+        1920: {
+            items: 6,
+            slideBy: 6,
+        },
+        2000: {
+            items: 8,
+            slideBy: 8,
+        },
+    },
 };
 
 const topDetailsRTL = {
-	element: ".top-carousel-ar",
-	loop: true,
-	margin: 10,
-	nav: true,
-	mouseDrag: false,
-	stagePadding: 80,
-	dots: false,
-	slideBy: 6,
-	navText: [
-		"<span class='carousel-nav-left'><i class='fa fa-chevron-left'></i></span>",
-		"<span class='carousel-nav-right'><i class='fa fa-chevron-right'></i></span>",
-	],
-	rtl: true,
-	responsive: {
-		0: {
-			items: 2,
-			nav: false,
-			stagePadding: 30,
-		},
-		600: {
-			items: 3,
-			slideBy: 3,
-		},
-		1000: {
-			items: 4,
-			stagePadding: 50,
-			slideBy: 4,
-		},
-		1920: {
-			items: 6,
-			slideBy: 6,
-		},
-		2000: {
-			items: 8,
-			slideBy: 8,
-		},
-	},
+    element: ".top-carousel-ar",
+    loop: true,
+    margin: 10,
+    nav: true,
+    mouseDrag: false,
+    stagePadding: 80,
+    dots: false,
+    slideBy: 6,
+    navText: [
+        "<span class='carousel-nav-left'><i class='fa fa-chevron-left'></i></span>",
+        "<span class='carousel-nav-right'><i class='fa fa-chevron-right'></i></span>",
+    ],
+    rtl: true,
+    responsive: {
+        0: {
+            items: 2,
+            nav: false,
+            stagePadding: 30,
+        },
+        600: {
+            items: 3,
+            slideBy: 3,
+        },
+        1000: {
+            items: 4,
+            stagePadding: 50,
+            slideBy: 4,
+        },
+        1920: {
+            items: 6,
+            slideBy: 6,
+        },
+        2000: {
+            items: 8,
+            slideBy: 8,
+        },
+    },
 };
 
 const resumeDetails = {
-	element: ".resume-carousel-en",
-	loop: true,
-	margin: 5,
-	nav: true,
-	mouseDrag: false,
-	stagePadding: 0,
-	dots: false,
-	slideBy: 7,
-	navText: [
-		"<span class='carousel-nav-left'><i class='fa fa-chevron-left'></i></span>",
-		"<span class='carousel-nav-right'><i class='fa fa-chevron-right'></i></span>",
-	],
-	responsive: {
-		0: {
-			items: 2,
-			nav: false,
-			stagePadding: 50,
-		},
-		600: {
-			items: 4,
-			slideBy: 4,
-		},
-		1000: {
-			items: 4,
-			stagePadding: 50,
-			slideBy: 4,
-		},
-		1300: {
-			items: 5,
-			stagePadding: 50,
-			slideBy: 5,
-		},
-		1920: {
-			items: 7,
-			slideBy: 7,
-		},
-		2000: {
-			items: 8,
-			slideBy: 8,
-		},
-	},
+    element: ".resume-carousel-en",
+    loop: true,
+    margin: 5,
+    nav: true,
+    mouseDrag: false,
+    stagePadding: 0,
+    dots: false,
+    slideBy: 7,
+    navText: [
+        "<span class='carousel-nav-left'><i class='fa fa-chevron-left'></i></span>",
+        "<span class='carousel-nav-right'><i class='fa fa-chevron-right'></i></span>",
+    ],
+    responsive: {
+        0: {
+            items: 2,
+            nav: false,
+            stagePadding: 50,
+        },
+        600: {
+            items: 4,
+            slideBy: 4,
+        },
+        1000: {
+            items: 4,
+            stagePadding: 50,
+            slideBy: 4,
+        },
+        1300: {
+            items: 5,
+            stagePadding: 50,
+            slideBy: 5,
+        },
+        1920: {
+            items: 7,
+            slideBy: 7,
+        },
+        2000: {
+            items: 8,
+            slideBy: 8,
+        },
+    },
 };
 
 const resumeDetailsRTL = {
-	element: ".resume-carousel-ar",
-	loop: true,
-	margin: 5,
-	nav: true,
-	mouseDrag: false,
-	stagePadding: 0,
-	dots: false,
-	slideBy: 7,
-	navText: [
-		"<span class='carousel-nav-left'><i class='fa fa-chevron-left'></i></span>",
-		"<span class='carousel-nav-right'><i class='fa fa-chevron-right'></i></span>",
-	],
-	rtl: true,
-	responsive: {
-		0: {
-			items: 2,
-			nav: false,
-			stagePadding: 50,
-		},
-		600: {
-			items: 4,
-			slideBy: 4,
-		},
-		1000: {
-			items: 4,
-			stagePadding: 50,
-			slideBy: 4,
-		},
-		1300: {
-			items: 5,
-			stagePadding: 50,
-			slideBy: 5,
-		},
-		1920: {
-			items: 7,
-			slideBy: 7,
-		},
-		2000: {
-			items: 8,
-			slideBy: 8,
-		},
-	},
+    element: ".resume-carousel-ar",
+    loop: true,
+    margin: 5,
+    nav: true,
+    mouseDrag: false,
+    stagePadding: 0,
+    dots: false,
+    slideBy: 7,
+    navText: [
+        "<span class='carousel-nav-left'><i class='fa fa-chevron-left'></i></span>",
+        "<span class='carousel-nav-right'><i class='fa fa-chevron-right'></i></span>",
+    ],
+    rtl: true,
+    responsive: {
+        0: {
+            items: 2,
+            nav: false,
+            stagePadding: 50,
+        },
+        600: {
+            items: 4,
+            slideBy: 4,
+        },
+        1000: {
+            items: 4,
+            stagePadding: 50,
+            slideBy: 4,
+        },
+        1300: {
+            items: 5,
+            stagePadding: 50,
+            slideBy: 5,
+        },
+        1920: {
+            items: 7,
+            slideBy: 7,
+        },
+        2000: {
+            items: 8,
+            slideBy: 8,
+        },
+    },
 };
 
 // HIDE ALL MUTE BUTTONS 'onLoad'
 unmute.forEach((el) => {
-	el.style.display = "none";
+    el.style.display = "none";
 });
 
 // MUTE & PAUSE ALL VIDEOS 'onLoad'
 videos.forEach((el) => {
-	el.muted = true;
-	el.pause();
+    el.muted = true;
+    el.pause();
 });
 
 // PLAY FIRST VIDEO AFTER 'cover-animation' DELAY 2S 'onLoad'
 setTimeout(() => {
-	videos[0].muted = true;
-	videos[0].play();
+    videos[0].muted = true;
+    videos[0].play();
 }, 2000);
 
-slider({ ...videoDetails });
-slider({ ...videoDetailsRTL });
-slider({ ...movieDetails });
-slider({ ...movieDetailsRTL });
-slider({ ...exclusiveDetails });
-slider({ ...exclusiveDetailsRTL });
-slider({ ...topDetails });
-slider({ ...topDetailsRTL });
-slider({ ...resumeDetails });
-slider({ ...resumeDetailsRTL });
-slider({ ...landingDetails });
-slider({ ...landingDetailsRTL });
-slider({ ...listDetails });
+slider({...videoDetails });
+slider({...videoDetailsRTL });
+slider({...movieDetails });
+slider({...movieDetailsRTL });
+slider({...exclusiveDetails });
+slider({...exclusiveDetailsRTL });
+slider({...topDetails });
+slider({...topDetailsRTL });
+slider({...resumeDetails });
+slider({...resumeDetailsRTL });
+slider({...landingDetails });
+slider({...landingDetailsRTL });
+slider({...listDetails });
 
 // CALLS WHEN SLIDE CHANGES
-$(mainCarousel).on("changed.owl.carousel", function (event) {
-	const currentSlideIndex = event.item.index;
+$(mainCarousel).on("changed.owl.carousel", function(event) {
+    const currentSlideIndex = event.item.index;
 
-	if (videos[prevSlideIndex].muted === true) {
-		resetPrevSlide();
-		handleCurrentSlide(currentSlideIndex, true, "", "none");
-	} else {
-		resetPrevSlide();
-		handleCurrentSlide(currentSlideIndex, false, "none", "");
-	}
+    if (videos[prevSlideIndex].muted === true) {
+        resetPrevSlide();
+        handleCurrentSlide(currentSlideIndex, true, "", "none");
+    } else {
+        resetPrevSlide();
+        handleCurrentSlide(currentSlideIndex, false, "none", "");
+    }
 
-	prevSlideIndex = currentSlideIndex;
+    prevSlideIndex = currentSlideIndex;
 });
 
 // PAUSE SLIDE ON SCROLL
 window.addEventListener("scroll", () => {
-	if (document.documentElement.scrollTop > 300) {
-		if (document.querySelector(activeSlideClasses).paused === false) {
-			document.querySelector(activeSlideClasses).pause();
-		}
-	} else {
-		document.querySelector(activeSlideClasses).play();
-	}
+    if (document.documentElement.scrollTop > 300) {
+        if (document.querySelector(activeSlideClasses).paused === false) {
+            document.querySelector(activeSlideClasses).pause();
+        }
+    } else {
+        document.querySelector(activeSlideClasses).play();
+    }
 });
 
 // UNMUTE: WHEN USER CLICKS UNMUTE BUTTON
 unmute.forEach((element, index) =>
-	element.addEventListener("click", (e) => {
-		handleMuteAndUnmute("mute", element, index, "", "none", true);
-	})
+    element.addEventListener("click", (e) => {
+        handleMuteAndUnmute("mute", element, index, "", "none", true);
+    })
 );
 
 // MUTE: WHEN USER CLICKS MUTE BUTTON
 mute.forEach((element, index) => {
-	element.addEventListener("click", (e) => {
-		handleMuteAndUnmute("unmute", element, index, "", "none", false);
-	});
+    element.addEventListener("click", (e) => {
+        handleMuteAndUnmute("unmute", element, index, "", "none", false);
+    });
 });
 
 // SHOW AND HIDE SIDENAV:
 menuBtn.addEventListener("click", () => {
-	sidebar.classList.toggle("show");
+    sidebar.classList.toggle("show");
 });
 
 // ADD POPUP ON MOUSE ENTER
 movies.forEach((movie) =>
-	movie.addEventListener("mouseenter", (e) => {
-		addPopup(e);
-	})
+    movie.addEventListener("mouseenter", (e) => {
+        addPopup(e);
+    })
 );
 
 // REMOVE 'POPUP' ON MOUSE LEAVE
 movies.forEach((movie) =>
-	movie.addEventListener("mouseleave", (e) => {
-		removePopupWithDelay(e);
-	})
+    movie.addEventListener("mouseleave", (e) => {
+        removePopupWithDelay(e);
+    })
 );
 
 // SHOW AND HIDE STICKY NAVBAR
@@ -557,43 +560,43 @@ window.addEventListener("scroll", scrollFunction);
 
 // SHOW MORE
 movieShowMore.forEach((shwMre) =>
-	shwMre.addEventListener("click", (e) => {
-		shwMre.classList.toggle("rotate");
-		movieContainer.forEach((cont) => cont.classList.toggle("show-less"));
-	})
+    shwMre.addEventListener("click", (e) => {
+        shwMre.classList.toggle("rotate");
+        movieContainer.forEach((cont) => cont.classList.toggle("show-less"));
+    })
 );
 
 function scrollFunction() {
-	if (document.body.scrollTop > 200 || document.documentElement.scrollTop > 200) {
-		headerSticky.classList.add("show");
-	} else {
-		headerSticky.classList.remove("show");
-	}
+    if (document.body.scrollTop > 200 || document.documentElement.scrollTop > 200) {
+        headerSticky.classList.add("show");
+    } else {
+        headerSticky.classList.remove("show");
+    }
 }
 
 function addPopup(e) {
-	let moviePost = e.target.closest(".movie__item");
-	let isRTL = document.body.classList.contains("rtl");
-	let moviePostAttr = moviePost.getAttribute("data-movie");
+    let moviePost = e.target.closest(".movie__item");
+    let isRTL = document.body.classList.contains("rtl");
+    let moviePostAttr = moviePost.getAttribute("data-movie");
 
-	// remove popup first
-	removePopup(e);
+    // remove popup first
+    removePopup(e);
 
-	if (moviePostAttr == "left") {
-		addPopupWithDelay(isRTL, moviePost, "item-controls--movie-left", 1000);
-	} else if (moviePostAttr == "right") {
-		addPopupWithDelay(isRTL, moviePost, "item-controls--movie-right", 1000);
-	} else {
-		addPopupWithDelay(isRTL, moviePost, "", 1000);
-	}
+    if (moviePostAttr == "left") {
+        addPopupWithDelay(isRTL, moviePost, "item-controls--movie-left", 1000);
+    } else if (moviePostAttr == "right") {
+        addPopupWithDelay(isRTL, moviePost, "item-controls--movie-right", 1000);
+    } else {
+        addPopupWithDelay(isRTL, moviePost, "", 1000);
+    }
 }
 
 function addPopupWithDelay(isRTL, post, classString, time) {
-	if (!isRTL) {
-		setTimeout(() => {
-			post.insertAdjacentHTML(
-				"beforeend",
-				`<div class="item-controls item-controls--movie ${classString}">
+    if (!isRTL) {
+        setTimeout(() => {
+            post.insertAdjacentHTML(
+                "beforeend",
+                `<div class="item-controls item-controls--movie ${classString}">
 					<figure class="item-controls__figure">
 						<img
 							class="item-controls__thumbnail"
@@ -677,13 +680,13 @@ function addPopupWithDelay(isRTL, post, classString, time) {
 					</div>
 				</div>
 			`
-			);
-		}, time);
-	} else {
-		setTimeout(() => {
-			post.insertAdjacentHTML(
-				"beforeend",
-				`<div class="item-controls item-controls--movie ${classString}">
+            );
+        }, time);
+    } else {
+        setTimeout(() => {
+            post.insertAdjacentHTML(
+                "beforeend",
+                `<div class="item-controls item-controls--movie ${classString}">
 					<figure class="item-controls__figure">
 						<img
 							class="item-controls__thumbnail"
@@ -767,143 +770,143 @@ function addPopupWithDelay(isRTL, post, classString, time) {
 					</div>
 				</div>
 			`
-			);
-		}, time);
-	}
+            );
+        }, time);
+    }
 }
 
 function removePopup(e) {
-	let moviePost = e.target.closest(".movie__item");
-	let popup = moviePost.lastElementChild;
+    let moviePost = e.target.closest(".movie__item");
+    let popup = moviePost.lastElementChild;
 
-	if (popup.classList.contains("item-controls--movie")) {
-		moviePost.removeChild(popup);
-	}
+    if (popup.classList.contains("item-controls--movie")) {
+        moviePost.removeChild(popup);
+    }
 }
 
 function removePopupWithDelay(e) {
-	setTimeout(() => {
-		removePopup(e);
-	}, 1005);
+    setTimeout(() => {
+        removePopup(e);
+    }, 1005);
 }
 
 function handleMuteAndUnmute(btnType, element, index, btnStyle, elementStyle, isMuted) {
-	btnType === "mute"
-		? (mute[index].style.display = btnStyle)
-		: (unmute[index].style.display = btnStyle);
-	element.style.display = elementStyle;
-	videos[index].muted = isMuted;
+    btnType === "mute" ?
+        (mute[index].style.display = btnStyle) :
+        (unmute[index].style.display = btnStyle);
+    element.style.display = elementStyle;
+    videos[index].muted = isMuted;
 }
 
 function slider(details) {
-	$(details.element).owlCarousel({
-		loop: details.loop,
-		margin: details.margin,
-		nav: details.nav,
-		mouseDrag: details.mouseDrag,
-		stagePadding: details.stagePadding || 0,
-		dots: details.dots,
-		navText: details.navText,
-		animateOut: details.animateOut || false,
-		responsive: details.responsive,
-		rtl: details.rtl || false,
-		slideBy: details.slideBy || 1,
-		autoWidth: details.autoWidth || false,
-		onTranslated: details.onTranslated,
-		onInitialized: details.onInitialized,
-		autoplay: details.autoplay || false,
-		autoplayTimeout: details.autoplayTimeout || 5000,
-		autoplaySpeed: details.autoplaySpeed || false,
-		autoplayHoverPause: details.autoplayHoverPause || false,
-		slideTransition: details.slideTransition || "",
-	});
+    $(details.element).owlCarousel({
+        loop: details.loop,
+        margin: details.margin,
+        nav: details.nav,
+        mouseDrag: details.mouseDrag,
+        stagePadding: details.stagePadding || 0,
+        dots: details.dots,
+        navText: details.navText,
+        animateOut: details.animateOut || false,
+        responsive: details.responsive,
+        rtl: details.rtl || false,
+        slideBy: details.slideBy || 1,
+        autoWidth: details.autoWidth || false,
+        onTranslated: details.onTranslated,
+        onInitialized: details.onInitialized,
+        autoplay: details.autoplay || false,
+        autoplayTimeout: details.autoplayTimeout || 5000,
+        autoplaySpeed: details.autoplaySpeed || false,
+        autoplayHoverPause: details.autoplayHoverPause || false,
+        slideTransition: details.slideTransition || "",
+    });
 }
 
 function resetPrevSlide() {
-	videos[prevSlideIndex].pause();
-	videos[prevSlideIndex].muted = true;
-	mute[prevSlideIndex].style.display = "";
-	unmute[prevSlideIndex].style.display = "none";
+    videos[prevSlideIndex].pause();
+    videos[prevSlideIndex].muted = true;
+    mute[prevSlideIndex].style.display = "";
+    unmute[prevSlideIndex].style.display = "none";
 }
 
 function handleCurrentSlide(curInd, isMuted, muteStye, unmuteStyle) {
-	videos[curInd].play();
-	videos[curInd].muted = isMuted;
-	mute[curInd].style.display = muteStye;
-	unmute[curInd].style.display = unmuteStyle;
+    videos[curInd].play();
+    videos[curInd].muted = isMuted;
+    mute[curInd].style.display = muteStye;
+    unmute[curInd].style.display = unmuteStyle;
 }
 
 function handleTranslation(event) {
-	const dir = document.documentElement.dir;
+    const dir = document.documentElement.dir;
 
-	if (dir == "rtl") {
-		// Reset preview 'popup' first
-		resetExclusives();
+    if (dir == "rtl") {
+        // Reset preview 'popup' first
+        resetExclusives();
 
-		// Manage popup for last and secondlast item
-		renderExclusivePopup(3, 2);
-	} else {
-		// Reset preview 'popup' first
-		resetExclusives();
+        // Manage popup for last and secondlast item
+        renderExclusivePopup(3, 2);
+    } else {
+        // Reset preview 'popup' first
+        resetExclusives();
 
-		// manage popup for last and secondlast item
-		renderExclusivePopup(2, 1);
-	}
+        // manage popup for last and secondlast item
+        renderExclusivePopup(2, 1);
+    }
 }
 
 function resetExclusives() {
-	const allExclusives = document.querySelectorAll(".exclusive-carousel .owl-item");
-	allExclusives.forEach((exclusive) => {
-		// Get single exclusive pop-up
-		const preview = exclusive.querySelector(".exclusive__preview");
+    const allExclusives = document.querySelectorAll(".exclusive-carousel .owl-item");
+    allExclusives.forEach((exclusive) => {
+        // Get single exclusive pop-up
+        const preview = exclusive.querySelector(".exclusive__preview");
 
-		if (preview.classList.contains("exclusive__preview--right")) {
-			preview.classList.remove("exclusive__preview--right");
-		}
-	});
+        if (preview.classList.contains("exclusive__preview--right")) {
+            preview.classList.remove("exclusive__preview--right");
+        }
+    });
 }
 
 function renderExclusivePopup(secondLastIndex, lastIndex) {
-	const activeExclusives = document.querySelectorAll(".exclusive-carousel .owl-item.active");
+    const activeExclusives = document.querySelectorAll(".exclusive-carousel .owl-item.active");
 
-	// Access last and secondlast item from 6 rendered items
-	const secondLastPreview =
-		activeExclusives[activeExclusives.length - secondLastIndex].querySelector(
-			".exclusive__preview"
-		);
-	const lastPreview =
-		activeExclusives[activeExclusives.length - lastIndex].querySelector(".exclusive__preview");
+    // Access last and secondlast item from 6 rendered items
+    const secondLastPreview =
+        activeExclusives[activeExclusives.length - secondLastIndex].querySelector(
+            ".exclusive__preview"
+        );
+    const lastPreview =
+        activeExclusives[activeExclusives.length - lastIndex].querySelector(".exclusive__preview");
 
-	// Add specific classes to last and second-last item
-	secondLastPreview.classList.add("exclusive__preview--right");
-	lastPreview.classList.add("exclusive__preview--right");
+    // Add specific classes to last and second-last item
+    secondLastPreview.classList.add("exclusive__preview--right");
+    lastPreview.classList.add("exclusive__preview--right");
 }
 
 function handleMovieTranslation() {
-	const dir = document.documentElement.dir;
-	const movieActiveItems = document.querySelectorAll(
-		".movie-carousel .owl-item.active .movie__item"
-	);
+    const dir = document.documentElement.dir;
+    const movieActiveItems = document.querySelectorAll(
+        ".movie-carousel .owl-item.active .movie__item"
+    );
 
-	if (dir == "rtl") {
-		// manage leftmost and rightmost item
-		movieActiveItems.forEach((item, index) => {
-			if (index == 0 || index == 8) {
-				item.setAttribute("data-movie", "left");
-			} else if (index == 6 || index == 14) {
-				item.setAttribute("data-movie", "right");
-			}
-		});
-	} else {
-		// manage leftmost and rightmost item
-		movieActiveItems.forEach((item, index) => {
-			if (index == 0 || index == 7) {
-				item.setAttribute("data-movie", "left");
-			} else if (index == 6 || index == 13) {
-				item.setAttribute("data-movie", "right");
-			}
-		});
-	}
+    if (dir == "rtl") {
+        // manage leftmost and rightmost item
+        movieActiveItems.forEach((item, index) => {
+            if (index == 0 || index == 8) {
+                item.setAttribute("data-movie", "left");
+            } else if (index == 6 || index == 14) {
+                item.setAttribute("data-movie", "right");
+            }
+        });
+    } else {
+        // manage leftmost and rightmost item
+        movieActiveItems.forEach((item, index) => {
+            if (index == 0 || index == 7) {
+                item.setAttribute("data-movie", "left");
+            } else if (index == 6 || index == 13) {
+                item.setAttribute("data-movie", "right");
+            }
+        });
+    }
 }
 
 // let callback = (entries, observer) => {
