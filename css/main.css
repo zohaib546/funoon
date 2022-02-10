@@ -4230,6 +4230,9 @@ input[type="range"]:active::-moz-range-thumb {
   width: 20%;
   overflow: hidden;
 }
+.hero-features__list p{
+  width: 70%;
+}
 @media screen and (max-width: 420px) {
   .hero-features__list .secondary-heading-bold {
     font-size: 2.4rem;
