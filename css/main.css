@@ -1168,7 +1168,7 @@ button:focus {
 }
 .hero__form {
   margin: auto;
-  max-width: 50%;
+  max-width: 57%;
 }
 @media only screen and (max-width: 48em) {
   .hero__form {
@@ -4202,7 +4202,7 @@ input[type="range"]:active::-moz-range-thumb {
 }
 
 .hero-features {
-  margin-top: 7rem;
+  margin-top: 4rem;
 }
 
 /* --------------------------(gradient border for top images)----------------- */
