@@ -4210,11 +4210,15 @@ input[type="range"]:active::-moz-range-thumb {
   border-width: 3px;
   border-style: solid;
   border-image: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, #105484 50%, rgba(0, 0, 0, 0)) 2 100%;
-  transition: all .2s;
+  
 }
-.hero-features__list:hover {
-  transform: scale(1.2);
+.hero-features__list:hover > .primary-color, .hero-features__list:hover > .secondary-heading-bold, .hero-features__list:hover > img, .hero-features__list:hover > p{
+  transform: scale(1.1);
   background: none;
+}
+.hero-features__list > .primary-color, .hero-features__list > .secondary-heading-bold, .hero-features__list:hover > img, .hero-features__list:hover > p{
+  transition: all .2s;
+  transition: transform .5s;
 }
 
 .hero-features__list p {
