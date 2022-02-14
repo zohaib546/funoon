@@ -276,3 +276,13 @@
         }
     }
 }
+
+// get start circle image
+@include arabicRTL {
+    .get-started {
+        &__graphic {
+            left: unset;
+            right: -50%;
+        }
+    }
+}

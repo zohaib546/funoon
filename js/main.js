@@ -15,6 +15,7 @@ let prevSlideIndex = 0;
 const mainCarousel = ".video-carousel";
 const activeSlideClasses = ".video .owl-item.active .video__figure";
 
+
 const landingDetails = {
     element: ".landing-carousel-en",
     loop: true,
@@ -67,9 +68,6 @@ const landingDetailsRTL = {
         },
     },
 };
-
-
-
 
 const listDetails = {
     element: ".list-carousel-en",
@@ -819,6 +817,7 @@ function slider(details) {
         autoplaySpeed: details.autoplaySpeed || false,
         autoplayHoverPause: details.autoplayHoverPause || false,
         slideTransition: details.slideTransition || "",
+
     });
 }
 

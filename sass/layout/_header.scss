@@ -93,6 +93,9 @@
         @include media-query(phone) {
             margin: 0 1rem;
         }
+        .drop-arrow {
+            width: 4rem;
+        }
     }
     &__content-icon {
         transform: rotate(-90deg);
@@ -153,7 +156,11 @@
             }
         }
         &__form {
-            max-width: 60%;
+            max-width: 57%;
+            margin: auto;
+            @include media-query(phone) {
+                max-width: 100%;
+            }
         }
     }
 }

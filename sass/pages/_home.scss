@@ -142,14 +142,14 @@
             content: "1 Month Free";
             position: absolute;
             background-color: red;
-            font-size: 2.7rem;
+            font-size: 2rem;
             padding: 0rem 18rem 0 5rem;
             transform: rotate(337deg);
             left: -48px;
             top: 1px;
             @include media-query(phone) {
                 padding: 0rem 10rem 0 5rem;
-                font-size: 1.6rem;
+                font-size: 1.3rem;
                 left: -40px;
                 top: 1rem;
             }

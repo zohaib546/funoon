@@ -1181,6 +1181,9 @@ button:focus {
     margin: 0 1rem;
   }
 }
+.hero__form .drop-arrow {
+  width: 4rem;
+}
 .hero__content-icon {
   transform: rotate(-90deg);
 }
@@ -1243,7 +1246,13 @@ body.rtl .hero-features__list:nth-child(5) {
   border-left: none;
 }
 body.rtl .hero__form {
-  max-width: 60%;
+  max-width: 57%;
+  margin: auto;
+}
+@media only screen and (max-width: 37.5em) {
+  body.rtl .hero__form {
+    max-width: 100%;
+  }
 }
 
 .header__mobile-nav {
@@ -1730,11 +1739,17 @@ body.rtl .header-sidenav__sidelist {
   background-color: #333;
   padding: 1rem;
   display: inline-block;
+  width: 40%;
+  transition: all .3s ease;
 }
 @media only screen and (max-width: 37.5em) {
   .subscribe-btn {
     width: 100%;
   }
+}
+.subscribe-btn:hover {
+  background-color: white;
+  color: #333;
 }
 
 .movie-popup__modal {
@@ -2101,7 +2116,7 @@ body.rtl .movie-popup__items:not(:last-child) {
   content: "1 Month Free";
   position: absolute;
   background-color: red;
-  font-size: 2.7rem;
+  font-size: 2rem;
   padding: 0rem 18rem 0 5rem;
   transform: rotate(337deg);
   left: -48px;
@@ -2110,7 +2125,7 @@ body.rtl .movie-popup__items:not(:last-child) {
 @media only screen and (max-width: 37.5em) {
   .feature .chit::after {
     padding: 0rem 10rem 0 5rem;
-    font-size: 1.6rem;
+    font-size: 1.3rem;
     left: -40px;
     top: 1rem;
   }
@@ -4202,7 +4217,7 @@ input[type="range"]:active::-moz-range-thumb {
 }
 
 .hero-features {
-  margin-top: 4rem;
+  margin-top: 2rem;
 }
 
 /* --------------------------(gradient border for top images)----------------- */
@@ -4210,15 +4225,11 @@ input[type="range"]:active::-moz-range-thumb {
   border-width: 3px;
   border-style: solid;
   border-image: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, #105484 50%, rgba(0, 0, 0, 0)) 2 100%;
-  
-}
-.hero-features__list:hover > .primary-color, .hero-features__list:hover > .secondary-heading-bold, .hero-features__list:hover > img, .hero-features__list:hover > p{
-  transform: scale(1.1);
-  background: none;
-}
-.hero-features__list > .primary-color, .hero-features__list > .secondary-heading-bold, .hero-features__list:hover > img, .hero-features__list:hover > p{
   transition: all .2s;
-  transition: transform .5s;
+}
+.hero-features__list:hover {
+  transform: scale(1.2);
+  background: none;
 }
 
 .hero-features__list p {
@@ -4229,9 +4240,6 @@ input[type="range"]:active::-moz-range-thumb {
 .hero-features__list {
   width: 20%;
   overflow: hidden;
-}
-.hero-features__list p{
-  width: 70%;
 }
 @media screen and (max-width: 420px) {
   .hero-features__list .secondary-heading-bold {
@@ -4446,6 +4454,11 @@ body.rtl .auth .form__input::placeholder {
 
 body.rtl .notification-arabic .dropdown-menu[data-bs-popper] {
   right: -25rem !important;
+}
+
+body.rtl .get-started__graphic {
+  left: unset;
+  right: -50%;
 }
 
 /*
