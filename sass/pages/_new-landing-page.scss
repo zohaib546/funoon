@@ -128,10 +128,8 @@
     .hero-features__list:hover > h1, h2,  img,  p{
          
         
-            transform: scale(15);
-            background: none;
-            border:solid red 4px !important;
-         
+            transform: scale(1.2);
+            background: none;  
     }
     
     .hero-features__list p {
